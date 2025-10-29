@@ -1,0 +1,74 @@
+<odoo>
+
+    <record id="arabic_gum_price_view_tree" model="ir.ui.view">
+        <field name="name">arabic gum price tree</field>
+        <field name="model">arabic.gum.price</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="active" invisible="True"/>
+                <field name="arabic_gum_id"/>
+                <field name="gum_name"/>
+                <field name="units"/>
+                <field name="unit_price"/>
+                <field name="price_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="arabic_gum_price_view_form" model="ir.ui.view">
+        <field name="name">arabic gum price form</field>
+        <field name="model">arabic.gum.price</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <group>
+                        <group string="General info">
+                            <field name="active" invisible="True"/>
+                            <field name="arabic_gum_id"/>
+                            <field name="gum_name"/>
+                            <field name="units"/>
+                        </group>
+                        <group string="Additional info">
+                            <field name="unit_price"/>
+                            <field name="price_date"/>
+                        </group>
+                    </group>
+                </sheet>
+                    <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="arabic_gum_price_view_search" model="ir.ui.view">
+        <field name="name">arabic gum price search</field>
+        <field name="model">arabic.gum.price</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="arabic_gum_id"/>
+            </search>
+        </field>
+    </record>
+
+
+
+    <record id="arabic_gum_price_action" model="ir.actions.act_window">
+        <field name="name">arabic gum price</field>
+        <field name="res_model">arabic.gum.price</field>
+    </record>
+
+
+
+
+    <menuitem
+          id="arabic_gum_price_menu_item"
+          name="Arabic Gum Prices"
+          parent="product_menu"
+          action="arabic_gum_price_action"
+    />
+</odoo>

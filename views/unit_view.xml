@@ -1,0 +1,77 @@
+<odoo>
+
+    <record id="unit_view_tree" model="ir.ui.view">
+        <field name="name">unit tree</field>
+        <field name="model">unit</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="ref"/>
+                <field name="unit_name"/>
+                <field name="active" invisible="True"/>
+                <field name="name"/>
+<!--                <field name="unit_id"/>-->
+                <field name="code"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="unit_view_form" model="ir.ui.view">
+        <field name="name">unit form</field>
+        <field name="model">unit</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <div class="oe_title">
+                        <label for="ref"/>
+                        <h1>
+                            <field name="ref"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Unit info">
+                            <field name="unit_name"/>
+                            <field name="active" invisible="True"/>
+                            <field name="name"/>
+<!--                            <field name="unit_id"/>-->
+                            <field name="code"/>
+                        </group>
+                    </group>
+                </sheet>
+                    <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="unit_view_search" model="ir.ui.view">
+        <field name="name">unit search</field>
+        <field name="model">unit</field>
+        <field name="arch" type="xml">
+            <search>
+<!--                <field name="name"/>-->
+            </search>
+        </field>
+    </record>
+
+
+
+    <record id="unit_action" model="ir.actions.act_window">
+        <field name="name">unit</field>
+        <field name="res_model">unit</field>
+    </record>
+
+
+
+
+    <menuitem
+          id="unit_menu_item"
+          name="Units"
+          parent="product_menu"
+          action="unit_action"
+    />
+</odoo>

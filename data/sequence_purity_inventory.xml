@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <record id="purity_inventory_sequence" model="ir.sequence">
+            <field name="name">purity inventory seq</field>
+            <field name="code">purity_inventory_seq</field>
+            <field name="prefix">PIV</field>
+            <field name="padding">4</field>
+        </record>
+    </data>
+</odoo>

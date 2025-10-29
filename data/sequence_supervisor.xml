@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <record id="supervisor_sequence" model="ir.sequence">
+            <field name="name">supervisor seq</field>
+            <field name="code">supervisor_seq</field>
+            <field name="prefix">SUP</field>
+            <field name="padding">4</field>
+        </record>
+    </data>
+</odoo>

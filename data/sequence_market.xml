@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <record id="market_sequence" model="ir.sequence">
+            <field name="name">market seq</field>
+            <field name="code">market_seq</field>
+            <field name="prefix">MRK</field>
+            <field name="padding">4</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="employee_report" model="ir.actions.report">
+        <field name="name">Employee Report</field>
+        <field name="model">employee</field>
+        <field name="report_type">qweb-html</field>
+        <field name="binding_model_id" ref="model_employee"/>
+        <field name="binding_type">report</field>
+        <field name="report_name">boraush_trading.employee_report_template</field>
+    </record>
+
+    <template id="employee_report_template">
+        <t t-set="report_encoding" t-value="'utf-8'"/>
+        <t t-call="web.html_container">
+            <div class="page">
+
+                <div class="report-header" style="display:flex; justify-content: space-between; align-items:flex-start;">
+                    <div class="company-left">
+                        <img t-if="docs and docs[0].env.company.logo"
+                             t-att-src="'data:image/png;base64,%s' % (docs[0].env.company.logo.decode())"
+                             style="width: 100px; height: auto; margin-bottom:10px;"/>
+                        <h1 t-field="docs and docs[0].env.company.name"/>
+                        <p t-field="docs and docs[0].env.company.street"/>
+                        <p>
+                            <span t-field="docs and docs[0].env.company.phone"/>
+                            |
+                            <span t-field="docs and docs[0].env.company.email"/>
+                        </p>
+                    </div>
+                    <div class="report-meta" style="text-align:right;">
+                        <h2>Employee Report</h2>
+                        <p><strong>Date:</strong> <t t-esc="time.strftime('%Y-%m-%d')"/></p>
+                    </div>
+                </div>
+
+                <table class="employee-table" style="width:100%; border-collapse: collapse; text-align:center; margin-top:10px;">
+                    <thead style="background-color:#2F5597; color:white;">
+                        <tr>
+                            <th>Employee ID</th>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Job</th>
+                            <th>Hire Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="docs" t-as="emp">
+                            <tr>
+                                <td t-esc="emp.employee_number"/>
+                                <td t-esc="emp.name"/>
+                                <td t-esc="emp.phone or '-'"/>
+                                <td t-esc="emp.email or '-'"/>
+                                <td t-esc="emp.job_id.name or '-'"/>
+                                <td t-esc="emp.hire_data or '-'"/>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+
+                <footer class="report-footer" style="display:flex; justify-content: space-between; margin-top:20px; font-size:11px; color:#555;">
+                    <div>
+                        Prepared by:
+                        <span t-esc="docs and docs[0].env.uid and docs[0].env.user.name or 'System'"/>
+                    </div>
+                    <div class="page-number">Page <span class="pagenum"/></div>
+                </footer>
+
+            </div>
+        </t>
+
+        <style>
+            .employee-table th, .employee-table td { border: 1px solid #ddd; padding: 8px; }
+            .employee-table th { background-color: #2F5597; color: white; }
+            .page { font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #222; padding: 20px; }
+            hr { border: none; border-top: 1px solid #ddd; margin: 12px 0; }
+            @media print { .page { padding: 10mm; } .pagenum:after { content: counter(page); } }
+        </style>
+
+    </template>
+</odoo>

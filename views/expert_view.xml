@@ -1,0 +1,79 @@
+<odoo>
+
+    <record id="expert_view_tree" model="ir.ui.view">
+        <field name="name">expert tree</field>
+        <field name="model">expert</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="ref"/>
+                <field name="name"/>
+                <field name="active" invisible="True"/>
+                <field name="expert_id"/>
+                <field name="phone"/>
+                <field name="email"/>
+                <field name="address"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="expert_view_form" model="ir.ui.view">
+        <field name="name">expert form</field>
+        <field name="model">expert</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <div class="oe_title">
+                        <label for="ref"/>
+                        <h1>
+                            <field name="ref"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="General info">
+                            <field name="active" invisible="True"/>
+                            <field name="name"/>
+                            <field name="expert_id"/>
+                            <field name="phone"/>
+                            <field name="address"/>
+                            <field name="email"/>
+                        </group>
+                    </group>
+                </sheet>
+                    <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="expert_view_search" model="ir.ui.view">
+        <field name="name">expert search</field>
+        <field name="model">expert</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="expert_id"/>
+            </search>
+        </field>
+    </record>
+
+
+
+    <record id="expert_action" model="ir.actions.act_window">
+        <field name="name">expert</field>
+        <field name="res_model">expert</field>
+    </record>
+
+
+
+
+    <menuitem
+          id="expert_menu_item"
+          name="Experts"
+          parent="partners_menu"
+          action="expert_action"
+    />
+</odoo>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="purchase_report" model="ir.actions.report">
+        <field name="name">Purchase Report</field>
+        <field name="model">purchase</field>
+        <field name="report_type">qweb-html</field>
+        <field name="binding_model_id" ref="model_purchase"/>
+        <field name="binding_type">report</field>
+        <field name="report_name">boraush_trading.purchase_report_template</field>
+    </record>
+    <template id="purchase_report_template">
+        <t t-set="report_encoding" t-value="'utf-8'"/>
+        <t t-call="web.html_container">
+            <div class="page">
+
+                <div class="row" style="display:flex; justify-content: space-between; align-items:flex-start;">
+                    <div class="col-6">
+                        <img t-if="docs and docs[0].env.company.logo"
+                             t-att-src="'data:image/png;base64,%s' % (docs[0].env.company.logo.decode())"
+                             style="max-height:100px;"/>
+                        <h2 t-field="docs and docs[0].env.company.name"/>
+                        <p t-field="docs and docs[0].env.company.street"/>
+                        <p>
+                            <span t-field="docs and docs[0].env.company.phone"/>
+                            |
+                            <span t-field="docs and docs[0].env.company.email"/>
+                        </p>
+                    </div>
+                    <div class="col-6" style="text-align:right;">
+                        <h1 style="color:#2F5597; margin-bottom:0;">Purchase Order</h1>
+                        <p><strong>Ref:</strong> <t t-esc="docs[0].ref"/></p>
+                        <p><strong>Date:</strong> <t t-esc="docs[0].purchase_date"/></p>
+                    </div>
+                </div>
+
+                <hr style="margin:15px 0;"/>
+
+                <table class="table table-sm" style="width:100%; border-collapse:collapse;">
+                    <thead style="background-color:#2F5597; color:white;">
+                        <tr>
+                            <th>Arabic Gum ID</th>
+                            <th>Arabic Gum Type</th>
+                            <th>Color</th>
+                            <th>Quality</th>
+                            <th>Quantity</th>
+                            <th>Unit Price</th>
+                            <th>Total Price</th>
+                            <th>Warehouse</th>
+                            <th>Commissioner</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="docs" t-as="purchase">
+                            <t t-foreach="purchase.line_ids" t-as="line">
+                                <tr>
+                                    <td t-esc="line.id"/>
+                                    <td t-esc="dict(line._fields['gum_type'].selection)[line.gum_type]"/>
+                                    <td t-esc="dict(line._fields['color'].selection)[line.color]"/>
+                                    <td t-esc="dict(line._fields['quality'].selection)[line.quality]"/>
+                                    <td t-esc="line.quantity"/>
+                                    <td t-esc="line.unit_price"/>
+                                    <td t-esc="line.total_price"/>
+                                    <td t-esc="line.warehouse_id.name or '-'"/>
+                                    <td t-esc="line.commissioner_id.name or '-'"/>
+                                </tr>
+                            </t>
+                            <tr style="font-weight:bold; background-color:#f2f2f2;">
+                                <td colspan="8" style="text-align:right;">Total:</td>
+                                <td t-esc="purchase.total_price" style="text-align:right;"/>
+                                <td colspan="2"/>
+                            </tr>
+
+                        </t>
+                    </tbody>
+                </table>
+
+                <footer style="display:flex; justify-content: space-between; margin-top:20px; font-size:11px;">
+                    <div>
+                        Prepared by: <span t-esc="docs and docs[0].env.user.name or 'System'"/>
+                    </div>
+                    <div class="page-number">Page <span class="pagenum"/></div>
+                </footer>
+
+            </div>
+        </t>
+
+        <style>
+            .table th, .table td { border:1px solid #ddd; padding:8px; }
+            .table th { background-color:#2F5597; color:white; }
+            .page { font-family: Arial, Helvetica, sans-serif; font-size:12px; padding:20px; }
+            .pagenum:after { content: counter(page); }
+        </style>
+    </template>
+
+
+</odoo>

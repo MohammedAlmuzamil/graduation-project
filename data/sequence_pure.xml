@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <record id="pure_sequence" model="ir.sequence">
+            <field name="name">pure seq</field>
+            <field name="code">pure_seq</field>
+            <field name="prefix">PUR</field>
+            <field name="padding">4</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <record id="arabic_gum_type_sequence" model="ir.sequence">
+            <field name="name">arabic gum type seq</field>
+            <field name="code">arabic_gum_type_seq</field>
+            <field name="prefix">GMT</field>
+            <field name="padding">4</field>
+        </record>
+    </data>
+</odoo>

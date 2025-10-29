@@ -1,0 +1,101 @@
+<odoo>
+
+    <record id="goods_transport_view_tree" model="ir.ui.view">
+        <field name="name">goods transport tree</field>
+        <field name="model">goods.transport</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="ref"/>
+                <field name="active" invisible="True"/>
+                <field name="transport_id"/>
+                <field name="driver_id"/>
+                <field name="employee_id"/>
+                <field name="warehouse_id"/>
+                <field name="truck_id"/>
+                <field name="gum_type"/>
+                <field name="gum_qty"/>
+                <field name="transport_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="goods_transport_view_form" model="ir.ui.view">
+        <field name="name">goods transport form</field>
+        <field name="model">goods.transport</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <widget name="web_ribbon" title="Delivered" bg_color="text-bg-success" invisible="state != 'delivered'"/>
+                    <header>
+                        <button name="action_pending" type="object" class="btn-warning" string="Pending"
+                        invisible="state in ('pending','delivered','loaded','in_transit')"/>
+                        <button name="action_loaded" type="object" class="btn-primary" string="Loaded"
+                        invisible="state != 'pending'"/>
+                        <button name="action_in_transit" type="object" class="btn-info" string="In Transit"
+                        invisible="state != 'loaded' "/>
+                        <button name="action_delivered" type="object" class="btn-success" string="Delivered"
+                        invisible="state != 'in_transit' "/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <div class="oe_title">
+                        <label for="ref"/>
+                        <h1>
+                            <field name="ref"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="General info">
+                            <field name="active" invisible="True"/>
+                            <field name="transport_id" readonly="state=='delivered'"/>
+                            <field name="employee_id" readonly="state=='delivered'"/>
+                            <field name="driver_id" readonly="state=='delivered'"/>
+                            <field name="warehouse_id" readonly="state=='delivered'"/>
+                        </group>
+                        <group string="Additional info">
+                            <field name="truck_id" readonly="state=='delivered'"/>
+                            <field name="gum_type" readonly="state=='delivered'"/>
+                            <field name="gum_qty" readonly="state=='delivered'"/>
+                            <field name="transport_date" readonly="state=='delivered'"/>
+                        </group>
+                    </group>
+                </sheet>
+                    <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="goods_transport_view_search" model="ir.ui.view">
+        <field name="name">goods transport search</field>
+        <field name="model">goods.transport</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="employee_id"/>
+                <field name="truck_id"/>
+                <field name="driver_id"/>
+            </search>
+        </field>
+    </record>
+
+
+
+    <record id="goods_transport_action" model="ir.actions.act_window">
+        <field name="name">goods transport</field>
+        <field name="res_model">goods.transport</field>
+    </record>
+
+
+
+
+    <menuitem
+          id="goods_transport_menu_item"
+          name="Goods Transport"
+          parent="operation_menu"
+          action="goods_transport_action"
+    />
+</odoo>

@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <record id="producer_sequence" model="ir.sequence">
+            <field name="name">producer seq</field>
+            <field name="code">producer_seq</field>
+            <field name="prefix">PRO</field>
+            <field name="padding">4</field>
+        </record>
+    </data>
+</odoo>

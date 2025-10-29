@@ -1,0 +1,81 @@
+<odoo>
+
+    <record id="customer_view_tree" model="ir.ui.view">
+        <field name="name">customer tree</field>
+        <field name="model">customer</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="ref"/>
+                <field name="name"/>
+                <field name="active" invisible="True"/>
+                <field name="customer_id"/>
+                <field name="phone"/>
+                <field name="email"/>
+                <field name="address"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="customer_view_form" model="ir.ui.view">
+        <field name="name">customer form</field>
+        <field name="model">customer</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <div class="oe_title">
+                        <label for="ref"/>
+                        <h1>
+                            <field name="ref"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="General info">
+                            <field name="active" invisible="True"/>
+                            <field name="customer_id"/>
+                            <field name="name"/>
+                        </group>
+                        <group string="Additional info">
+                            <field name="phone"/>
+                            <field name="address"/>
+                            <field name="email"/>
+                        </group>
+                    </group>
+                </sheet>
+                    <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="customer_view_search" model="ir.ui.view">
+        <field name="name">customer search</field>
+        <field name="model">customer</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="customer_id"/>
+            </search>
+        </field>
+    </record>
+
+
+
+    <record id="customer_action" model="ir.actions.act_window">
+        <field name="name">customer</field>
+        <field name="res_model">customer</field>
+    </record>
+
+
+
+
+    <menuitem
+          id="customer_menu_item"
+          name="Customers"
+          parent="partners_menu"
+          action="customer_action"
+    />
+</odoo>

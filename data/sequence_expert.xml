@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <record id="expert_sequence" model="ir.sequence">
+            <field name="name">expert seq</field>
+            <field name="code">expert_seq</field>
+            <field name="prefix">EXP</field>
+            <field name="padding">4</field>
+        </record>
+    </data>
+</odoo>

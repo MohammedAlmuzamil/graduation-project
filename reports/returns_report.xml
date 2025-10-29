@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="returns_report" model="ir.actions.report">
+        <field name="name">Returns Report</field>
+        <field name="model">returns</field>
+        <field name="report_type">qweb-html</field>
+        <field name="binding_model_id" ref="model_returns"/>
+        <field name="binding_type">report</field>
+        <field name="report_name">boraush_trading.returns_report_template</field>
+    </record>
+    <template id="returns_report_template">
+        <t t-set="report_encoding" t-value="'utf-8'"/>
+        <t t-call="web.html_container">
+            <div class="page">
+                <div class="report-header" style="display:flex; justify-content: space-between; align-items:flex-start;">
+                    <div class="company-left">
+                        <img t-if="docs and docs[0].env.company.logo"
+                             t-att-src="'data:image/png;base64,%s' % (docs[0].env.company.logo.decode())"
+                             style="width: 100px; height: auto; margin-bottom:10px;"/>
+                        <h1 t-field="docs and docs[0].env.company.name"/>
+                        <p t-field="docs and docs[0].env.company.street"/>
+                        <p>
+                            <span t-field="docs and docs[0].env.company.phone"/>
+                            |
+                            <span t-field="docs and docs[0].env.company.email"/>
+                        </p>
+                    </div>
+                    <div class="report-meta" style="text-align:right;">
+                        <p><strong>Date:</strong> <t t-esc="time.strftime('%Y-%m-%d')"/></p>
+                    </div>
+                </div>
+
+                <div style="text-align:left; font-size:13px; font-weight:bold; margin-bottom:10px;">
+                    <t t-esc="docs and docs[0].ref or ''"/>
+                </div>
+
+                <table class="returns-table" style="width:100%; border-collapse: collapse; text-align:center; margin-top:10px;">
+                    <thead style="background-color:#2F5597; color:white;">
+                        <tr>
+                            <th>Return ID</th>
+                            <th>Invoice ID</th>
+                            <th>Customer</th>
+                            <th>Return Reason</th>
+                            <th>Gum Type</th>
+                            <th>Quantity</th>
+                            <th>Unit Price</th>
+                            <th>Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="docs" t-as="return_record">
+                            <t t-foreach="return_record.line_ids" t-as="line">
+                                <tr>
+                                    <td t-esc="return_record.return_id"/>
+                                    <td t-esc="return_record.sale_id.name or return_record.sale_id.name"/>
+                                    <td t-esc="return_record.customer_id.name or '-'"/>
+                                    <td t-esc="return_record.return_reason_id"/>
+                                    <td t-esc="dict(line._fields['gum_type'].selection)[line.gum_type]"/>
+                                    <td t-esc="line.quantity"/>
+                                    <td t-esc="line.unit_price"/>
+                                    <td t-esc="line.quantity * line.unit_price" style="text-align:right;"/>
+                                </tr>
+                            </t>
+                            <tr style="font-weight:bold; background-color:#f2f2f2;">
+                                <td colspan="7" style="text-align:right;">Total:</td>
+                                <td t-esc="sum([l.quantity * l.unit_price for l in return_record.line_ids])" style="text-align:right;"/>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+
+                <footer class="report-footer" style="display:flex; justify-content: space-between; margin-top:20px; font-size:11px; color:#555;">
+                    <div>
+                        Prepared by:
+                        <span t-esc="docs and docs[0].env.uid and docs[0].env.user.name or 'System'"/>
+                    </div>
+                    <div class="page-number">Page <span class="pagenum"/></div>
+                </footer>
+            </div>
+        </t>
+
+        <style>
+            .returns-table th, .returns-table td { border: 1px solid #ddd; padding: 8px; }
+            .returns-table th { background-color: #2F5597; color: white; }
+            .page { font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #222; padding: 20px; }
+            hr { border: none; border-top: 1px solid #ddd; margin: 12px 0; }
+            @media print { .page { padding: 10mm; } .pagenum:after { content: counter(page); } }
+        </style>
+    </template>
+
+
+</odoo>

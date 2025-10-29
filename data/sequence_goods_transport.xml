@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <record id="goods_transport_sequence" model="ir.sequence">
+            <field name="name">goods transport seq</field>
+            <field name="code">goods_transport_seq</field>
+            <field name="prefix">GOT</field>
+            <field name="padding">4</field>
+        </record>
+    </data>
+</odoo>

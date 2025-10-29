@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <record id="commissioner_sequence" model="ir.sequence">
+            <field name="name">commissioner seq</field>
+            <field name="code">commissioner_seq</field>
+            <field name="prefix">COM</field>
+            <field name="padding">4</field>
+        </record>
+    </data>
+</odoo>

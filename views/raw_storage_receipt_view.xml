@@ -1,0 +1,80 @@
+<odoo>
+
+    <record id="raw_storage_receipt_view_tree" model="ir.ui.view">
+        <field name="name">raw storage receipt tree</field>
+        <field name="model">raw.storage.receipt</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="active" invisible="True"/>
+                <field name="receipt_id"/>
+                <field name="warehouse_id"/>
+                <field name="employee_id"/>
+                <field name="date"/>
+                <field name="received_qty"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="raw_storage_receipt_view_form" model="ir.ui.view">
+        <field name="name">raw storage receipt form</field>
+        <field name="model">raw.storage.receipt</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <div class="oe_title">
+                        <label for="ref"/>
+                        <h1>
+                            <field name="ref"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="active" invisible="True"/>
+                            <field name="receipt_id"/>
+                            <field name="employee_id"/>
+                            <field name="warehouse_id"/>
+                        </group>
+                        <group>
+                            <field name="date"/>
+                            <field name="received_qty"/>
+                        </group>
+                    </group>
+                </sheet>
+                    <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="raw_storage_receipt_view_search" model="ir.ui.view">
+        <field name="name">raw storage receipt search</field>
+        <field name="model">raw.storage.receipt</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="receipt_id"/>
+            </search>
+        </field>
+    </record>
+
+
+
+    <record id="raw_storage_receipt_action" model="ir.actions.act_window">
+        <field name="name">raw storage receipt</field>
+        <field name="res_model">raw.storage.receipt</field>
+    </record>
+
+
+
+
+    <menuitem
+          id="raw_storage_receipt_menu_item"
+          name="Raw Storage Receipt"
+          parent="operation_menu"
+          action="raw_storage_receipt_action"
+    />
+</odoo>

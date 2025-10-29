@@ -1,0 +1,86 @@
+<odoo>
+
+    <record id="arabic_gum_type_view_tree" model="ir.ui.view">
+        <field name="name">arabic gum type tree</field>
+        <field name="model">arabic.gum.type</field>
+        <field name="arch" type="xml">
+            <tree string="Arabic Gum Types" decoration-success="is_cleaned" decoration-danger="not is_cleaned">
+                <field name="ref"/>
+                <field name="name"/>
+                <field name="arabic_gum_type"/>
+                <field name="color"/>
+                <field name="quality"/>
+                <field name="quantity"/>
+                <field name="date"/>
+                <field name="warehouse_ids"/>
+                <field name="is_cleaned" invisible="1"/>
+                <field name="active" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="arabic_gum_type_view_form" model="ir.ui.view">
+        <field name="name">arabic gum type form</field>
+        <field name="model">arabic.gum.type</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <div class="oe_title">
+                        <label for="ref"/>
+                        <h1>
+                            <field name="ref"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Arabic Gum Type">
+                            <field name="active" invisible="True"/>
+                            <field name="name"/>
+                            <field name="arabic_gum_type"/>
+                            <field name="color"/>
+                            <field name="quality"/>
+                        </group>
+                        <group string="Additional info">
+                            <field name="quantity"/>
+                            <field name="date"/>
+                            <field name="warehouse_ids" widget="many2many_tags"/>
+                        </group>
+                    </group>
+                </sheet>
+                    <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="arabic_gum_type_view_search" model="ir.ui.view">
+        <field name="name">arabic gum type search</field>
+        <field name="model">arabic.gum.type</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+            </search>
+        </field>
+    </record>
+
+
+
+    <record id="arabic_gum_type_action" model="ir.actions.act_window">
+        <field name="name">arabic gum type</field>
+        <field name="res_model">arabic.gum.type</field>
+    </record>
+
+
+
+
+    <menuitem
+          id="arabic_gum_type_menu_item"
+          name="Arabic Gum Types"
+          parent="product_menu"
+          action="arabic_gum_type_action"
+    />
+</odoo>
