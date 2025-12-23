@@ -1,0 +1,16 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# PyCharm
+.idea/
+
+# Odoo core
+odoo17/
+
+# Logs & env
+.env
+*.log
+
+
