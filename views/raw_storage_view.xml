@@ -1,0 +1,75 @@
+<odoo>
+
+    <record id="raw_storage_view_tree" model="ir.ui.view">
+        <field name="name">raw storage tree</field>
+        <field name="model">raw.storage</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="storing_id"/>
+                <field name="active" invisible="True"/>
+                <field name="warehouse_id"/>
+                <field name="employee_id"/>
+                <field name="storing_date"/>
+                <field name="received_qty"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="raw_storage_view_form" model="ir.ui.view">
+        <field name="name">raw storage form</field>
+        <field name="model">raw.storage</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <group>
+                        <group>
+                            <field name="storing_id"/>
+                            <field name="active" invisible="True"/>
+                            <field name="employee_id"/>
+                            <field name="warehouse_id"/>
+                        </group>
+                        <group>
+                            <field name="storing_date"/>
+                            <field name="received_qty"/>
+                        </group>
+                    </group>
+                </sheet>
+                    <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="raw_storage_view_search" model="ir.ui.view">
+        <field name="name">raw storage search</field>
+        <field name="model">raw.storage</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="storing_id"/>
+                <field name="warehouse_id"/>
+            </search>
+        </field>
+    </record>
+
+
+
+    <record id="raw_storage_action" model="ir.actions.act_window">
+        <field name="name">raw storage</field>
+        <field name="res_model">raw.storage</field>
+    </record>
+
+
+
+
+    <menuitem
+          id="raw_storage_menu_item"
+          name="Raw Storage"
+          parent="operation_menu"
+          action="raw_storage_action"
+    />
+</odoo>

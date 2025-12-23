@@ -1,0 +1,3362 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* boraush_trading
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-28 10:26+0000\n"
+"PO-Revision-Date: 2025-10-29 10:58+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar_EG\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? "
+"1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 "
+"&& n%100<=99 ? 4 : 5);\n"
+"برعيش التجاريةProject-Id-Version: Odoo Server 17.0\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#. module: boraush_trading
+#: model_terms:ir.ui.view,arch_db:boraush_trading.arabic_gum_type_report_template
+msgid "<span>No warehouses assigned</span>"
+msgstr "لايوجد مخزن  مخصص"
+
+#. module: boraush_trading
+#: model_terms:ir.ui.view,arch_db:boraush_trading.address_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.arabic_gum_type_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.commissioner_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.customer_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.driver_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.employee_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.expert_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.goods_transport_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.inventory_of_tallying_product_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.job_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.market_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.producer_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.purchase_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.returns_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.sale_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.supervisor_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.trucks_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.unit_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.warehouse_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.warehouseman_report_template
+msgid "<strong>Date:</strong>"
+msgstr "التاريخ"
+
+#. module: boraush_trading
+#: model_terms:ir.ui.view,arch_db:boraush_trading.commissioner_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.customer_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.expert_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.producer_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.purchase_report_template
+msgid "<strong>Ref:</strong>"
+msgstr ""
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_address__message_needaction
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum__message_needaction
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_price__message_needaction
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_type__message_needaction
+#: model:ir.model.fields,field_description:boraush_trading.field_commissioner__message_needaction
+#: model:ir.model.fields,field_description:boraush_trading.field_customer__message_needaction
+#: model:ir.model.fields,field_description:boraush_trading.field_driver__message_needaction
+#: model:ir.model.fields,field_description:boraush_trading.field_employee__message_needaction
+#: model:ir.model.fields,field_description:boraush_trading.field_expert__message_needaction
+#: model:ir.model.fields,field_description:boraush_trading.field_goods_transport__message_needaction
+#: model:ir.model.fields,field_description:boraush_trading.field_gum_stock__message_needaction
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product__message_needaction
+#: model:ir.model.fields,field_description:boraush_trading.field_job__message_needaction
+#: model:ir.model.fields,field_description:boraush_trading.field_market__message_needaction
+#: model:ir.model.fields,field_description:boraush_trading.field_order__message_needaction
+#: model:ir.model.fields,field_description:boraush_trading.field_procure_order__message_needaction
+#: model:ir.model.fields,field_description:boraush_trading.field_producer__message_needaction
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase__message_needaction
+#: model:ir.model.fields,field_description:boraush_trading.field_pure__message_needaction
+#: model:ir.model.fields,field_description:boraush_trading.field_pure_store__message_needaction
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_inventory__message_needaction
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_storage__message_needaction
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage__message_needaction
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage_receipt__message_needaction
+#: model:ir.model.fields,field_description:boraush_trading.field_return_reason__message_needaction
+#: model:ir.model.fields,field_description:boraush_trading.field_returns__message_needaction
+#: model:ir.model.fields,field_description:boraush_trading.field_sale__message_needaction
+#: model:ir.model.fields,field_description:boraush_trading.field_supervisor__message_needaction
+#: model:ir.model.fields,field_description:boraush_trading.field_tallying_product__message_needaction
+#: model:ir.model.fields,field_description:boraush_trading.field_trucks__message_needaction
+#: model:ir.model.fields,field_description:boraush_trading.field_unit__message_needaction
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouse__message_needaction
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouseman__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_address__active
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum__active
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_price__active
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_type__active
+#: model:ir.model.fields,field_description:boraush_trading.field_commissioner__active
+#: model:ir.model.fields,field_description:boraush_trading.field_customer__active
+#: model:ir.model.fields,field_description:boraush_trading.field_driver__active
+#: model:ir.model.fields,field_description:boraush_trading.field_employee__active
+#: model:ir.model.fields,field_description:boraush_trading.field_expert__active
+#: model:ir.model.fields,field_description:boraush_trading.field_goods_transport__active
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product__active
+#: model:ir.model.fields,field_description:boraush_trading.field_job__active
+#: model:ir.model.fields,field_description:boraush_trading.field_market__active
+#: model:ir.model.fields,field_description:boraush_trading.field_order__active
+#: model:ir.model.fields,field_description:boraush_trading.field_procure_order__active
+#: model:ir.model.fields,field_description:boraush_trading.field_producer__active
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase__active
+#: model:ir.model.fields,field_description:boraush_trading.field_pure__active
+#: model:ir.model.fields,field_description:boraush_trading.field_pure_store__active
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_inventory__active
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_storage__active
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage__active
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage_receipt__active
+#: model:ir.model.fields,field_description:boraush_trading.field_return_reason__active
+#: model:ir.model.fields,field_description:boraush_trading.field_returns__active
+#: model:ir.model.fields,field_description:boraush_trading.field_sale__active
+#: model:ir.model.fields,field_description:boraush_trading.field_supervisor__active
+#: model:ir.model.fields,field_description:boraush_trading.field_tallying_product__active
+#: model:ir.model.fields,field_description:boraush_trading.field_trucks__active
+#: model:ir.model.fields,field_description:boraush_trading.field_unit__active
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouse__active
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouseman__active
+msgid "Active"
+msgstr ""
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_address__activity_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum__activity_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_price__activity_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_type__activity_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_commissioner__activity_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_customer__activity_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_driver__activity_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_employee__activity_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_expert__activity_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_goods_transport__activity_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_gum_stock__activity_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product__activity_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_job__activity_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_market__activity_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_order__activity_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_procure_order__activity_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_producer__activity_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase__activity_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_pure__activity_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_pure_store__activity_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_inventory__activity_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_storage__activity_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage__activity_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage_receipt__activity_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_return_reason__activity_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_returns__activity_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_sale__activity_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_supervisor__activity_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_tallying_product__activity_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_trucks__activity_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_unit__activity_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouse__activity_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouseman__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_address__activity_exception_decoration
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum__activity_exception_decoration
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_price__activity_exception_decoration
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_type__activity_exception_decoration
+#: model:ir.model.fields,field_description:boraush_trading.field_commissioner__activity_exception_decoration
+#: model:ir.model.fields,field_description:boraush_trading.field_customer__activity_exception_decoration
+#: model:ir.model.fields,field_description:boraush_trading.field_driver__activity_exception_decoration
+#: model:ir.model.fields,field_description:boraush_trading.field_employee__activity_exception_decoration
+#: model:ir.model.fields,field_description:boraush_trading.field_expert__activity_exception_decoration
+#: model:ir.model.fields,field_description:boraush_trading.field_goods_transport__activity_exception_decoration
+#: model:ir.model.fields,field_description:boraush_trading.field_gum_stock__activity_exception_decoration
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product__activity_exception_decoration
+#: model:ir.model.fields,field_description:boraush_trading.field_job__activity_exception_decoration
+#: model:ir.model.fields,field_description:boraush_trading.field_market__activity_exception_decoration
+#: model:ir.model.fields,field_description:boraush_trading.field_order__activity_exception_decoration
+#: model:ir.model.fields,field_description:boraush_trading.field_procure_order__activity_exception_decoration
+#: model:ir.model.fields,field_description:boraush_trading.field_producer__activity_exception_decoration
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase__activity_exception_decoration
+#: model:ir.model.fields,field_description:boraush_trading.field_pure__activity_exception_decoration
+#: model:ir.model.fields,field_description:boraush_trading.field_pure_store__activity_exception_decoration
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_inventory__activity_exception_decoration
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_storage__activity_exception_decoration
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage__activity_exception_decoration
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage_receipt__activity_exception_decoration
+#: model:ir.model.fields,field_description:boraush_trading.field_return_reason__activity_exception_decoration
+#: model:ir.model.fields,field_description:boraush_trading.field_returns__activity_exception_decoration
+#: model:ir.model.fields,field_description:boraush_trading.field_sale__activity_exception_decoration
+#: model:ir.model.fields,field_description:boraush_trading.field_supervisor__activity_exception_decoration
+#: model:ir.model.fields,field_description:boraush_trading.field_tallying_product__activity_exception_decoration
+#: model:ir.model.fields,field_description:boraush_trading.field_trucks__activity_exception_decoration
+#: model:ir.model.fields,field_description:boraush_trading.field_unit__activity_exception_decoration
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouse__activity_exception_decoration
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouseman__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_address__activity_state
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum__activity_state
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_price__activity_state
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_type__activity_state
+#: model:ir.model.fields,field_description:boraush_trading.field_commissioner__activity_state
+#: model:ir.model.fields,field_description:boraush_trading.field_customer__activity_state
+#: model:ir.model.fields,field_description:boraush_trading.field_driver__activity_state
+#: model:ir.model.fields,field_description:boraush_trading.field_employee__activity_state
+#: model:ir.model.fields,field_description:boraush_trading.field_expert__activity_state
+#: model:ir.model.fields,field_description:boraush_trading.field_goods_transport__activity_state
+#: model:ir.model.fields,field_description:boraush_trading.field_gum_stock__activity_state
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product__activity_state
+#: model:ir.model.fields,field_description:boraush_trading.field_job__activity_state
+#: model:ir.model.fields,field_description:boraush_trading.field_market__activity_state
+#: model:ir.model.fields,field_description:boraush_trading.field_order__activity_state
+#: model:ir.model.fields,field_description:boraush_trading.field_procure_order__activity_state
+#: model:ir.model.fields,field_description:boraush_trading.field_producer__activity_state
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase__activity_state
+#: model:ir.model.fields,field_description:boraush_trading.field_pure__activity_state
+#: model:ir.model.fields,field_description:boraush_trading.field_pure_store__activity_state
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_inventory__activity_state
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_storage__activity_state
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage__activity_state
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage_receipt__activity_state
+#: model:ir.model.fields,field_description:boraush_trading.field_return_reason__activity_state
+#: model:ir.model.fields,field_description:boraush_trading.field_returns__activity_state
+#: model:ir.model.fields,field_description:boraush_trading.field_sale__activity_state
+#: model:ir.model.fields,field_description:boraush_trading.field_supervisor__activity_state
+#: model:ir.model.fields,field_description:boraush_trading.field_tallying_product__activity_state
+#: model:ir.model.fields,field_description:boraush_trading.field_trucks__activity_state
+#: model:ir.model.fields,field_description:boraush_trading.field_unit__activity_state
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouse__activity_state
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouseman__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_address__activity_type_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum__activity_type_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_price__activity_type_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_type__activity_type_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_commissioner__activity_type_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_customer__activity_type_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_driver__activity_type_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_employee__activity_type_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_expert__activity_type_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_goods_transport__activity_type_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_gum_stock__activity_type_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product__activity_type_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_job__activity_type_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_market__activity_type_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_order__activity_type_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_procure_order__activity_type_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_producer__activity_type_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase__activity_type_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_pure__activity_type_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_pure_store__activity_type_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_inventory__activity_type_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_storage__activity_type_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage__activity_type_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage_receipt__activity_type_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_return_reason__activity_type_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_returns__activity_type_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_sale__activity_type_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_supervisor__activity_type_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_tallying_product__activity_type_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_trucks__activity_type_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_unit__activity_type_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouse__activity_type_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouseman__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: boraush_trading
+#: model_terms:ir.ui.view,arch_db:boraush_trading.arabic_gum_price_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.arabic_gum_type_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.commissioner_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.customer_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.driver_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.employee_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.goods_transport_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.gum_stock_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.inventory_of_tallying_product_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.order_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.procure_order_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.producer_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.pure_store_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.pure_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.purity_inventory_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.sale_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.supervisor_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.tallying_product_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.warehouse_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.warehouseman_view_form
+msgid "Additional info"
+msgstr "المعلومات الإضافية"
+
+#. module: boraush_trading
+#: model_terms:ir.ui.view,arch_db:boraush_trading.trucks_view_form
+#, fuzzy
+msgid "Additional info."
+msgstr "المعلومات الاضافيه."
+
+#. module: boraush_trading
+#: model:ir.model,name:boraush_trading.model_address
+#: model:ir.model.fields,field_description:boraush_trading.field_commissioner__address
+#: model:ir.model.fields,field_description:boraush_trading.field_customer__address
+#: model:ir.model.fields,field_description:boraush_trading.field_driver__address
+#: model:ir.model.fields,field_description:boraush_trading.field_expert__address
+#: model:ir.model.fields,field_description:boraush_trading.field_producer__address
+#: model:ir.model.fields,field_description:boraush_trading.field_supervisor__address
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouseman__address
+#: model:ir.ui.menu,name:boraush_trading.address_menu_item
+#: model_terms:ir.ui.view,arch_db:boraush_trading.commissioner_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.customer_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.driver_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.expert_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.producer_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.supervisor_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.warehouseman_report_template
+msgid "Address"
+msgstr "العنوان"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_address__name
+#: model_terms:ir.ui.view,arch_db:boraush_trading.address_report_template
+msgid "Address ID"
+msgstr "رقم العنوان"
+
+#. module: boraush_trading
+#: model:ir.actions.report,name:boraush_trading.address_report
+msgid "Address Report"
+msgstr "تقرير العنوان"
+
+#. module: boraush_trading
+#: model:ir.model.fields.selection,name:boraush_trading.selection__address__continent__africa
+msgid "Africa"
+msgstr "افريقيا"
+
+#. module: boraush_trading
+#: model:ir.model,name:boraush_trading.model_arabic_gum
+#: model:ir.ui.menu,name:boraush_trading.arabic_gum_menu_item
+msgid "Arabic Gum"
+msgstr "الصمغ العربي"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum__arabic_gum_id
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_price__arabic_gum_id
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_type__name
+#: model_terms:ir.ui.view,arch_db:boraush_trading.purchase_report_template
+msgid "Arabic Gum ID"
+msgstr "رقم الصمغ العربي"
+
+#. module: boraush_trading
+#: model:ir.model,name:boraush_trading.model_arabic_gum_price
+msgid "Arabic Gum Price"
+msgstr "سعر الصمغ العربي"
+
+#. module: boraush_trading
+#: model:ir.ui.menu,name:boraush_trading.arabic_gum_price_menu_item
+msgid "Arabic Gum Prices"
+msgstr "اسعار الصمغ العربي"
+
+#. module: boraush_trading
+#: model:ir.model,name:boraush_trading.model_arabic_gum_type
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_type__arabic_gum_type
+#: model:ir.model.fields,field_description:boraush_trading.field_goods_transport__gum_type
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product_line__gum_type_id
+#: model:ir.model.fields,field_description:boraush_trading.field_order__gum_type
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase_line__gum_type
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouse__arabic_gum
+#: model_terms:ir.ui.view,arch_db:boraush_trading.arabic_gum_type_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.goods_transport_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.inventory_of_tallying_product_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.purchase_report_template
+msgid "Arabic Gum Type"
+msgstr "نوع الصمغ العربي"
+
+#. module: boraush_trading
+#: model:ir.actions.report,name:boraush_trading.arabic_gum_type_report
+#: model_terms:ir.ui.view,arch_db:boraush_trading.arabic_gum_type_report_template
+msgid "Arabic Gum Type Report"
+msgstr "تقرير نوع الصمغ العربي"
+
+#. module: boraush_trading
+#: model:ir.ui.menu,name:boraush_trading.arabic_gum_type_menu_item
+#: model_terms:ir.ui.view,arch_db:boraush_trading.arabic_gum_type_view_tree
+msgid "Arabic Gum Types"
+msgstr "انواع الصمغ العربي"
+
+#. module: boraush_trading
+#: model_terms:ir.ui.view,arch_db:boraush_trading.address_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.arabic_gum_price_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.arabic_gum_type_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.arabic_gum_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.commissioner_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.customer_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.driver_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.employee_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.expert_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.goods_transport_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.inventory_of_tallying_product_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.job_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.market_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.order_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.procure_order_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.producer_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.purchase_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.pure_store_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.pure_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.purity_inventory_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.purity_storage_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.raw_storage_receipt_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.raw_storage_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.return_reason_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.returns_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.sale_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.supervisor_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.tallying_product_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.trucks_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.unit_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.warehouse_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.warehouseman_view_form
+msgid "Archived"
+msgstr "مؤرشفة"
+
+#. module: boraush_trading
+#: model:ir.model.fields.selection,name:boraush_trading.selection__address__continent__asia
+msgid "Asia"
+msgstr "اسيا"
+
+#. module: boraush_trading
+#: model:ir.ui.menu,name:boraush_trading.assets_menu
+msgid "Assets"
+msgstr "الأصول الثابتة"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_address__message_attachment_count
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum__message_attachment_count
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_price__message_attachment_count
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_type__message_attachment_count
+#: model:ir.model.fields,field_description:boraush_trading.field_commissioner__message_attachment_count
+#: model:ir.model.fields,field_description:boraush_trading.field_customer__message_attachment_count
+#: model:ir.model.fields,field_description:boraush_trading.field_driver__message_attachment_count
+#: model:ir.model.fields,field_description:boraush_trading.field_employee__message_attachment_count
+#: model:ir.model.fields,field_description:boraush_trading.field_expert__message_attachment_count
+#: model:ir.model.fields,field_description:boraush_trading.field_goods_transport__message_attachment_count
+#: model:ir.model.fields,field_description:boraush_trading.field_gum_stock__message_attachment_count
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product__message_attachment_count
+#: model:ir.model.fields,field_description:boraush_trading.field_job__message_attachment_count
+#: model:ir.model.fields,field_description:boraush_trading.field_market__message_attachment_count
+#: model:ir.model.fields,field_description:boraush_trading.field_order__message_attachment_count
+#: model:ir.model.fields,field_description:boraush_trading.field_procure_order__message_attachment_count
+#: model:ir.model.fields,field_description:boraush_trading.field_producer__message_attachment_count
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase__message_attachment_count
+#: model:ir.model.fields,field_description:boraush_trading.field_pure__message_attachment_count
+#: model:ir.model.fields,field_description:boraush_trading.field_pure_store__message_attachment_count
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_inventory__message_attachment_count
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_storage__message_attachment_count
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage__message_attachment_count
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage_receipt__message_attachment_count
+#: model:ir.model.fields,field_description:boraush_trading.field_return_reason__message_attachment_count
+#: model:ir.model.fields,field_description:boraush_trading.field_returns__message_attachment_count
+#: model:ir.model.fields,field_description:boraush_trading.field_sale__message_attachment_count
+#: model:ir.model.fields,field_description:boraush_trading.field_supervisor__message_attachment_count
+#: model:ir.model.fields,field_description:boraush_trading.field_tallying_product__message_attachment_count
+#: model:ir.model.fields,field_description:boraush_trading.field_trucks__message_attachment_count
+#: model:ir.model.fields,field_description:boraush_trading.field_unit__message_attachment_count
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouse__message_attachment_count
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouseman__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: boraush_trading
+#: model:ir.model.fields.selection,name:boraush_trading.selection__address__continent__australia
+msgid "Australia"
+msgstr "استراليا"
+
+#. module: boraush_trading
+#: model:ir.model.fields.selection,name:boraush_trading.selection__arabic_gum_type__quality__average
+#: model:ir.model.fields.selection,name:boraush_trading.selection__purchase_line__quality__average
+msgid "Average"
+msgstr "المتوسط"
+
+#. module: boraush_trading
+#: model:ir.model.fields.selection,name:boraush_trading.selection__pure__pure_type__bark
+msgid "Bark"
+msgstr "لحاء"
+
+#. module: boraush_trading
+#: model:ir.ui.menu,name:boraush_trading.boraush_trading_root_menu
+msgid "Boraush Trading"
+msgstr "برعيش التجارية"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_trucks__chassis_no
+#: model_terms:ir.ui.view,arch_db:boraush_trading.trucks_report_template
+msgid "Chassis Number"
+msgstr "رقم  الشاصي"
+
+#. module: boraush_trading
+#: model_terms:ir.ui.view,arch_db:boraush_trading.address_report_template
+msgid "City"
+msgstr "المدينة"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_address__city_id
+msgid "City ID"
+msgstr "رقم المدينة"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_address__city_name
+msgid "City Name"
+msgstr "اسم المدينة"
+
+#. module: boraush_trading
+#: model_terms:ir.ui.view,arch_db:boraush_trading.inventory_of_tallying_product_view_form
+msgid "Clean Gums"
+msgstr "تنظيف الصمغ"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_type__is_cleaned
+#: model:ir.model.fields.selection,name:boraush_trading.selection__inventory_of_tallying_product__state__cleaned
+#: model_terms:ir.ui.view,arch_db:boraush_trading.arabic_gum_type_report_template
+msgid "Cleaned"
+msgstr "تم التنظيف"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product__line_ids
+#: model_terms:ir.ui.view,arch_db:boraush_trading.inventory_of_tallying_product_view_form
+msgid "Cleaning Details"
+msgstr "تفاصيل التنظيف و الفرز"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_type__line_ids
+msgid "Cleaning Lines"
+msgstr "بنود التنظيف"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product_line__cleaning_id
+msgid "Cleaning Reference"
+msgstr "مرجع التنظيف"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_type__color
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase_line__color
+#: model_terms:ir.ui.view,arch_db:boraush_trading.arabic_gum_type_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.purchase_report_template
+msgid "Color"
+msgstr "اللون"
+
+#. module: boraush_trading
+#: model:ir.model,name:boraush_trading.model_commissioner
+#: model:ir.model.fields,field_description:boraush_trading.field_procure_order__commissioner_id
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase_line__commissioner_id
+#: model_terms:ir.ui.view,arch_db:boraush_trading.purchase_report_template
+msgid "Commissioner"
+msgstr "المندوب"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_commissioner__comm_id
+#: model:ir.model.fields,field_description:boraush_trading.field_pure_store__commissioner_id
+#: model_terms:ir.ui.view,arch_db:boraush_trading.commissioner_report_template
+msgid "Commissioner ID"
+msgstr "رقم المندوب"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_commissioner__name
+#: model_terms:ir.ui.view,arch_db:boraush_trading.commissioner_report_template
+msgid "Commissioner Name"
+msgstr "اسم المندوب"
+
+#. module: boraush_trading
+#: model:ir.actions.report,name:boraush_trading.commissioner_report
+#: model_terms:ir.ui.view,arch_db:boraush_trading.commissioner_report_template
+#, fuzzy
+msgid "Commissioner Report"
+msgstr "تقرير المناديب"
+
+#. module: boraush_trading
+#: model:ir.ui.menu,name:boraush_trading.commissioner_menu_item
+msgid "Commissioners"
+msgstr "المناديب"
+
+#. module: boraush_trading
+#: model_terms:ir.ui.view,arch_db:boraush_trading.purchase_view_form
+msgid "Confirm"
+msgstr "تأكيد"
+
+#. module: boraush_trading
+#: model_terms:ir.ui.view,arch_db:boraush_trading.returns_view_form
+msgid "Confirm Return"
+msgstr "تأكيد الأرجاع"
+
+#. module: boraush_trading
+#: model_terms:ir.ui.view,arch_db:boraush_trading.sale_view_form
+msgid "Confirm Sale"
+msgstr "تأكيد البيع"
+
+#. module: boraush_trading
+#: model:ir.model.fields.selection,name:boraush_trading.selection__trucks__truck_type__container_truck
+msgid "Container Truck"
+msgstr "شاحنة حاويات"
+
+#. module: boraush_trading
+#: model_terms:ir.ui.view,arch_db:boraush_trading.address_report_template
+msgid "Continent"
+msgstr "القارة"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_address__continent
+msgid "Continent Name"
+msgstr "إسم القارة"
+
+#. module: boraush_trading
+#: model_terms:ir.ui.view,arch_db:boraush_trading.address_report_template
+msgid "Country"
+msgstr "الدولة"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_address__country_id
+msgid "Country ID"
+msgstr "رقم الدولة"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_address__country_name
+msgid "Country Name"
+msgstr "إسم الدولة"
+
+#. module: boraush_trading
+#: model_terms:ir.ui.view,arch_db:boraush_trading.address_view_form
+msgid "Country info"
+msgstr "معلومات الدولة"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_address__create_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum__create_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_price__create_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_type__create_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_commissioner__create_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_customer__create_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_driver__create_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_employee__create_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_expert__create_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_goods_transport__create_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_gum_stock__create_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product__create_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product_line__create_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_job__create_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_market__create_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_order__create_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_procure_order__create_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_producer__create_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase__create_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase_line__create_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_pure__create_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_pure_store__create_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_inventory__create_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_storage__create_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage__create_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage_receipt__create_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_return_reason__create_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_returns__create_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_returns_line__create_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_sale__create_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_sale_line__create_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_supervisor__create_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_tallying_product__create_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_trucks__create_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_unit__create_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouse__create_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouseman__create_uid
+msgid "Created by"
+msgstr "تم انشاؤه بواسطة"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_address__create_date
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum__create_date
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_price__create_date
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_type__create_date
+#: model:ir.model.fields,field_description:boraush_trading.field_commissioner__create_date
+#: model:ir.model.fields,field_description:boraush_trading.field_customer__create_date
+#: model:ir.model.fields,field_description:boraush_trading.field_driver__create_date
+#: model:ir.model.fields,field_description:boraush_trading.field_employee__create_date
+#: model:ir.model.fields,field_description:boraush_trading.field_expert__create_date
+#: model:ir.model.fields,field_description:boraush_trading.field_goods_transport__create_date
+#: model:ir.model.fields,field_description:boraush_trading.field_gum_stock__create_date
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product__create_date
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product_line__create_date
+#: model:ir.model.fields,field_description:boraush_trading.field_job__create_date
+#: model:ir.model.fields,field_description:boraush_trading.field_market__create_date
+#: model:ir.model.fields,field_description:boraush_trading.field_order__create_date
+#: model:ir.model.fields,field_description:boraush_trading.field_procure_order__create_date
+#: model:ir.model.fields,field_description:boraush_trading.field_producer__create_date
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase__create_date
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase_line__create_date
+#: model:ir.model.fields,field_description:boraush_trading.field_pure__create_date
+#: model:ir.model.fields,field_description:boraush_trading.field_pure_store__create_date
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_inventory__create_date
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_storage__create_date
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage__create_date
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage_receipt__create_date
+#: model:ir.model.fields,field_description:boraush_trading.field_return_reason__create_date
+#: model:ir.model.fields,field_description:boraush_trading.field_returns__create_date
+#: model:ir.model.fields,field_description:boraush_trading.field_returns_line__create_date
+#: model:ir.model.fields,field_description:boraush_trading.field_sale__create_date
+#: model:ir.model.fields,field_description:boraush_trading.field_sale_line__create_date
+#: model:ir.model.fields,field_description:boraush_trading.field_supervisor__create_date
+#: model:ir.model.fields,field_description:boraush_trading.field_tallying_product__create_date
+#: model:ir.model.fields,field_description:boraush_trading.field_trucks__create_date
+#: model:ir.model.fields,field_description:boraush_trading.field_unit__create_date
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouse__create_date
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouseman__create_date
+msgid "Created on"
+msgstr "تم انشاؤه في"
+
+#. module: boraush_trading
+#: model:ir.model,name:boraush_trading.model_customer
+#: model:ir.model.fields,field_description:boraush_trading.field_sale__customer_id
+#: model_terms:ir.ui.view,arch_db:boraush_trading.returns_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.sale_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.sale_view_form
+msgid "Customer"
+msgstr "العميل"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_customer__customer_id
+#: model_terms:ir.ui.view,arch_db:boraush_trading.customer_report_template
+msgid "Customer ID"
+msgstr "رقم العميل"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_customer__name
+#: model:ir.model.fields,field_description:boraush_trading.field_order__customer_id
+#: model:ir.model.fields,field_description:boraush_trading.field_returns__customer_id
+#: model_terms:ir.ui.view,arch_db:boraush_trading.customer_report_template
+msgid "Customer Name"
+msgstr "إسم العميل"
+
+#. module: boraush_trading
+#: model:ir.actions.report,name:boraush_trading.customer_report
+#: model_terms:ir.ui.view,arch_db:boraush_trading.customer_report_template
+msgid "Customer Report"
+msgstr "تقرير العملاء"
+
+#. module: boraush_trading
+#: model:ir.ui.menu,name:boraush_trading.customer_menu_item
+msgid "Customers"
+msgstr "العملاء"
+
+#. module: boraush_trading
+#: model:ir.model.fields.selection,name:boraush_trading.selection__arabic_gum_type__color__dark_colored
+#: model:ir.model.fields.selection,name:boraush_trading.selection__purchase_line__color__dark_colored
+msgid "Dark Colored"
+msgstr "لون داكن"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum__date
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_type__date
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product__date
+#: model:ir.model.fields,field_description:boraush_trading.field_procure_order__date
+#: model:ir.model.fields,field_description:boraush_trading.field_pure__date
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_inventory__date
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage_receipt__date
+#: model_terms:ir.ui.view,arch_db:boraush_trading.arabic_gum_type_report_template
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: boraush_trading
+#: model:ir.model.fields.selection,name:boraush_trading.selection__goods_transport__state__delivered
+#: model_terms:ir.ui.view,arch_db:boraush_trading.goods_transport_view_form
+msgid "Delivered"
+msgstr "تم التوصيل"
+
+#. module: boraush_trading
+#: model_terms:ir.ui.view,arch_db:boraush_trading.purchase_view_form
+msgid "Description"
+msgstr "الوصف"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_address__display_name
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum__display_name
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_price__display_name
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_type__display_name
+#: model:ir.model.fields,field_description:boraush_trading.field_commissioner__display_name
+#: model:ir.model.fields,field_description:boraush_trading.field_customer__display_name
+#: model:ir.model.fields,field_description:boraush_trading.field_driver__display_name
+#: model:ir.model.fields,field_description:boraush_trading.field_employee__display_name
+#: model:ir.model.fields,field_description:boraush_trading.field_expert__display_name
+#: model:ir.model.fields,field_description:boraush_trading.field_goods_transport__display_name
+#: model:ir.model.fields,field_description:boraush_trading.field_gum_stock__display_name
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product__display_name
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product_line__display_name
+#: model:ir.model.fields,field_description:boraush_trading.field_job__display_name
+#: model:ir.model.fields,field_description:boraush_trading.field_market__display_name
+#: model:ir.model.fields,field_description:boraush_trading.field_order__display_name
+#: model:ir.model.fields,field_description:boraush_trading.field_procure_order__display_name
+#: model:ir.model.fields,field_description:boraush_trading.field_producer__display_name
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase__display_name
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase_line__display_name
+#: model:ir.model.fields,field_description:boraush_trading.field_pure__display_name
+#: model:ir.model.fields,field_description:boraush_trading.field_pure_store__display_name
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_inventory__display_name
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_storage__display_name
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage__display_name
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage_receipt__display_name
+#: model:ir.model.fields,field_description:boraush_trading.field_return_reason__display_name
+#: model:ir.model.fields,field_description:boraush_trading.field_returns__display_name
+#: model:ir.model.fields,field_description:boraush_trading.field_returns_line__display_name
+#: model:ir.model.fields,field_description:boraush_trading.field_sale__display_name
+#: model:ir.model.fields,field_description:boraush_trading.field_sale_line__display_name
+#: model:ir.model.fields,field_description:boraush_trading.field_supervisor__display_name
+#: model:ir.model.fields,field_description:boraush_trading.field_tallying_product__display_name
+#: model:ir.model.fields,field_description:boraush_trading.field_trucks__display_name
+#: model:ir.model.fields,field_description:boraush_trading.field_unit__display_name
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouse__display_name
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouseman__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: boraush_trading
+#: model:ir.model.fields.selection,name:boraush_trading.selection__inventory_of_tallying_product__state__draft
+msgid "Draft"
+msgstr "معلق"
+
+#. module: boraush_trading
+#: model:ir.model,name:boraush_trading.model_driver
+#: model_terms:ir.ui.view,arch_db:boraush_trading.goods_transport_report_template
+msgid "Driver"
+msgstr "السائق"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_driver__driver_id
+#: model:ir.model.fields,field_description:boraush_trading.field_goods_transport__driver_id
+#: model_terms:ir.ui.view,arch_db:boraush_trading.driver_report_template
+msgid "Driver ID"
+msgstr "رقم السائق"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_driver__name
+#: model:ir.model.fields,field_description:boraush_trading.field_trucks__driver_id
+#: model_terms:ir.ui.view,arch_db:boraush_trading.driver_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.trucks_report_template
+msgid "Driver Name"
+msgstr "إسم السائق"
+
+#. module: boraush_trading
+#: model:ir.actions.report,name:boraush_trading.driver_report
+msgid "Driver Report"
+msgstr "تقرير السائقين"
+
+#. module: boraush_trading
+#: model_terms:ir.ui.view,arch_db:boraush_trading.driver_view_form
+msgid "Driver info"
+msgstr "معلومات السائق"
+
+#. module: boraush_trading
+#: model:ir.ui.menu,name:boraush_trading.driver_menu_item
+msgid "Drivers"
+msgstr "السائقين"
+
+#. module: boraush_trading
+#: model:ir.model.constraint,message:boraush_trading.constraint_warehouseman_unique_warehouse
+msgid "Each warehouse can have only one warehouseman!"
+msgstr "كل مخزن يجب ان يكون له امين مخزن واحد فقط!"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_commissioner__email
+#: model:ir.model.fields,field_description:boraush_trading.field_customer__email
+#: model:ir.model.fields,field_description:boraush_trading.field_driver__email
+#: model:ir.model.fields,field_description:boraush_trading.field_employee__email
+#: model:ir.model.fields,field_description:boraush_trading.field_expert__email
+#: model:ir.model.fields,field_description:boraush_trading.field_producer__email
+#: model:ir.model.fields,field_description:boraush_trading.field_supervisor__email
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouseman__email
+#: model_terms:ir.ui.view,arch_db:boraush_trading.commissioner_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.customer_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.driver_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.employee_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.expert_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.producer_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.supervisor_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.warehouseman_report_template
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#. module: boraush_trading
+#: model:ir.model,name:boraush_trading.model_employee
+#: model:ir.model.fields,field_description:boraush_trading.field_job__employee_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_storage__employee_id
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage__employee_id
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage_receipt__employee_id
+#: model:ir.model.fields,field_description:boraush_trading.field_sale__employee_id
+#: model_terms:ir.ui.view,arch_db:boraush_trading.goods_transport_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.sale_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.sale_view_form
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_job__employee_count
+#: model_terms:ir.ui.view,arch_db:boraush_trading.job_report_template
+msgid "Employee Count"
+msgstr "عدد الموظفين"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_employee__employee_number
+#: model:ir.model.fields,field_description:boraush_trading.field_goods_transport__employee_id
+#: model:ir.model.fields,field_description:boraush_trading.field_pure_store__employee_id
+#: model_terms:ir.ui.view,arch_db:boraush_trading.employee_report_template
+msgid "Employee ID"
+msgstr "رقم الموظف"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_employee__name
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouseman__employee_id
+#: model_terms:ir.ui.view,arch_db:boraush_trading.warehouseman_report_template
+msgid "Employee Name"
+msgstr "اسم الموظف"
+
+#. module: boraush_trading
+#: model_terms:ir.ui.view,arch_db:boraush_trading.job_report_template
+msgid "Employee Names"
+msgstr "اسماء الموظفين"
+
+#. module: boraush_trading
+#: model:ir.actions.report,name:boraush_trading.employee_report
+#: model_terms:ir.ui.view,arch_db:boraush_trading.employee_report_template
+msgid "Employee Report"
+msgstr "تقرير الموظفين"
+
+#. module: boraush_trading
+#: model:ir.ui.menu,name:boraush_trading.employee_menu_item
+#: model_terms:ir.ui.view,arch_db:boraush_trading.job_view_form
+msgid "Employees"
+msgstr "الموظفين"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouse__end_service_date
+#: model_terms:ir.ui.view,arch_db:boraush_trading.warehouse_report_template
+msgid "End Service Date"
+msgstr "تاريخ إنتهاء الخدمة"
+
+#. module: boraush_trading
+#: model:ir.model.fields.selection,name:boraush_trading.selection__address__continent__europe
+msgid "Europe"
+msgstr "اوروبا"
+
+#. module: boraush_trading
+#: model:ir.model.fields.selection,name:boraush_trading.selection__arabic_gum_type__quality__excellent
+#: model:ir.model.fields.selection,name:boraush_trading.selection__purchase_line__quality__excellent
+msgid "Excellent"
+msgstr "ممتاز"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_expert__expert_id
+#: model_terms:ir.ui.view,arch_db:boraush_trading.expert_report_template
+msgid "Expert ID"
+msgstr "رقم الخبير"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_expert__name
+#: model_terms:ir.ui.view,arch_db:boraush_trading.expert_report_template
+msgid "Expert Name"
+msgstr "إسم الخبير"
+
+#. module: boraush_trading
+#: model:ir.actions.report,name:boraush_trading.expert_report
+#: model_terms:ir.ui.view,arch_db:boraush_trading.expert_report_template
+msgid "Expert Report"
+msgstr "تقرير الخبراء"
+
+#. module: boraush_trading
+#: model:ir.ui.menu,name:boraush_trading.expert_menu_item
+msgid "Experts"
+msgstr "الخبراء"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_tallying_product__extracted_date
+msgid "Extracted Date"
+msgstr "تاريخ الاستخراج"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_tallying_product__extracted_qty
+msgid "Extracted Quantity KG"
+msgstr "الكمية المستخرجة كغ"
+
+#. module: boraush_trading
+#: model:ir.model.fields.selection,name:boraush_trading.selection__trucks__truck_type__box_truck
+#, fuzzy
+msgid "Flatbed Box"
+msgstr "شاحنة صندوقية مسطحة"
+
+#. module: boraush_trading
+#: model:ir.model.fields.selection,name:boraush_trading.selection__trucks__truck_type__flatbed_truck
+msgid "Flatbed Truck"
+msgstr "شاحنة مسطحة"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_address__message_follower_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum__message_follower_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_price__message_follower_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_type__message_follower_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_commissioner__message_follower_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_customer__message_follower_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_driver__message_follower_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_employee__message_follower_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_expert__message_follower_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_goods_transport__message_follower_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_gum_stock__message_follower_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product__message_follower_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_job__message_follower_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_market__message_follower_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_order__message_follower_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_procure_order__message_follower_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_producer__message_follower_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase__message_follower_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_pure__message_follower_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_pure_store__message_follower_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_inventory__message_follower_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_storage__message_follower_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage__message_follower_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage_receipt__message_follower_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_return_reason__message_follower_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_returns__message_follower_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_sale__message_follower_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_supervisor__message_follower_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_tallying_product__message_follower_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_trucks__message_follower_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_unit__message_follower_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouse__message_follower_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouseman__message_follower_ids
+#, fuzzy
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_address__message_partner_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum__message_partner_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_price__message_partner_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_type__message_partner_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_commissioner__message_partner_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_customer__message_partner_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_driver__message_partner_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_employee__message_partner_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_expert__message_partner_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_goods_transport__message_partner_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_gum_stock__message_partner_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product__message_partner_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_job__message_partner_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_market__message_partner_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_order__message_partner_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_procure_order__message_partner_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_producer__message_partner_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase__message_partner_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_pure__message_partner_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_pure_store__message_partner_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_inventory__message_partner_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_storage__message_partner_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage__message_partner_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage_receipt__message_partner_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_return_reason__message_partner_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_returns__message_partner_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_sale__message_partner_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_supervisor__message_partner_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_tallying_product__message_partner_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_trucks__message_partner_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_unit__message_partner_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouse__message_partner_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouseman__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون الشركاء"
+
+#. module: boraush_trading
+#: model:ir.model.fields,help:boraush_trading.field_address__activity_type_icon
+#: model:ir.model.fields,help:boraush_trading.field_arabic_gum__activity_type_icon
+#: model:ir.model.fields,help:boraush_trading.field_arabic_gum_price__activity_type_icon
+#: model:ir.model.fields,help:boraush_trading.field_arabic_gum_type__activity_type_icon
+#: model:ir.model.fields,help:boraush_trading.field_commissioner__activity_type_icon
+#: model:ir.model.fields,help:boraush_trading.field_customer__activity_type_icon
+#: model:ir.model.fields,help:boraush_trading.field_driver__activity_type_icon
+#: model:ir.model.fields,help:boraush_trading.field_employee__activity_type_icon
+#: model:ir.model.fields,help:boraush_trading.field_expert__activity_type_icon
+#: model:ir.model.fields,help:boraush_trading.field_goods_transport__activity_type_icon
+#: model:ir.model.fields,help:boraush_trading.field_gum_stock__activity_type_icon
+#: model:ir.model.fields,help:boraush_trading.field_inventory_of_tallying_product__activity_type_icon
+#: model:ir.model.fields,help:boraush_trading.field_job__activity_type_icon
+#: model:ir.model.fields,help:boraush_trading.field_market__activity_type_icon
+#: model:ir.model.fields,help:boraush_trading.field_order__activity_type_icon
+#: model:ir.model.fields,help:boraush_trading.field_procure_order__activity_type_icon
+#: model:ir.model.fields,help:boraush_trading.field_producer__activity_type_icon
+#: model:ir.model.fields,help:boraush_trading.field_purchase__activity_type_icon
+#: model:ir.model.fields,help:boraush_trading.field_pure__activity_type_icon
+#: model:ir.model.fields,help:boraush_trading.field_pure_store__activity_type_icon
+#: model:ir.model.fields,help:boraush_trading.field_purity_inventory__activity_type_icon
+#: model:ir.model.fields,help:boraush_trading.field_purity_storage__activity_type_icon
+#: model:ir.model.fields,help:boraush_trading.field_raw_storage__activity_type_icon
+#: model:ir.model.fields,help:boraush_trading.field_raw_storage_receipt__activity_type_icon
+#: model:ir.model.fields,help:boraush_trading.field_return_reason__activity_type_icon
+#: model:ir.model.fields,help:boraush_trading.field_returns__activity_type_icon
+#: model:ir.model.fields,help:boraush_trading.field_sale__activity_type_icon
+#: model:ir.model.fields,help:boraush_trading.field_supervisor__activity_type_icon
+#: model:ir.model.fields,help:boraush_trading.field_tallying_product__activity_type_icon
+#: model:ir.model.fields,help:boraush_trading.field_trucks__activity_type_icon
+#: model:ir.model.fields,help:boraush_trading.field_unit__activity_type_icon
+#: model:ir.model.fields,help:boraush_trading.field_warehouse__activity_type_icon
+#: model:ir.model.fields,help:boraush_trading.field_warehouseman__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: boraush_trading
+#: model_terms:ir.ui.view,arch_db:boraush_trading.address_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.arabic_gum_price_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.arabic_gum_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.commissioner_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.customer_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.employee_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.expert_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.goods_transport_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.gum_stock_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.inventory_of_tallying_product_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.job_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.order_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.procure_order_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.producer_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.purchase_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.pure_store_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.purity_inventory_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.sale_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.supervisor_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.tallying_product_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.warehouse_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.warehouseman_view_form
+msgid "General info"
+msgstr "معلومات عامة"
+
+#. module: boraush_trading
+#: model_terms:ir.ui.view,arch_db:boraush_trading.returns_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.trucks_view_form
+msgid "General info."
+msgstr "معلومات عامة"
+
+#. module: boraush_trading
+#: model:ir.model.fields.selection,name:boraush_trading.selection__arabic_gum_type__quality__good
+#: model:ir.model.fields.selection,name:boraush_trading.selection__purchase_line__quality__good
+msgid "Good"
+msgstr "جيد"
+
+#. module: boraush_trading
+#: model:ir.model,name:boraush_trading.model_goods_transport
+#: model:ir.ui.menu,name:boraush_trading.goods_transport_menu_item
+#, fuzzy
+msgid "Goods Transport"
+msgstr "نقل البضائع"
+
+#. module: boraush_trading
+#: model:ir.actions.report,name:boraush_trading.goods_transport_report
+msgid "Goods Transport Report"
+msgstr "تقرير نقل البضائع"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_unit__code
+#: model_terms:ir.ui.view,arch_db:boraush_trading.unit_report_template
+msgid "Gum Code"
+msgstr "رمز الصمغ"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_procure_order__gum_id
+#: model_terms:ir.ui.view,arch_db:boraush_trading.arabic_gum_type_report_template
+msgid "Gum ID"
+msgstr "رقم الصمغ"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_price__gum_name
+msgid "Gum Name"
+msgstr "إسم الصمغ"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_procure_order__gum_price_id
+msgid "Gum Price"
+msgstr "سعر الصمغ"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_goods_transport__gum_qty
+msgid "Gum Quantity"
+msgstr "كمية الصمغ"
+
+#. module: boraush_trading
+#: model:ir.model,name:boraush_trading.model_gum_stock
+msgid "Gum Stock"
+msgstr "مخزون الصمغ"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product_line__gum_type
+#: model:ir.model.fields,field_description:boraush_trading.field_order__gum_id
+#: model:ir.model.fields,field_description:boraush_trading.field_returns_line__gum_type
+#: model:ir.model.fields,field_description:boraush_trading.field_sale_line__gum_type
+#: model_terms:ir.ui.view,arch_db:boraush_trading.arabic_gum_type_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.returns_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.sale_report_template
+msgid "Gum Type"
+msgstr "نوع الصمغ"
+
+#. module: boraush_trading
+#: model_terms:ir.ui.view,arch_db:boraush_trading.arabic_gum_view_form
+msgid "Gum info"
+msgstr "معلومات الصمغ"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_address__has_message
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum__has_message
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_price__has_message
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_type__has_message
+#: model:ir.model.fields,field_description:boraush_trading.field_commissioner__has_message
+#: model:ir.model.fields,field_description:boraush_trading.field_customer__has_message
+#: model:ir.model.fields,field_description:boraush_trading.field_driver__has_message
+#: model:ir.model.fields,field_description:boraush_trading.field_employee__has_message
+#: model:ir.model.fields,field_description:boraush_trading.field_expert__has_message
+#: model:ir.model.fields,field_description:boraush_trading.field_goods_transport__has_message
+#: model:ir.model.fields,field_description:boraush_trading.field_gum_stock__has_message
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product__has_message
+#: model:ir.model.fields,field_description:boraush_trading.field_job__has_message
+#: model:ir.model.fields,field_description:boraush_trading.field_market__has_message
+#: model:ir.model.fields,field_description:boraush_trading.field_order__has_message
+#: model:ir.model.fields,field_description:boraush_trading.field_procure_order__has_message
+#: model:ir.model.fields,field_description:boraush_trading.field_producer__has_message
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase__has_message
+#: model:ir.model.fields,field_description:boraush_trading.field_pure__has_message
+#: model:ir.model.fields,field_description:boraush_trading.field_pure_store__has_message
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_inventory__has_message
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_storage__has_message
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage__has_message
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage_receipt__has_message
+#: model:ir.model.fields,field_description:boraush_trading.field_return_reason__has_message
+#: model:ir.model.fields,field_description:boraush_trading.field_returns__has_message
+#: model:ir.model.fields,field_description:boraush_trading.field_sale__has_message
+#: model:ir.model.fields,field_description:boraush_trading.field_supervisor__has_message
+#: model:ir.model.fields,field_description:boraush_trading.field_tallying_product__has_message
+#: model:ir.model.fields,field_description:boraush_trading.field_trucks__has_message
+#: model:ir.model.fields,field_description:boraush_trading.field_unit__has_message
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouse__has_message
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouseman__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: boraush_trading
+#: model:ir.model.fields.selection,name:boraush_trading.selection__arabic_gum_type__arabic_gum_type__hashab_gum
+#: model:ir.model.fields.selection,name:boraush_trading.selection__goods_transport__gum_type__hashab_gum
+#: model:ir.model.fields.selection,name:boraush_trading.selection__purchase_line__gum_type__hashab_gum
+#: model:ir.model.fields.selection,name:boraush_trading.selection__returns_line__gum_type__hashab_gum
+#: model:ir.model.fields.selection,name:boraush_trading.selection__sale_line__gum_type__hashab_gum
+msgid "Hashab Gum"
+msgstr "صمغ الهشاب"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_gum_stock__hashab_price
+msgid "Hashab Gum Price"
+msgstr "سعر صمغ الهشاب"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_gum_stock__hashab_quantity
+msgid "Hashab On Hand Quantity"
+msgstr "الكمية المتوفرة من صمغ الهشاب"
+
+#. module: boraush_trading
+#: model:ir.model.fields.selection,name:boraush_trading.selection__purity_inventory__purity_type__high
+msgid "High"
+msgstr "عالي"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_employee__hire_data
+#: model:ir.model.fields,field_description:boraush_trading.field_supervisor__hire_date
+#: model_terms:ir.ui.view,arch_db:boraush_trading.employee_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.supervisor_report_template
+msgid "Hire Date"
+msgstr "تاريخ التعيين"
+
+#. module: boraush_trading
+#: model:ir.ui.menu,name:boraush_trading.human_resources_menu
+msgid "Human Resource"
+msgstr "الموارد البشرية"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_address__id
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum__id
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_price__id
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_type__id
+#: model:ir.model.fields,field_description:boraush_trading.field_commissioner__id
+#: model:ir.model.fields,field_description:boraush_trading.field_customer__id
+#: model:ir.model.fields,field_description:boraush_trading.field_driver__id
+#: model:ir.model.fields,field_description:boraush_trading.field_employee__id
+#: model:ir.model.fields,field_description:boraush_trading.field_expert__id
+#: model:ir.model.fields,field_description:boraush_trading.field_goods_transport__id
+#: model:ir.model.fields,field_description:boraush_trading.field_gum_stock__id
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product__id
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product_line__id
+#: model:ir.model.fields,field_description:boraush_trading.field_job__id
+#: model:ir.model.fields,field_description:boraush_trading.field_market__id
+#: model:ir.model.fields,field_description:boraush_trading.field_order__id
+#: model:ir.model.fields,field_description:boraush_trading.field_procure_order__id
+#: model:ir.model.fields,field_description:boraush_trading.field_producer__id
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase__id
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase_line__id
+#: model:ir.model.fields,field_description:boraush_trading.field_pure__id
+#: model:ir.model.fields,field_description:boraush_trading.field_pure_store__id
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_inventory__id
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_storage__id
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage__id
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage_receipt__id
+#: model:ir.model.fields,field_description:boraush_trading.field_return_reason__id
+#: model:ir.model.fields,field_description:boraush_trading.field_returns__id
+#: model:ir.model.fields,field_description:boraush_trading.field_returns_line__id
+#: model:ir.model.fields,field_description:boraush_trading.field_sale__id
+#: model:ir.model.fields,field_description:boraush_trading.field_sale_line__id
+#: model:ir.model.fields,field_description:boraush_trading.field_supervisor__id
+#: model:ir.model.fields,field_description:boraush_trading.field_tallying_product__id
+#: model:ir.model.fields,field_description:boraush_trading.field_trucks__id
+#: model:ir.model.fields,field_description:boraush_trading.field_unit__id
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouse__id
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouseman__id
+msgid "ID"
+msgstr "الرقم"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_address__activity_exception_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum__activity_exception_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_price__activity_exception_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_type__activity_exception_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_commissioner__activity_exception_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_customer__activity_exception_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_driver__activity_exception_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_employee__activity_exception_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_expert__activity_exception_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_goods_transport__activity_exception_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_gum_stock__activity_exception_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product__activity_exception_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_job__activity_exception_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_market__activity_exception_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_order__activity_exception_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_procure_order__activity_exception_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_producer__activity_exception_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase__activity_exception_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_pure__activity_exception_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_pure_store__activity_exception_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_inventory__activity_exception_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_storage__activity_exception_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage__activity_exception_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage_receipt__activity_exception_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_return_reason__activity_exception_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_returns__activity_exception_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_sale__activity_exception_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_supervisor__activity_exception_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_tallying_product__activity_exception_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_trucks__activity_exception_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_unit__activity_exception_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouse__activity_exception_icon
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouseman__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: boraush_trading
+#: model:ir.model.fields,help:boraush_trading.field_address__activity_exception_icon
+#: model:ir.model.fields,help:boraush_trading.field_arabic_gum__activity_exception_icon
+#: model:ir.model.fields,help:boraush_trading.field_arabic_gum_price__activity_exception_icon
+#: model:ir.model.fields,help:boraush_trading.field_arabic_gum_type__activity_exception_icon
+#: model:ir.model.fields,help:boraush_trading.field_commissioner__activity_exception_icon
+#: model:ir.model.fields,help:boraush_trading.field_customer__activity_exception_icon
+#: model:ir.model.fields,help:boraush_trading.field_driver__activity_exception_icon
+#: model:ir.model.fields,help:boraush_trading.field_employee__activity_exception_icon
+#: model:ir.model.fields,help:boraush_trading.field_expert__activity_exception_icon
+#: model:ir.model.fields,help:boraush_trading.field_goods_transport__activity_exception_icon
+#: model:ir.model.fields,help:boraush_trading.field_gum_stock__activity_exception_icon
+#: model:ir.model.fields,help:boraush_trading.field_inventory_of_tallying_product__activity_exception_icon
+#: model:ir.model.fields,help:boraush_trading.field_job__activity_exception_icon
+#: model:ir.model.fields,help:boraush_trading.field_market__activity_exception_icon
+#: model:ir.model.fields,help:boraush_trading.field_order__activity_exception_icon
+#: model:ir.model.fields,help:boraush_trading.field_procure_order__activity_exception_icon
+#: model:ir.model.fields,help:boraush_trading.field_producer__activity_exception_icon
+#: model:ir.model.fields,help:boraush_trading.field_purchase__activity_exception_icon
+#: model:ir.model.fields,help:boraush_trading.field_pure__activity_exception_icon
+#: model:ir.model.fields,help:boraush_trading.field_pure_store__activity_exception_icon
+#: model:ir.model.fields,help:boraush_trading.field_purity_inventory__activity_exception_icon
+#: model:ir.model.fields,help:boraush_trading.field_purity_storage__activity_exception_icon
+#: model:ir.model.fields,help:boraush_trading.field_raw_storage__activity_exception_icon
+#: model:ir.model.fields,help:boraush_trading.field_raw_storage_receipt__activity_exception_icon
+#: model:ir.model.fields,help:boraush_trading.field_return_reason__activity_exception_icon
+#: model:ir.model.fields,help:boraush_trading.field_returns__activity_exception_icon
+#: model:ir.model.fields,help:boraush_trading.field_sale__activity_exception_icon
+#: model:ir.model.fields,help:boraush_trading.field_supervisor__activity_exception_icon
+#: model:ir.model.fields,help:boraush_trading.field_tallying_product__activity_exception_icon
+#: model:ir.model.fields,help:boraush_trading.field_trucks__activity_exception_icon
+#: model:ir.model.fields,help:boraush_trading.field_unit__activity_exception_icon
+#: model:ir.model.fields,help:boraush_trading.field_warehouse__activity_exception_icon
+#: model:ir.model.fields,help:boraush_trading.field_warehouseman__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: boraush_trading
+#: model:ir.model.fields,help:boraush_trading.field_address__message_needaction
+#: model:ir.model.fields,help:boraush_trading.field_arabic_gum__message_needaction
+#: model:ir.model.fields,help:boraush_trading.field_arabic_gum_price__message_needaction
+#: model:ir.model.fields,help:boraush_trading.field_arabic_gum_type__message_needaction
+#: model:ir.model.fields,help:boraush_trading.field_commissioner__message_needaction
+#: model:ir.model.fields,help:boraush_trading.field_customer__message_needaction
+#: model:ir.model.fields,help:boraush_trading.field_driver__message_needaction
+#: model:ir.model.fields,help:boraush_trading.field_employee__message_needaction
+#: model:ir.model.fields,help:boraush_trading.field_expert__message_needaction
+#: model:ir.model.fields,help:boraush_trading.field_goods_transport__message_needaction
+#: model:ir.model.fields,help:boraush_trading.field_gum_stock__message_needaction
+#: model:ir.model.fields,help:boraush_trading.field_inventory_of_tallying_product__message_needaction
+#: model:ir.model.fields,help:boraush_trading.field_job__message_needaction
+#: model:ir.model.fields,help:boraush_trading.field_market__message_needaction
+#: model:ir.model.fields,help:boraush_trading.field_order__message_needaction
+#: model:ir.model.fields,help:boraush_trading.field_procure_order__message_needaction
+#: model:ir.model.fields,help:boraush_trading.field_producer__message_needaction
+#: model:ir.model.fields,help:boraush_trading.field_purchase__message_needaction
+#: model:ir.model.fields,help:boraush_trading.field_pure__message_needaction
+#: model:ir.model.fields,help:boraush_trading.field_pure_store__message_needaction
+#: model:ir.model.fields,help:boraush_trading.field_purity_inventory__message_needaction
+#: model:ir.model.fields,help:boraush_trading.field_purity_storage__message_needaction
+#: model:ir.model.fields,help:boraush_trading.field_raw_storage__message_needaction
+#: model:ir.model.fields,help:boraush_trading.field_raw_storage_receipt__message_needaction
+#: model:ir.model.fields,help:boraush_trading.field_return_reason__message_needaction
+#: model:ir.model.fields,help:boraush_trading.field_returns__message_needaction
+#: model:ir.model.fields,help:boraush_trading.field_sale__message_needaction
+#: model:ir.model.fields,help:boraush_trading.field_supervisor__message_needaction
+#: model:ir.model.fields,help:boraush_trading.field_tallying_product__message_needaction
+#: model:ir.model.fields,help:boraush_trading.field_trucks__message_needaction
+#: model:ir.model.fields,help:boraush_trading.field_unit__message_needaction
+#: model:ir.model.fields,help:boraush_trading.field_warehouse__message_needaction
+#: model:ir.model.fields,help:boraush_trading.field_warehouseman__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: boraush_trading
+#: model:ir.model.fields,help:boraush_trading.field_address__message_has_error
+#: model:ir.model.fields,help:boraush_trading.field_arabic_gum__message_has_error
+#: model:ir.model.fields,help:boraush_trading.field_arabic_gum_price__message_has_error
+#: model:ir.model.fields,help:boraush_trading.field_arabic_gum_type__message_has_error
+#: model:ir.model.fields,help:boraush_trading.field_commissioner__message_has_error
+#: model:ir.model.fields,help:boraush_trading.field_customer__message_has_error
+#: model:ir.model.fields,help:boraush_trading.field_driver__message_has_error
+#: model:ir.model.fields,help:boraush_trading.field_employee__message_has_error
+#: model:ir.model.fields,help:boraush_trading.field_expert__message_has_error
+#: model:ir.model.fields,help:boraush_trading.field_goods_transport__message_has_error
+#: model:ir.model.fields,help:boraush_trading.field_gum_stock__message_has_error
+#: model:ir.model.fields,help:boraush_trading.field_inventory_of_tallying_product__message_has_error
+#: model:ir.model.fields,help:boraush_trading.field_job__message_has_error
+#: model:ir.model.fields,help:boraush_trading.field_market__message_has_error
+#: model:ir.model.fields,help:boraush_trading.field_order__message_has_error
+#: model:ir.model.fields,help:boraush_trading.field_procure_order__message_has_error
+#: model:ir.model.fields,help:boraush_trading.field_producer__message_has_error
+#: model:ir.model.fields,help:boraush_trading.field_purchase__message_has_error
+#: model:ir.model.fields,help:boraush_trading.field_pure__message_has_error
+#: model:ir.model.fields,help:boraush_trading.field_pure_store__message_has_error
+#: model:ir.model.fields,help:boraush_trading.field_purity_inventory__message_has_error
+#: model:ir.model.fields,help:boraush_trading.field_purity_storage__message_has_error
+#: model:ir.model.fields,help:boraush_trading.field_raw_storage__message_has_error
+#: model:ir.model.fields,help:boraush_trading.field_raw_storage_receipt__message_has_error
+#: model:ir.model.fields,help:boraush_trading.field_return_reason__message_has_error
+#: model:ir.model.fields,help:boraush_trading.field_returns__message_has_error
+#: model:ir.model.fields,help:boraush_trading.field_sale__message_has_error
+#: model:ir.model.fields,help:boraush_trading.field_supervisor__message_has_error
+#: model:ir.model.fields,help:boraush_trading.field_tallying_product__message_has_error
+#: model:ir.model.fields,help:boraush_trading.field_trucks__message_has_error
+#: model:ir.model.fields,help:boraush_trading.field_unit__message_has_error
+#: model:ir.model.fields,help:boraush_trading.field_warehouse__message_has_error
+#: model:ir.model.fields,help:boraush_trading.field_warehouseman__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: boraush_trading
+#: model:ir.model.fields.selection,name:boraush_trading.selection__goods_transport__state__in_transit
+#: model_terms:ir.ui.view,arch_db:boraush_trading.goods_transport_view_form
+msgid "In Transit"
+msgstr "في الطريق"
+
+#. module: boraush_trading
+#: model:ir.ui.menu,name:boraush_trading.inventory_management_menu
+msgid "Inventory Management"
+msgstr "إدارة المخزون"
+
+#. module: boraush_trading
+#: model:ir.model,name:boraush_trading.model_inventory_of_tallying_product
+msgid "Inventory Of Tallying Product"
+msgstr "التنظيف و الفرز"
+
+#. module: boraush_trading
+#: model:ir.model,name:boraush_trading.model_inventory_of_tallying_product_line
+msgid "Inventory Of Tallying Product Line"
+msgstr "بنود الجرد والتنظيف"
+
+#. module: boraush_trading
+#: model:ir.ui.menu,name:boraush_trading.inventory_of_tallying_product_menu_item
+msgid "Inventory Of Tallying Products"
+msgstr "التنظيف و الفرز"
+
+#. module: boraush_trading
+#: model_terms:ir.ui.view,arch_db:boraush_trading.returns_report_template
+msgid "Invoice ID"
+msgstr "رقم الفاتورة"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_sale__name
+#: model_terms:ir.ui.view,arch_db:boraush_trading.sale_report_template
+msgid "Invoice Number"
+msgstr "رقم الفاتورة"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_address__message_is_follower
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum__message_is_follower
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_price__message_is_follower
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_type__message_is_follower
+#: model:ir.model.fields,field_description:boraush_trading.field_commissioner__message_is_follower
+#: model:ir.model.fields,field_description:boraush_trading.field_customer__message_is_follower
+#: model:ir.model.fields,field_description:boraush_trading.field_driver__message_is_follower
+#: model:ir.model.fields,field_description:boraush_trading.field_employee__message_is_follower
+#: model:ir.model.fields,field_description:boraush_trading.field_expert__message_is_follower
+#: model:ir.model.fields,field_description:boraush_trading.field_goods_transport__message_is_follower
+#: model:ir.model.fields,field_description:boraush_trading.field_gum_stock__message_is_follower
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product__message_is_follower
+#: model:ir.model.fields,field_description:boraush_trading.field_job__message_is_follower
+#: model:ir.model.fields,field_description:boraush_trading.field_market__message_is_follower
+#: model:ir.model.fields,field_description:boraush_trading.field_order__message_is_follower
+#: model:ir.model.fields,field_description:boraush_trading.field_procure_order__message_is_follower
+#: model:ir.model.fields,field_description:boraush_trading.field_producer__message_is_follower
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase__message_is_follower
+#: model:ir.model.fields,field_description:boraush_trading.field_pure__message_is_follower
+#: model:ir.model.fields,field_description:boraush_trading.field_pure_store__message_is_follower
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_inventory__message_is_follower
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_storage__message_is_follower
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage__message_is_follower
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage_receipt__message_is_follower
+#: model:ir.model.fields,field_description:boraush_trading.field_return_reason__message_is_follower
+#: model:ir.model.fields,field_description:boraush_trading.field_returns__message_is_follower
+#: model:ir.model.fields,field_description:boraush_trading.field_sale__message_is_follower
+#: model:ir.model.fields,field_description:boraush_trading.field_supervisor__message_is_follower
+#: model:ir.model.fields,field_description:boraush_trading.field_tallying_product__message_is_follower
+#: model:ir.model.fields,field_description:boraush_trading.field_trucks__message_is_follower
+#: model:ir.model.fields,field_description:boraush_trading.field_unit__message_is_follower
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouse__message_is_follower
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouseman__message_is_follower
+msgid "Is Follower"
+msgstr "هل هو متابع"
+
+#. module: boraush_trading
+#: model:ir.model,name:boraush_trading.model_job
+#: model:ir.model.fields,field_description:boraush_trading.field_employee__job_id
+#: model_terms:ir.ui.view,arch_db:boraush_trading.employee_report_template
+msgid "Job"
+msgstr "الوظيفة"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_job__grade
+#: model_terms:ir.ui.view,arch_db:boraush_trading.job_report_template
+msgid "Job Grade"
+msgstr "درجة الوظيفة"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_job__job_number
+#: model_terms:ir.ui.view,arch_db:boraush_trading.job_report_template
+msgid "Job ID"
+msgstr "رقم الوظيفة"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_job__name
+#: model_terms:ir.ui.view,arch_db:boraush_trading.job_report_template
+msgid "Job Name"
+msgstr "إسم الوظيفة"
+
+#. module: boraush_trading
+#: model:ir.actions.report,name:boraush_trading.job_report
+#: model_terms:ir.ui.view,arch_db:boraush_trading.job_report_template
+msgid "Job Report"
+msgstr "تقرير الوظائف"
+
+#. module: boraush_trading
+#: model:ir.ui.menu,name:boraush_trading.job_menu_item
+msgid "Jobs"
+msgstr "الوظائف"
+
+#. module: boraush_trading
+#: model:ir.model.fields.selection,name:boraush_trading.selection__unit__code__kg
+msgid "KG"
+msgstr "كغ"
+
+#. module: boraush_trading
+#: model:ir.model.fields.selection,name:boraush_trading.selection__unit__unit_name__kilogram
+msgid "Kilogram"
+msgstr "كيلوجرام"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_address__write_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum__write_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_price__write_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_type__write_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_commissioner__write_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_customer__write_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_driver__write_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_employee__write_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_expert__write_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_goods_transport__write_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_gum_stock__write_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product__write_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product_line__write_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_job__write_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_market__write_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_order__write_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_procure_order__write_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_producer__write_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase__write_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase_line__write_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_pure__write_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_pure_store__write_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_inventory__write_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_storage__write_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage__write_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage_receipt__write_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_return_reason__write_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_returns__write_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_returns_line__write_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_sale__write_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_sale_line__write_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_supervisor__write_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_tallying_product__write_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_trucks__write_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_unit__write_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouse__write_uid
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouseman__write_uid
+msgid "Last Updated by"
+msgstr "اخر تعديل بواسطة"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_address__write_date
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum__write_date
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_price__write_date
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_type__write_date
+#: model:ir.model.fields,field_description:boraush_trading.field_commissioner__write_date
+#: model:ir.model.fields,field_description:boraush_trading.field_customer__write_date
+#: model:ir.model.fields,field_description:boraush_trading.field_driver__write_date
+#: model:ir.model.fields,field_description:boraush_trading.field_employee__write_date
+#: model:ir.model.fields,field_description:boraush_trading.field_expert__write_date
+#: model:ir.model.fields,field_description:boraush_trading.field_goods_transport__write_date
+#: model:ir.model.fields,field_description:boraush_trading.field_gum_stock__write_date
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product__write_date
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product_line__write_date
+#: model:ir.model.fields,field_description:boraush_trading.field_job__write_date
+#: model:ir.model.fields,field_description:boraush_trading.field_market__write_date
+#: model:ir.model.fields,field_description:boraush_trading.field_order__write_date
+#: model:ir.model.fields,field_description:boraush_trading.field_procure_order__write_date
+#: model:ir.model.fields,field_description:boraush_trading.field_producer__write_date
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase__write_date
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase_line__write_date
+#: model:ir.model.fields,field_description:boraush_trading.field_pure__write_date
+#: model:ir.model.fields,field_description:boraush_trading.field_pure_store__write_date
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_inventory__write_date
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_storage__write_date
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage__write_date
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage_receipt__write_date
+#: model:ir.model.fields,field_description:boraush_trading.field_return_reason__write_date
+#: model:ir.model.fields,field_description:boraush_trading.field_returns__write_date
+#: model:ir.model.fields,field_description:boraush_trading.field_returns_line__write_date
+#: model:ir.model.fields,field_description:boraush_trading.field_sale__write_date
+#: model:ir.model.fields,field_description:boraush_trading.field_sale_line__write_date
+#: model:ir.model.fields,field_description:boraush_trading.field_supervisor__write_date
+#: model:ir.model.fields,field_description:boraush_trading.field_tallying_product__write_date
+#: model:ir.model.fields,field_description:boraush_trading.field_trucks__write_date
+#: model:ir.model.fields,field_description:boraush_trading.field_unit__write_date
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouse__write_date
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouseman__write_date
+msgid "Last Updated on"
+msgstr "اخر تعديل في"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_trucks__license
+#: model_terms:ir.ui.view,arch_db:boraush_trading.trucks_report_template
+msgid "License"
+msgstr "الرخصة"
+
+#. module: boraush_trading
+#: model:ir.model.fields.selection,name:boraush_trading.selection__arabic_gum_type__color__light_colored
+#: model:ir.model.fields.selection,name:boraush_trading.selection__purchase_line__color__light_colored
+msgid "Light Colored"
+msgstr "لون فاتح"
+
+#. module: boraush_trading
+#: model_terms:ir.ui.view,arch_db:boraush_trading.inventory_of_tallying_product_view_form
+msgid "Load All Types"
+msgstr "تحميل كل الانواع"
+
+#. module: boraush_trading
+#: model:ir.model.fields.selection,name:boraush_trading.selection__goods_transport__state__loaded
+#: model_terms:ir.ui.view,arch_db:boraush_trading.goods_transport_view_form
+msgid "Loaded"
+msgstr "تم التحميل"
+
+#. module: boraush_trading
+#: model_terms:ir.ui.view,arch_db:boraush_trading.address_report_template
+msgid "Locality"
+msgstr "المحلية"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_address__locality_id
+msgid "Locality ID"
+msgstr "رقم المحلية"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_address__locality_name
+msgid "Locality Name"
+msgstr "إسم المحلية"
+
+#. module: boraush_trading
+#: model:ir.ui.menu,name:boraush_trading.location_menu
+msgid "Locations"
+msgstr "المواقع"
+
+#. module: boraush_trading
+#: model:ir.model,name:boraush_trading.model_market
+msgid "Market"
+msgstr "السوق"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_market__address_id
+#: model_terms:ir.ui.view,arch_db:boraush_trading.market_report_template
+msgid "Market Address"
+msgstr "عنوان السوق"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_market__market_id
+#: model_terms:ir.ui.view,arch_db:boraush_trading.market_report_template
+msgid "Market ID"
+msgstr "رقم السوق"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_market__name
+#: model_terms:ir.ui.view,arch_db:boraush_trading.market_report_template
+msgid "Market Name"
+msgstr "اسم السوق"
+
+#. module: boraush_trading
+#: model_terms:ir.ui.view,arch_db:boraush_trading.market_view_form
+msgid "Market info"
+msgstr "معلومات السوق"
+
+#. module: boraush_trading
+#: model:ir.ui.menu,name:boraush_trading.market_menu_item
+msgid "Markets"
+msgstr "الاسواق"
+
+#. module: boraush_trading
+#: model_terms:ir.ui.view,arch_db:boraush_trading.trucks_report_template
+#, fuzzy
+msgid "Max Weight (KG)"
+msgstr "الوزن الاقصي كغ"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_trucks__max_weight
+msgid "Max Weight KG"
+msgstr "الوزن الاقصي"
+
+#. module: boraush_trading
+#: model:ir.model.fields.selection,name:boraush_trading.selection__purity_inventory__purity_type__medium
+msgid "Medium"
+msgstr "وسط"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_address__message_has_error
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum__message_has_error
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_price__message_has_error
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_type__message_has_error
+#: model:ir.model.fields,field_description:boraush_trading.field_commissioner__message_has_error
+#: model:ir.model.fields,field_description:boraush_trading.field_customer__message_has_error
+#: model:ir.model.fields,field_description:boraush_trading.field_driver__message_has_error
+#: model:ir.model.fields,field_description:boraush_trading.field_employee__message_has_error
+#: model:ir.model.fields,field_description:boraush_trading.field_expert__message_has_error
+#: model:ir.model.fields,field_description:boraush_trading.field_goods_transport__message_has_error
+#: model:ir.model.fields,field_description:boraush_trading.field_gum_stock__message_has_error
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product__message_has_error
+#: model:ir.model.fields,field_description:boraush_trading.field_job__message_has_error
+#: model:ir.model.fields,field_description:boraush_trading.field_market__message_has_error
+#: model:ir.model.fields,field_description:boraush_trading.field_order__message_has_error
+#: model:ir.model.fields,field_description:boraush_trading.field_procure_order__message_has_error
+#: model:ir.model.fields,field_description:boraush_trading.field_producer__message_has_error
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase__message_has_error
+#: model:ir.model.fields,field_description:boraush_trading.field_pure__message_has_error
+#: model:ir.model.fields,field_description:boraush_trading.field_pure_store__message_has_error
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_inventory__message_has_error
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_storage__message_has_error
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage__message_has_error
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage_receipt__message_has_error
+#: model:ir.model.fields,field_description:boraush_trading.field_return_reason__message_has_error
+#: model:ir.model.fields,field_description:boraush_trading.field_returns__message_has_error
+#: model:ir.model.fields,field_description:boraush_trading.field_sale__message_has_error
+#: model:ir.model.fields,field_description:boraush_trading.field_supervisor__message_has_error
+#: model:ir.model.fields,field_description:boraush_trading.field_tallying_product__message_has_error
+#: model:ir.model.fields,field_description:boraush_trading.field_trucks__message_has_error
+#: model:ir.model.fields,field_description:boraush_trading.field_unit__message_has_error
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouse__message_has_error
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouseman__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_address__message_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum__message_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_price__message_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_type__message_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_commissioner__message_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_customer__message_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_driver__message_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_employee__message_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_expert__message_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_goods_transport__message_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_gum_stock__message_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product__message_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_job__message_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_market__message_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_order__message_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_procure_order__message_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_producer__message_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase__message_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_pure__message_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_pure_store__message_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_inventory__message_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_storage__message_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage__message_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage_receipt__message_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_return_reason__message_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_returns__message_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_sale__message_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_supervisor__message_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_tallying_product__message_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_trucks__message_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_unit__message_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouse__message_ids
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouseman__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_address__my_activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum__my_activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_price__my_activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_type__my_activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_commissioner__my_activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_customer__my_activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_driver__my_activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_employee__my_activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_expert__my_activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_goods_transport__my_activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_gum_stock__my_activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product__my_activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_job__my_activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_market__my_activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_order__my_activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_procure_order__my_activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_producer__my_activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase__my_activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_pure__my_activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_pure_store__my_activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_inventory__my_activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_storage__my_activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage__my_activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage_receipt__my_activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_return_reason__my_activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_returns__my_activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_sale__my_activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_supervisor__my_activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_tallying_product__my_activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_trucks__my_activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_unit__my_activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouse__my_activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouseman__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: boraush_trading
+#: model_terms:ir.ui.view,arch_db:boraush_trading.employee_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.supervisor_report_template
+msgid "Name"
+msgstr "الاسم"
+
+#. module: boraush_trading
+#: model_terms:ir.ui.view,arch_db:boraush_trading.inventory_of_tallying_product_report_template
+msgid "Net Quantity"
+msgstr "صافي الكمية"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_address__activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum__activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_price__activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_type__activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_commissioner__activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_customer__activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_driver__activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_employee__activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_expert__activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_goods_transport__activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_gum_stock__activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product__activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_job__activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_market__activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_order__activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_procure_order__activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_producer__activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase__activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_pure__activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_pure_store__activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_inventory__activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_storage__activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage__activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage_receipt__activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_return_reason__activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_returns__activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_sale__activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_supervisor__activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_tallying_product__activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_trucks__activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_unit__activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouse__activity_date_deadline
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouseman__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_address__activity_summary
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum__activity_summary
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_price__activity_summary
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_type__activity_summary
+#: model:ir.model.fields,field_description:boraush_trading.field_commissioner__activity_summary
+#: model:ir.model.fields,field_description:boraush_trading.field_customer__activity_summary
+#: model:ir.model.fields,field_description:boraush_trading.field_driver__activity_summary
+#: model:ir.model.fields,field_description:boraush_trading.field_employee__activity_summary
+#: model:ir.model.fields,field_description:boraush_trading.field_expert__activity_summary
+#: model:ir.model.fields,field_description:boraush_trading.field_goods_transport__activity_summary
+#: model:ir.model.fields,field_description:boraush_trading.field_gum_stock__activity_summary
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product__activity_summary
+#: model:ir.model.fields,field_description:boraush_trading.field_job__activity_summary
+#: model:ir.model.fields,field_description:boraush_trading.field_market__activity_summary
+#: model:ir.model.fields,field_description:boraush_trading.field_order__activity_summary
+#: model:ir.model.fields,field_description:boraush_trading.field_procure_order__activity_summary
+#: model:ir.model.fields,field_description:boraush_trading.field_producer__activity_summary
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase__activity_summary
+#: model:ir.model.fields,field_description:boraush_trading.field_pure__activity_summary
+#: model:ir.model.fields,field_description:boraush_trading.field_pure_store__activity_summary
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_inventory__activity_summary
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_storage__activity_summary
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage__activity_summary
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage_receipt__activity_summary
+#: model:ir.model.fields,field_description:boraush_trading.field_return_reason__activity_summary
+#: model:ir.model.fields,field_description:boraush_trading.field_returns__activity_summary
+#: model:ir.model.fields,field_description:boraush_trading.field_sale__activity_summary
+#: model:ir.model.fields,field_description:boraush_trading.field_supervisor__activity_summary
+#: model:ir.model.fields,field_description:boraush_trading.field_tallying_product__activity_summary
+#: model:ir.model.fields,field_description:boraush_trading.field_trucks__activity_summary
+#: model:ir.model.fields,field_description:boraush_trading.field_unit__activity_summary
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouse__activity_summary
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouseman__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_address__activity_type_id
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum__activity_type_id
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_price__activity_type_id
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_type__activity_type_id
+#: model:ir.model.fields,field_description:boraush_trading.field_commissioner__activity_type_id
+#: model:ir.model.fields,field_description:boraush_trading.field_customer__activity_type_id
+#: model:ir.model.fields,field_description:boraush_trading.field_driver__activity_type_id
+#: model:ir.model.fields,field_description:boraush_trading.field_employee__activity_type_id
+#: model:ir.model.fields,field_description:boraush_trading.field_expert__activity_type_id
+#: model:ir.model.fields,field_description:boraush_trading.field_goods_transport__activity_type_id
+#: model:ir.model.fields,field_description:boraush_trading.field_gum_stock__activity_type_id
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product__activity_type_id
+#: model:ir.model.fields,field_description:boraush_trading.field_job__activity_type_id
+#: model:ir.model.fields,field_description:boraush_trading.field_market__activity_type_id
+#: model:ir.model.fields,field_description:boraush_trading.field_order__activity_type_id
+#: model:ir.model.fields,field_description:boraush_trading.field_procure_order__activity_type_id
+#: model:ir.model.fields,field_description:boraush_trading.field_producer__activity_type_id
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase__activity_type_id
+#: model:ir.model.fields,field_description:boraush_trading.field_pure__activity_type_id
+#: model:ir.model.fields,field_description:boraush_trading.field_pure_store__activity_type_id
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_inventory__activity_type_id
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_storage__activity_type_id
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage__activity_type_id
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage_receipt__activity_type_id
+#: model:ir.model.fields,field_description:boraush_trading.field_return_reason__activity_type_id
+#: model:ir.model.fields,field_description:boraush_trading.field_returns__activity_type_id
+#: model:ir.model.fields,field_description:boraush_trading.field_sale__activity_type_id
+#: model:ir.model.fields,field_description:boraush_trading.field_supervisor__activity_type_id
+#: model:ir.model.fields,field_description:boraush_trading.field_tallying_product__activity_type_id
+#: model:ir.model.fields,field_description:boraush_trading.field_trucks__activity_type_id
+#: model:ir.model.fields,field_description:boraush_trading.field_unit__activity_type_id
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouse__activity_type_id
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouseman__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: boraush_trading
+#: model_terms:ir.ui.view,arch_db:boraush_trading.arabic_gum_type_report_template
+msgid "No"
+msgstr ""
+
+#. module: boraush_trading
+#: model:ir.model.fields.selection,name:boraush_trading.selection__address__continent__north_america
+msgid "North America"
+msgstr "امريكا الشمالية"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_gum_stock__description
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product__description
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase__description
+msgid "Note"
+msgstr "الوصف"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_address__message_needaction_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum__message_needaction_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_price__message_needaction_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_type__message_needaction_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_commissioner__message_needaction_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_customer__message_needaction_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_driver__message_needaction_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_employee__message_needaction_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_expert__message_needaction_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_goods_transport__message_needaction_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_gum_stock__message_needaction_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product__message_needaction_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_job__message_needaction_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_market__message_needaction_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_order__message_needaction_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_procure_order__message_needaction_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_producer__message_needaction_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase__message_needaction_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_pure__message_needaction_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_pure_store__message_needaction_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_inventory__message_needaction_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_storage__message_needaction_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage__message_needaction_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage_receipt__message_needaction_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_return_reason__message_needaction_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_returns__message_needaction_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_sale__message_needaction_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_supervisor__message_needaction_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_tallying_product__message_needaction_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_trucks__message_needaction_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_unit__message_needaction_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouse__message_needaction_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouseman__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_address__message_has_error_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum__message_has_error_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_price__message_has_error_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_type__message_has_error_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_commissioner__message_has_error_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_customer__message_has_error_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_driver__message_has_error_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_employee__message_has_error_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_expert__message_has_error_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_goods_transport__message_has_error_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_gum_stock__message_has_error_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product__message_has_error_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_job__message_has_error_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_market__message_has_error_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_order__message_has_error_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_procure_order__message_has_error_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_producer__message_has_error_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase__message_has_error_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_pure__message_has_error_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_pure_store__message_has_error_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_inventory__message_has_error_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_storage__message_has_error_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage__message_has_error_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage_receipt__message_has_error_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_return_reason__message_has_error_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_returns__message_has_error_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_sale__message_has_error_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_supervisor__message_has_error_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_tallying_product__message_has_error_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_trucks__message_has_error_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_unit__message_has_error_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouse__message_has_error_counter
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouseman__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: boraush_trading
+#: model:ir.model.fields,help:boraush_trading.field_address__message_needaction_counter
+#: model:ir.model.fields,help:boraush_trading.field_arabic_gum__message_needaction_counter
+#: model:ir.model.fields,help:boraush_trading.field_arabic_gum_price__message_needaction_counter
+#: model:ir.model.fields,help:boraush_trading.field_arabic_gum_type__message_needaction_counter
+#: model:ir.model.fields,help:boraush_trading.field_commissioner__message_needaction_counter
+#: model:ir.model.fields,help:boraush_trading.field_customer__message_needaction_counter
+#: model:ir.model.fields,help:boraush_trading.field_driver__message_needaction_counter
+#: model:ir.model.fields,help:boraush_trading.field_employee__message_needaction_counter
+#: model:ir.model.fields,help:boraush_trading.field_expert__message_needaction_counter
+#: model:ir.model.fields,help:boraush_trading.field_goods_transport__message_needaction_counter
+#: model:ir.model.fields,help:boraush_trading.field_gum_stock__message_needaction_counter
+#: model:ir.model.fields,help:boraush_trading.field_inventory_of_tallying_product__message_needaction_counter
+#: model:ir.model.fields,help:boraush_trading.field_job__message_needaction_counter
+#: model:ir.model.fields,help:boraush_trading.field_market__message_needaction_counter
+#: model:ir.model.fields,help:boraush_trading.field_order__message_needaction_counter
+#: model:ir.model.fields,help:boraush_trading.field_procure_order__message_needaction_counter
+#: model:ir.model.fields,help:boraush_trading.field_producer__message_needaction_counter
+#: model:ir.model.fields,help:boraush_trading.field_purchase__message_needaction_counter
+#: model:ir.model.fields,help:boraush_trading.field_pure__message_needaction_counter
+#: model:ir.model.fields,help:boraush_trading.field_pure_store__message_needaction_counter
+#: model:ir.model.fields,help:boraush_trading.field_purity_inventory__message_needaction_counter
+#: model:ir.model.fields,help:boraush_trading.field_purity_storage__message_needaction_counter
+#: model:ir.model.fields,help:boraush_trading.field_raw_storage__message_needaction_counter
+#: model:ir.model.fields,help:boraush_trading.field_raw_storage_receipt__message_needaction_counter
+#: model:ir.model.fields,help:boraush_trading.field_return_reason__message_needaction_counter
+#: model:ir.model.fields,help:boraush_trading.field_returns__message_needaction_counter
+#: model:ir.model.fields,help:boraush_trading.field_sale__message_needaction_counter
+#: model:ir.model.fields,help:boraush_trading.field_supervisor__message_needaction_counter
+#: model:ir.model.fields,help:boraush_trading.field_tallying_product__message_needaction_counter
+#: model:ir.model.fields,help:boraush_trading.field_trucks__message_needaction_counter
+#: model:ir.model.fields,help:boraush_trading.field_unit__message_needaction_counter
+#: model:ir.model.fields,help:boraush_trading.field_warehouse__message_needaction_counter
+#: model:ir.model.fields,help:boraush_trading.field_warehouseman__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: boraush_trading
+#: model:ir.model.fields,help:boraush_trading.field_address__message_has_error_counter
+#: model:ir.model.fields,help:boraush_trading.field_arabic_gum__message_has_error_counter
+#: model:ir.model.fields,help:boraush_trading.field_arabic_gum_price__message_has_error_counter
+#: model:ir.model.fields,help:boraush_trading.field_arabic_gum_type__message_has_error_counter
+#: model:ir.model.fields,help:boraush_trading.field_commissioner__message_has_error_counter
+#: model:ir.model.fields,help:boraush_trading.field_customer__message_has_error_counter
+#: model:ir.model.fields,help:boraush_trading.field_driver__message_has_error_counter
+#: model:ir.model.fields,help:boraush_trading.field_employee__message_has_error_counter
+#: model:ir.model.fields,help:boraush_trading.field_expert__message_has_error_counter
+#: model:ir.model.fields,help:boraush_trading.field_goods_transport__message_has_error_counter
+#: model:ir.model.fields,help:boraush_trading.field_gum_stock__message_has_error_counter
+#: model:ir.model.fields,help:boraush_trading.field_inventory_of_tallying_product__message_has_error_counter
+#: model:ir.model.fields,help:boraush_trading.field_job__message_has_error_counter
+#: model:ir.model.fields,help:boraush_trading.field_market__message_has_error_counter
+#: model:ir.model.fields,help:boraush_trading.field_order__message_has_error_counter
+#: model:ir.model.fields,help:boraush_trading.field_procure_order__message_has_error_counter
+#: model:ir.model.fields,help:boraush_trading.field_producer__message_has_error_counter
+#: model:ir.model.fields,help:boraush_trading.field_purchase__message_has_error_counter
+#: model:ir.model.fields,help:boraush_trading.field_pure__message_has_error_counter
+#: model:ir.model.fields,help:boraush_trading.field_pure_store__message_has_error_counter
+#: model:ir.model.fields,help:boraush_trading.field_purity_inventory__message_has_error_counter
+#: model:ir.model.fields,help:boraush_trading.field_purity_storage__message_has_error_counter
+#: model:ir.model.fields,help:boraush_trading.field_raw_storage__message_has_error_counter
+#: model:ir.model.fields,help:boraush_trading.field_raw_storage_receipt__message_has_error_counter
+#: model:ir.model.fields,help:boraush_trading.field_return_reason__message_has_error_counter
+#: model:ir.model.fields,help:boraush_trading.field_returns__message_has_error_counter
+#: model:ir.model.fields,help:boraush_trading.field_sale__message_has_error_counter
+#: model:ir.model.fields,help:boraush_trading.field_supervisor__message_has_error_counter
+#: model:ir.model.fields,help:boraush_trading.field_tallying_product__message_has_error_counter
+#: model:ir.model.fields,help:boraush_trading.field_trucks__message_has_error_counter
+#: model:ir.model.fields,help:boraush_trading.field_unit__message_has_error_counter
+#: model:ir.model.fields,help:boraush_trading.field_warehouse__message_has_error_counter
+#: model:ir.model.fields,help:boraush_trading.field_warehouseman__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: boraush_trading
+#: model:ir.model.fields.selection,name:boraush_trading.selection__arabic_gum_type__arabic_gum_type__olibanum_gum
+#: model:ir.model.fields.selection,name:boraush_trading.selection__goods_transport__gum_type__olibanum_gum
+#: model:ir.model.fields.selection,name:boraush_trading.selection__purchase_line__gum_type__olibanum_gum
+#: model:ir.model.fields.selection,name:boraush_trading.selection__returns_line__gum_type__olibanum_gum
+#: model:ir.model.fields.selection,name:boraush_trading.selection__sale_line__gum_type__olibanum_gum
+msgid "Olibanum Gum"
+msgstr "صمغ اللبان"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_gum_stock__olibanum_price
+msgid "Olibanum Gum Price"
+msgstr "سعر صمغ اللبان"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_gum_stock__olibanum_quantity
+msgid "Olibanum On Hand Quantity"
+msgstr "الكمية المتوفرة من صمغ اللبان"
+
+#. module: boraush_trading
+#: model:ir.ui.menu,name:boraush_trading.operation_menu
+msgid "Operations"
+msgstr "العمليات"
+
+#. module: boraush_trading
+#: model:ir.model,name:boraush_trading.model_order
+msgid "Order"
+msgstr "الطلب"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_order__date_order
+msgid "Order Date"
+msgstr "تاريخ الطلب"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_order__order_id
+#: model:ir.model.fields,field_description:boraush_trading.field_procure_order__order_id
+#: model:ir.model.fields,field_description:boraush_trading.field_return_reason__order_id
+msgid "Order ID"
+msgstr "رقم الطلب"
+
+#. module: boraush_trading
+#: model:ir.ui.menu,name:boraush_trading.order_menu_item
+msgid "Orders"
+msgstr "الطلبات"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product_line__original_quantity
+#: model_terms:ir.ui.view,arch_db:boraush_trading.inventory_of_tallying_product_report_template
+msgid "Original Quantity"
+msgstr "الكمية الاصلية"
+
+#. module: boraush_trading
+#: model_terms:ir.ui.view,arch_db:boraush_trading.address_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.arabic_gum_type_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.commissioner_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.customer_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.driver_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.employee_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.expert_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.goods_transport_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.inventory_of_tallying_product_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.job_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.market_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.producer_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.purchase_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.returns_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.sale_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.supervisor_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.trucks_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.unit_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.warehouse_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.warehouseman_report_template
+msgid "Page <span class=\"pagenum\"/>"
+msgstr ""
+
+#. module: boraush_trading
+#: model:ir.ui.menu,name:boraush_trading.partners_menu
+#, fuzzy
+msgid "Partners"
+msgstr "المتابعون الشركاء"
+
+#. module: boraush_trading
+#: model:ir.model.fields.selection,name:boraush_trading.selection__goods_transport__state__pending
+#: model_terms:ir.ui.view,arch_db:boraush_trading.goods_transport_view_form
+msgid "Pending"
+msgstr "قيد الانتظار"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_driver__phone
+#: model:ir.model.fields,field_description:boraush_trading.field_producer__phone
+#: model_terms:ir.ui.view,arch_db:boraush_trading.commissioner_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.customer_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.driver_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.employee_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.expert_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.producer_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.supervisor_report_template
+msgid "Phone"
+msgstr "رقم الهاتف"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_commissioner__phone
+#: model:ir.model.fields,field_description:boraush_trading.field_customer__phone
+#: model:ir.model.fields,field_description:boraush_trading.field_employee__phone
+#: model:ir.model.fields,field_description:boraush_trading.field_expert__phone
+#: model:ir.model.fields,field_description:boraush_trading.field_supervisor__phone
+msgid "Phone Number"
+msgstr "رقم الهاتف"
+
+#. module: boraush_trading
+#: model:ir.model.fields.selection,name:boraush_trading.selection__trucks__truck_type__pickup_truck
+msgid "Pickup Truck"
+msgstr "شاحنة صغيرة"
+
+#. module: boraush_trading
+#: model:ir.model.fields.selection,name:boraush_trading.selection__arabic_gum_type__quality__poor
+#: model:ir.model.fields.selection,name:boraush_trading.selection__purchase_line__quality__poor
+msgid "Poor"
+msgstr "رديء"
+
+#. module: boraush_trading
+#: model_terms:ir.ui.view,arch_db:boraush_trading.address_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.arabic_gum_type_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.commissioner_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.customer_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.driver_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.employee_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.expert_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.goods_transport_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.inventory_of_tallying_product_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.job_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.market_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.producer_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.purchase_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.returns_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.sale_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.supervisor_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.trucks_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.unit_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.warehouse_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.warehouseman_report_template
+msgid "Prepared by:"
+msgstr "أُعد بواسطة"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_price__price_date
+msgid "Price Date"
+msgstr "تاريخ التسعير"
+
+#. module: boraush_trading
+#: model:ir.model,name:boraush_trading.model_procure_order
+msgid "Procure Order"
+msgstr "طلب الشراء"
+
+#. module: boraush_trading
+#: model:ir.ui.menu,name:boraush_trading.procure_order_menu_item
+msgid "Procure Orders"
+msgstr "طلبات الشراء"
+
+#. module: boraush_trading
+#: model:ir.model,name:boraush_trading.model_producer
+#, fuzzy
+msgid "Producer"
+msgstr "المُنتج"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_producer__producer_id
+#: model_terms:ir.ui.view,arch_db:boraush_trading.producer_report_template
+#, fuzzy
+msgid "Producer ID"
+msgstr "رقم المُنتج"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_producer__name
+#: model_terms:ir.ui.view,arch_db:boraush_trading.producer_report_template
+#, fuzzy
+msgid "Producer Name"
+msgstr "إسم المُنتج"
+
+#. module: boraush_trading
+#: model:ir.actions.report,name:boraush_trading.producer_report
+#: model_terms:ir.ui.view,arch_db:boraush_trading.producer_report_template
+msgid "Producer Report"
+msgstr "تقرير المُنتج"
+
+#. module: boraush_trading
+#: model:ir.ui.menu,name:boraush_trading.producer_menu_item
+msgid "Producers"
+msgstr "المُنتجين"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product__product_id
+#: model:ir.model.fields,field_description:boraush_trading.field_tallying_product__product_id
+#: model_terms:ir.ui.view,arch_db:boraush_trading.inventory_of_tallying_product_report_template
+msgid "Product ID"
+msgstr "رقم المنتج"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_tallying_product__name
+msgid "Product Name"
+msgstr "إسم المنتج"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_tallying_product__product_weight
+msgid "Product Weight KG"
+msgstr "وزن المنتج كغ"
+
+#. module: boraush_trading
+#: model:ir.ui.menu,name:boraush_trading.product_menu
+msgid "Products"
+msgstr "المنتجات"
+
+#. module: boraush_trading
+#: model:ir.model,name:boraush_trading.model_purchase
+msgid "Purchase"
+msgstr "المشتريات"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase__purchase_date
+msgid "Purchase Date"
+msgstr "تاريخ الشراء"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase__purchase_id
+msgid "Purchase ID"
+msgstr "رقم الشراء"
+
+#. module: boraush_trading
+#: model:ir.model,name:boraush_trading.model_purchase_line
+msgid "Purchase Line"
+msgstr "بنود المشتريات"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase__line_ids
+#: model_terms:ir.ui.view,arch_db:boraush_trading.purchase_view_form
+msgid "Purchase Lines"
+msgstr "بنود المشتريات"
+
+#. module: boraush_trading
+#: model_terms:ir.ui.view,arch_db:boraush_trading.purchase_report_template
+msgid "Purchase Order"
+msgstr "أمر الشراء"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase_line__purchase_id
+msgid "Purchase Reference"
+msgstr "مرجع الشراء"
+
+#. module: boraush_trading
+#: model:ir.actions.report,name:boraush_trading.purchase_report
+msgid "Purchase Report"
+msgstr "تقرير المشتريات"
+
+#. module: boraush_trading
+#: model:ir.ui.menu,name:boraush_trading.purchase_menu_item
+#: model:ir.ui.menu,name:boraush_trading.purchases_menu
+msgid "Purchases"
+msgstr "المشتريات"
+
+#. module: boraush_trading
+#: model:ir.model,name:boraush_trading.model_pure
+#: model:ir.ui.menu,name:boraush_trading.pure_menu_item
+msgid "Pure"
+msgstr "النقاوة"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_pure__name
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_inventory__pure_id
+msgid "Pure ID"
+msgstr "رقم النقاوة"
+
+#. module: boraush_trading
+#: model:ir.model,name:boraush_trading.model_pure_store
+#: model:ir.ui.menu,name:boraush_trading.pure_store_menu_item
+msgid "Pure Store"
+msgstr "تخزين النقاوة"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_pure__pure_type
+msgid "Pure Type"
+msgstr "نوع النقاوة"
+
+#. module: boraush_trading
+#: model_terms:ir.ui.view,arch_db:boraush_trading.pure_view_form
+msgid "Pure info"
+msgstr "معلومات النقاوة"
+
+#. module: boraush_trading
+#: model:ir.model,name:boraush_trading.model_purity_inventory
+#: model:ir.ui.menu,name:boraush_trading.purity_inventory_menu_item
+msgid "Purity Inventory"
+msgstr "تخزين النقاوة"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_inventory__purity_qty
+msgid "Purity Quantity"
+msgstr "كمية النقاوة"
+
+#. module: boraush_trading
+#: model:ir.model,name:boraush_trading.model_purity_storage
+#: model:ir.ui.menu,name:boraush_trading.purity_storage_menu_item
+msgid "Purity Storage"
+msgstr "تخزين النقاوة"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_pure_store__purity_type
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_inventory__purity_type
+msgid "Purity Type"
+msgstr "نوع النقاوة"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_type__quality
+#: model:ir.model.fields,field_description:boraush_trading.field_procure_order__quality
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase_line__quality
+#: model_terms:ir.ui.view,arch_db:boraush_trading.arabic_gum_type_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.purchase_report_template
+msgid "Quality"
+msgstr "الجودة"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_type__quantity
+#: model:ir.model.fields,field_description:boraush_trading.field_order__quantity
+#: model:ir.model.fields,field_description:boraush_trading.field_procure_order__quantity
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase_line__quantity
+#: model:ir.model.fields,field_description:boraush_trading.field_pure_store__quantity
+#: model:ir.model.fields,field_description:boraush_trading.field_returns_line__quantity
+#: model:ir.model.fields,field_description:boraush_trading.field_sale_line__quantity
+#: model_terms:ir.ui.view,arch_db:boraush_trading.goods_transport_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.purchase_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.returns_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.sale_report_template
+msgid "Quantity"
+msgstr "الكمية"
+
+#. module: boraush_trading
+#: model_terms:ir.ui.view,arch_db:boraush_trading.arabic_gum_type_report_template
+msgid "Quantity (KG)"
+msgstr "الكمية  كغ"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product_line__net_quantity
+msgid "Quantity After Cleaning"
+msgstr "الكمية بعد التنظيف"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum__quantity
+msgid "Quantity KG"
+msgstr "الكمية  كغ"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_pure__quantity
+msgid "Quantity kg"
+msgstr "الكمية  كغ"
+
+#. module: boraush_trading
+#: model:ir.model.fields.selection,name:boraush_trading.selection__pure__pure_type__raw
+msgid "Raw"
+msgstr "خام"
+
+#. module: boraush_trading
+#: model:ir.model,name:boraush_trading.model_raw_storage
+#: model:ir.ui.menu,name:boraush_trading.raw_storage_menu_item
+msgid "Raw Storage"
+msgstr "تخزين خام"
+
+#. module: boraush_trading
+#: model:ir.model,name:boraush_trading.model_raw_storage_receipt
+#: model:ir.ui.menu,name:boraush_trading.raw_storage_receipt_menu_item
+msgid "Raw Storage Receipt"
+msgstr "فاتورة إستلام خام"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage_receipt__receipt_id
+msgid "Receipt ID"
+msgstr "رقم الفاتورة"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_pure_store__receive_date
+msgid "Received Date"
+msgstr "تاريخ الاستلام"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_storage__received_qty
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage__received_qty
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage_receipt__received_qty
+msgid "Received Quantity"
+msgstr "الكمية المستلمة"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_address__ref
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum__ref
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_type__ref
+#: model:ir.model.fields,field_description:boraush_trading.field_commissioner__ref
+#: model:ir.model.fields,field_description:boraush_trading.field_customer__ref
+#: model:ir.model.fields,field_description:boraush_trading.field_driver__ref
+#: model:ir.model.fields,field_description:boraush_trading.field_expert__ref
+#: model:ir.model.fields,field_description:boraush_trading.field_goods_transport__ref
+#: model:ir.model.fields,field_description:boraush_trading.field_job__ref
+#: model:ir.model.fields,field_description:boraush_trading.field_market__ref
+#: model:ir.model.fields,field_description:boraush_trading.field_order__ref
+#: model:ir.model.fields,field_description:boraush_trading.field_procure_order__ref
+#: model:ir.model.fields,field_description:boraush_trading.field_producer__ref
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase__ref
+#: model:ir.model.fields,field_description:boraush_trading.field_pure__ref
+#: model:ir.model.fields,field_description:boraush_trading.field_pure_store__ref
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_inventory__ref
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage_receipt__ref
+#: model:ir.model.fields,field_description:boraush_trading.field_returns__ref
+#: model:ir.model.fields,field_description:boraush_trading.field_sale__ref
+#: model:ir.model.fields,field_description:boraush_trading.field_supervisor__ref
+#: model:ir.model.fields,field_description:boraush_trading.field_tallying_product__ref
+#: model:ir.model.fields,field_description:boraush_trading.field_trucks__ref
+#: model:ir.model.fields,field_description:boraush_trading.field_unit__ref
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouse__ref
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouseman__ref
+#: model_terms:ir.ui.view,arch_db:boraush_trading.driver_report_template
+msgid "Ref"
+msgstr "المرجع"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product_line__refined_quantity
+#: model_terms:ir.ui.view,arch_db:boraush_trading.inventory_of_tallying_product_report_template
+msgid "Refined Quantity"
+msgstr "الكمية المكررة (الفائض)"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_address__activity_user_id
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum__activity_user_id
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_price__activity_user_id
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_type__activity_user_id
+#: model:ir.model.fields,field_description:boraush_trading.field_commissioner__activity_user_id
+#: model:ir.model.fields,field_description:boraush_trading.field_customer__activity_user_id
+#: model:ir.model.fields,field_description:boraush_trading.field_driver__activity_user_id
+#: model:ir.model.fields,field_description:boraush_trading.field_employee__activity_user_id
+#: model:ir.model.fields,field_description:boraush_trading.field_expert__activity_user_id
+#: model:ir.model.fields,field_description:boraush_trading.field_goods_transport__activity_user_id
+#: model:ir.model.fields,field_description:boraush_trading.field_gum_stock__activity_user_id
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product__activity_user_id
+#: model:ir.model.fields,field_description:boraush_trading.field_job__activity_user_id
+#: model:ir.model.fields,field_description:boraush_trading.field_market__activity_user_id
+#: model:ir.model.fields,field_description:boraush_trading.field_order__activity_user_id
+#: model:ir.model.fields,field_description:boraush_trading.field_procure_order__activity_user_id
+#: model:ir.model.fields,field_description:boraush_trading.field_producer__activity_user_id
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase__activity_user_id
+#: model:ir.model.fields,field_description:boraush_trading.field_pure__activity_user_id
+#: model:ir.model.fields,field_description:boraush_trading.field_pure_store__activity_user_id
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_inventory__activity_user_id
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_storage__activity_user_id
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage__activity_user_id
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage_receipt__activity_user_id
+#: model:ir.model.fields,field_description:boraush_trading.field_return_reason__activity_user_id
+#: model:ir.model.fields,field_description:boraush_trading.field_returns__activity_user_id
+#: model:ir.model.fields,field_description:boraush_trading.field_sale__activity_user_id
+#: model:ir.model.fields,field_description:boraush_trading.field_supervisor__activity_user_id
+#: model:ir.model.fields,field_description:boraush_trading.field_tallying_product__activity_user_id
+#: model:ir.model.fields,field_description:boraush_trading.field_trucks__activity_user_id
+#: model:ir.model.fields,field_description:boraush_trading.field_unit__activity_user_id
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouse__activity_user_id
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouseman__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_return_reason__return_date
+#: model:ir.model.fields,field_description:boraush_trading.field_returns__return_date
+msgid "Return Date"
+msgstr "تاريخ الإرجاع"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_returns__return_id
+#: model_terms:ir.ui.view,arch_db:boraush_trading.returns_report_template
+msgid "Return ID"
+msgstr "رقم المرتجع"
+
+#. module: boraush_trading
+#: model:ir.model,name:boraush_trading.model_returns_line
+msgid "Return Line"
+msgstr "بنود المرتجعات"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_returns__line_ids
+#: model_terms:ir.ui.view,arch_db:boraush_trading.returns_view_form
+msgid "Return Lines"
+msgstr "بنود المرتجعات"
+
+#. module: boraush_trading
+#: model:ir.model,name:boraush_trading.model_return_reason
+#: model:ir.model.fields,field_description:boraush_trading.field_return_reason__return_reason
+#: model:ir.model.fields,field_description:boraush_trading.field_returns__return_reason_id
+#: model_terms:ir.ui.view,arch_db:boraush_trading.returns_report_template
+msgid "Return Reason"
+msgstr "سبب الإرجاع"
+
+#. module: boraush_trading
+#: model:ir.ui.menu,name:boraush_trading.return_reason_menu_item
+msgid "Return Reasons"
+msgstr "اسباب الإرجاع"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_returns_line__return_id
+msgid "Return Reference"
+msgstr "مرجع المرتجع"
+
+#. module: boraush_trading
+#: model:ir.model,name:boraush_trading.model_returns
+#: model:ir.ui.menu,name:boraush_trading.returns_menu_item
+msgid "Returns"
+msgstr "المرتجعات"
+
+#. module: boraush_trading
+#: model:ir.actions.report,name:boraush_trading.returns_report
+msgid "Returns Report"
+msgstr "تقرير المرتجعات"
+
+#. module: boraush_trading
+#: model:ir.model,name:boraush_trading.model_sale
+msgid "Sale"
+msgstr "المبيعات"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_sale__sale_date
+msgid "Sale Date"
+msgstr "تاريخ البيع"
+
+#. module: boraush_trading
+#: model:ir.model,name:boraush_trading.model_sale_line
+#: model:ir.model.fields,field_description:boraush_trading.field_returns_line__sale_line_id
+msgid "Sale Line"
+msgstr "بنود المبيعات"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_sale__line_ids
+#: model_terms:ir.ui.view,arch_db:boraush_trading.sale_view_form
+msgid "Sale Lines"
+msgstr "بنود المبيعات"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_sale_line__sale_id
+msgid "Sale Order"
+msgstr "أمر البيع"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_returns__sale_id
+msgid "Sale Reference"
+msgstr "مرجع البيع"
+
+#. module: boraush_trading
+#: model:ir.actions.report,name:boraush_trading.sale_report
+msgid "Sale Report"
+msgstr "تقرير البيع"
+
+#. module: boraush_trading
+#: model:ir.ui.menu,name:boraush_trading.sale_menu_item
+#: model:ir.ui.menu,name:boraush_trading.sales_menu
+msgid "Sales"
+msgstr "المبيعات"
+
+#. module: boraush_trading
+#: model:ir.model.fields.selection,name:boraush_trading.selection__address__continent__south_america
+msgid "South America"
+msgstr "جنوب امريكا"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_goods_transport__state
+#: model_terms:ir.ui.view,arch_db:boraush_trading.address_report_template
+msgid "State"
+msgstr "الولاية"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_address__state_id
+msgid "State ID"
+msgstr "رقم الولاية"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_address__state_name
+msgid "State Name"
+msgstr "اسم الولاية"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product__state
+#: model_terms:ir.ui.view,arch_db:boraush_trading.goods_transport_report_template
+msgid "Status"
+msgstr "الحالة"
+
+#. module: boraush_trading
+#: model:ir.model.fields,help:boraush_trading.field_address__activity_state
+#: model:ir.model.fields,help:boraush_trading.field_arabic_gum__activity_state
+#: model:ir.model.fields,help:boraush_trading.field_arabic_gum_price__activity_state
+#: model:ir.model.fields,help:boraush_trading.field_arabic_gum_type__activity_state
+#: model:ir.model.fields,help:boraush_trading.field_commissioner__activity_state
+#: model:ir.model.fields,help:boraush_trading.field_customer__activity_state
+#: model:ir.model.fields,help:boraush_trading.field_driver__activity_state
+#: model:ir.model.fields,help:boraush_trading.field_employee__activity_state
+#: model:ir.model.fields,help:boraush_trading.field_expert__activity_state
+#: model:ir.model.fields,help:boraush_trading.field_goods_transport__activity_state
+#: model:ir.model.fields,help:boraush_trading.field_gum_stock__activity_state
+#: model:ir.model.fields,help:boraush_trading.field_inventory_of_tallying_product__activity_state
+#: model:ir.model.fields,help:boraush_trading.field_job__activity_state
+#: model:ir.model.fields,help:boraush_trading.field_market__activity_state
+#: model:ir.model.fields,help:boraush_trading.field_order__activity_state
+#: model:ir.model.fields,help:boraush_trading.field_procure_order__activity_state
+#: model:ir.model.fields,help:boraush_trading.field_producer__activity_state
+#: model:ir.model.fields,help:boraush_trading.field_purchase__activity_state
+#: model:ir.model.fields,help:boraush_trading.field_pure__activity_state
+#: model:ir.model.fields,help:boraush_trading.field_pure_store__activity_state
+#: model:ir.model.fields,help:boraush_trading.field_purity_inventory__activity_state
+#: model:ir.model.fields,help:boraush_trading.field_purity_storage__activity_state
+#: model:ir.model.fields,help:boraush_trading.field_raw_storage__activity_state
+#: model:ir.model.fields,help:boraush_trading.field_raw_storage_receipt__activity_state
+#: model:ir.model.fields,help:boraush_trading.field_return_reason__activity_state
+#: model:ir.model.fields,help:boraush_trading.field_returns__activity_state
+#: model:ir.model.fields,help:boraush_trading.field_sale__activity_state
+#: model:ir.model.fields,help:boraush_trading.field_supervisor__activity_state
+#: model:ir.model.fields,help:boraush_trading.field_tallying_product__activity_state
+#: model:ir.model.fields,help:boraush_trading.field_trucks__activity_state
+#: model:ir.model.fields,help:boraush_trading.field_unit__activity_state
+#: model:ir.model.fields,help:boraush_trading.field_warehouse__activity_state
+#: model:ir.model.fields,help:boraush_trading.field_warehouseman__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouse__stock
+#: model:ir.ui.menu,name:boraush_trading.gum_stock_menu_item
+#, fuzzy
+msgid "Stock"
+msgstr "مخزون الصمغ"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_storage__storing_date
+msgid "Storage Date"
+msgstr "تاريخ التخزين"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage__storing_date
+msgid "Storing Date"
+msgstr "تاريخ التخزين"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage__storing_id
+msgid "Storing ID"
+msgstr "رقم التخزين"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_sale_line__subtotal
+#: model_terms:ir.ui.view,arch_db:boraush_trading.returns_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.sale_report_template
+msgid "Subtotal"
+msgstr "المجموع الكلي"
+
+#. module: boraush_trading
+#: model:ir.model,name:boraush_trading.model_supervisor
+msgid "Supervisor"
+msgstr "المشرف"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_supervisor__supervisor_id
+#: model:ir.model.fields,field_description:boraush_trading.field_tallying_product__supervisor_id
+#: model_terms:ir.ui.view,arch_db:boraush_trading.supervisor_report_template
+msgid "Supervisor ID"
+msgstr "رقم المشرف"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_supervisor__name
+msgid "Supervisor Name"
+msgstr "إسم المشرف"
+
+#. module: boraush_trading
+#: model:ir.actions.report,name:boraush_trading.supervisor_report
+#: model_terms:ir.ui.view,arch_db:boraush_trading.supervisor_report_template
+msgid "Supervisor Report"
+msgstr "تقرير المشرفين"
+
+#. module: boraush_trading
+#: model:ir.ui.menu,name:boraush_trading.supervisor_menu_item
+msgid "Supervisors"
+msgstr "ألمشرفين"
+
+#. module: boraush_trading
+#: model:ir.model.fields.selection,name:boraush_trading.selection__unit__code__tn
+msgid "TN"
+msgstr "طن"
+
+#. module: boraush_trading
+#: model:ir.model.fields.selection,name:boraush_trading.selection__arabic_gum_type__arabic_gum_type__talha_gum
+#: model:ir.model.fields.selection,name:boraush_trading.selection__goods_transport__gum_type__talha_gum
+#: model:ir.model.fields.selection,name:boraush_trading.selection__purchase_line__gum_type__talha_gum
+#: model:ir.model.fields.selection,name:boraush_trading.selection__returns_line__gum_type__talha_gum
+#: model:ir.model.fields.selection,name:boraush_trading.selection__sale_line__gum_type__talha_gum
+msgid "Talha Gum"
+msgstr "صمغ الطلح"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_gum_stock__talha_price
+msgid "Talha Gum Price"
+msgstr "سعر صمغ الطلح"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_gum_stock__talha_quantity
+msgid "Talha On Hand Quantity"
+msgstr "الكميه المتوفرة من صمغ الطلح "
+
+#. module: boraush_trading
+#: model:ir.model,name:boraush_trading.model_tallying_product
+#, fuzzy
+msgid "Tallying Product"
+msgstr "التنظيف و الفرز"
+
+#. module: boraush_trading
+#: model:ir.ui.menu,name:boraush_trading.tallying_product_menu_item
+msgid "Tallying Products"
+msgstr "التنظيف و الفرز"
+
+#. module: boraush_trading
+#: model:ir.actions.report,name:boraush_trading.inventory_of_tallying_product_report
+msgid "Tallying Products Report"
+msgstr "تقرير التنظيف و الفرز"
+
+#. module: boraush_trading
+#: model:ir.model.constraint,message:boraush_trading.constraint_address_unique_id
+#: model:ir.model.constraint,message:boraush_trading.constraint_commissioner_unique_id
+#: model:ir.model.constraint,message:boraush_trading.constraint_customer_unique_id
+#: model:ir.model.constraint,message:boraush_trading.constraint_driver_unique_id
+#: model:ir.model.constraint,message:boraush_trading.constraint_employee_unique_id
+#: model:ir.model.constraint,message:boraush_trading.constraint_expert_unique_id
+#: model:ir.model.constraint,message:boraush_trading.constraint_goods_transport_unique_id
+#: model:ir.model.constraint,message:boraush_trading.constraint_job_unique_id
+#: model:ir.model.constraint,message:boraush_trading.constraint_market_unique_id
+#: model:ir.model.constraint,message:boraush_trading.constraint_order_unique_id
+#: model:ir.model.constraint,message:boraush_trading.constraint_producer_unique_id
+#: model:ir.model.constraint,message:boraush_trading.constraint_pure_unique_id
+#: model:ir.model.constraint,message:boraush_trading.constraint_raw_storage_receipt_unique_id
+#: model:ir.model.constraint,message:boraush_trading.constraint_raw_storage_unique_id
+#: model:ir.model.constraint,message:boraush_trading.constraint_supervisor_unique_id
+#: model:ir.model.constraint,message:boraush_trading.constraint_trucks_unique_id
+#: model:ir.model.constraint,message:boraush_trading.constraint_unit_unique_id
+msgid "This ID Is Exist!"
+msgstr "هذا الرقم موجود"
+
+#. module: boraush_trading
+#: model:ir.model.constraint,message:boraush_trading.constraint_sale_unique_invoice
+msgid "This Invoice Number already exists!"
+msgstr "رقم الفاتورة الذي اخترته موجود"
+
+#. module: boraush_trading
+#: model:ir.model.constraint,message:boraush_trading.constraint_purchase_unique_purchase_id
+#, fuzzy
+msgid "This Purchase ID already exists!"
+msgstr "رقم الشراء الذي اخترته موجود"
+
+#. module: boraush_trading
+#: model:ir.model.constraint,message:boraush_trading.constraint_warehouse_unique_id
+msgid "This Warehouse ID already exists!"
+msgstr "رقم المخزن الذي اخترته موجود"
+
+#. module: boraush_trading
+#: model:ir.model.fields.selection,name:boraush_trading.selection__unit__unit_name__tonne
+msgid "Tonne"
+msgstr "طن"
+
+#. module: boraush_trading
+#: model_terms:ir.ui.view,arch_db:boraush_trading.inventory_of_tallying_product_report_template
+msgid "Total"
+msgstr "المجموع"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_sale__amount_total
+msgid "Total Amount"
+msgstr "إجمالي المبلغ"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase__total_price
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase_line__total_price
+#: model_terms:ir.ui.view,arch_db:boraush_trading.purchase_report_template
+msgid "Total Price"
+msgstr "إجمالي المبلغ"
+
+#. module: boraush_trading
+#: model_terms:ir.ui.view,arch_db:boraush_trading.purchase_view_form
+msgid "Total Purchase"
+msgstr "إجمالي المشتريات"
+
+#. module: boraush_trading
+#: model_terms:ir.ui.view,arch_db:boraush_trading.inventory_of_tallying_product_view_form
+msgid "Total Refined Quantity: KG"
+msgstr "مجموع الكمية المكررة كغ"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_inventory_of_tallying_product__total_refined_text
+msgid "Total Refined Text"
+msgstr ""
+
+#. module: boraush_trading
+#: model_terms:ir.ui.view,arch_db:boraush_trading.purchase_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.returns_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.sale_report_template
+msgid "Total:"
+msgstr "المجموع"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_goods_transport__transport_date
+#: model_terms:ir.ui.view,arch_db:boraush_trading.goods_transport_report_template
+msgid "Transport Date"
+msgstr "تاريخ النقل"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_goods_transport__transport_id
+#: model_terms:ir.ui.view,arch_db:boraush_trading.goods_transport_report_template
+msgid "Transport ID"
+msgstr "رقم النقل"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_goods_transport__truck_id
+#: model:ir.model.fields,field_description:boraush_trading.field_trucks__name
+#: model_terms:ir.ui.view,arch_db:boraush_trading.trucks_report_template
+msgid "Truck ID"
+msgstr "رقم الشاحنة"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_trucks__truck_type
+#: model_terms:ir.ui.view,arch_db:boraush_trading.goods_transport_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.trucks_report_template
+msgid "Truck Type"
+msgstr "نوع الشاحنة"
+
+#. module: boraush_trading
+#: model:ir.model,name:boraush_trading.model_trucks
+#: model:ir.ui.menu,name:boraush_trading.trucks_menu_item
+msgid "Trucks"
+msgstr "الشاحنات"
+
+#. module: boraush_trading
+#: model:ir.actions.report,name:boraush_trading.trucks_report
+msgid "Trucks Report"
+msgstr "تقرير الشاحنات"
+
+#. module: boraush_trading
+#: model:ir.model.fields,help:boraush_trading.field_address__activity_exception_decoration
+#: model:ir.model.fields,help:boraush_trading.field_arabic_gum__activity_exception_decoration
+#: model:ir.model.fields,help:boraush_trading.field_arabic_gum_price__activity_exception_decoration
+#: model:ir.model.fields,help:boraush_trading.field_arabic_gum_type__activity_exception_decoration
+#: model:ir.model.fields,help:boraush_trading.field_commissioner__activity_exception_decoration
+#: model:ir.model.fields,help:boraush_trading.field_customer__activity_exception_decoration
+#: model:ir.model.fields,help:boraush_trading.field_driver__activity_exception_decoration
+#: model:ir.model.fields,help:boraush_trading.field_employee__activity_exception_decoration
+#: model:ir.model.fields,help:boraush_trading.field_expert__activity_exception_decoration
+#: model:ir.model.fields,help:boraush_trading.field_goods_transport__activity_exception_decoration
+#: model:ir.model.fields,help:boraush_trading.field_gum_stock__activity_exception_decoration
+#: model:ir.model.fields,help:boraush_trading.field_inventory_of_tallying_product__activity_exception_decoration
+#: model:ir.model.fields,help:boraush_trading.field_job__activity_exception_decoration
+#: model:ir.model.fields,help:boraush_trading.field_market__activity_exception_decoration
+#: model:ir.model.fields,help:boraush_trading.field_order__activity_exception_decoration
+#: model:ir.model.fields,help:boraush_trading.field_procure_order__activity_exception_decoration
+#: model:ir.model.fields,help:boraush_trading.field_producer__activity_exception_decoration
+#: model:ir.model.fields,help:boraush_trading.field_purchase__activity_exception_decoration
+#: model:ir.model.fields,help:boraush_trading.field_pure__activity_exception_decoration
+#: model:ir.model.fields,help:boraush_trading.field_pure_store__activity_exception_decoration
+#: model:ir.model.fields,help:boraush_trading.field_purity_inventory__activity_exception_decoration
+#: model:ir.model.fields,help:boraush_trading.field_purity_storage__activity_exception_decoration
+#: model:ir.model.fields,help:boraush_trading.field_raw_storage__activity_exception_decoration
+#: model:ir.model.fields,help:boraush_trading.field_raw_storage_receipt__activity_exception_decoration
+#: model:ir.model.fields,help:boraush_trading.field_return_reason__activity_exception_decoration
+#: model:ir.model.fields,help:boraush_trading.field_returns__activity_exception_decoration
+#: model:ir.model.fields,help:boraush_trading.field_sale__activity_exception_decoration
+#: model:ir.model.fields,help:boraush_trading.field_supervisor__activity_exception_decoration
+#: model:ir.model.fields,help:boraush_trading.field_tallying_product__activity_exception_decoration
+#: model:ir.model.fields,help:boraush_trading.field_trucks__activity_exception_decoration
+#: model:ir.model.fields,help:boraush_trading.field_unit__activity_exception_decoration
+#: model:ir.model.fields,help:boraush_trading.field_warehouse__activity_exception_decoration
+#: model:ir.model.fields,help:boraush_trading.field_warehouseman__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: boraush_trading
+#: model:ir.model,name:boraush_trading.model_unit
+msgid "Unit"
+msgstr "الوحدة"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_price__units
+#: model:ir.model.fields,field_description:boraush_trading.field_unit__name
+#: model_terms:ir.ui.view,arch_db:boraush_trading.unit_report_template
+msgid "Unit ID"
+msgstr "رقم الوحدة"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_unit__unit_name
+#: model_terms:ir.ui.view,arch_db:boraush_trading.unit_report_template
+msgid "Unit Name"
+msgstr "إسم الوحدة"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_price__unit_price
+#: model:ir.model.fields,field_description:boraush_trading.field_procure_order__unit_price
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase_line__unit_price
+#: model:ir.model.fields,field_description:boraush_trading.field_returns_line__unit_price
+#: model:ir.model.fields,field_description:boraush_trading.field_sale_line__unit_price
+#: model_terms:ir.ui.view,arch_db:boraush_trading.purchase_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.returns_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.sale_report_template
+msgid "Unit Price"
+msgstr "سعر الوحدة"
+
+#. module: boraush_trading
+#: model:ir.actions.report,name:boraush_trading.unit_report
+msgid "Unit Report"
+msgstr "تقرير الوحدات"
+
+#. module: boraush_trading
+#: model_terms:ir.ui.view,arch_db:boraush_trading.unit_view_form
+msgid "Unit info"
+msgstr "معلومات الوحدة"
+
+#. module: boraush_trading
+#: model:ir.ui.menu,name:boraush_trading.unit_menu_item
+msgid "Units"
+msgstr "الوحدات"
+
+#. module: boraush_trading
+#: model:ir.model.fields.selection,name:boraush_trading.selection__arabic_gum_type__quality__very_good
+#: model:ir.model.fields.selection,name:boraush_trading.selection__purchase_line__quality__very_good
+msgid "Very Good"
+msgstr "جيد جدا"
+
+#. module: boraush_trading
+#: model:ir.model,name:boraush_trading.model_warehouse
+#: model:ir.model.fields,field_description:boraush_trading.field_purchase_line__warehouse_id
+#: model:ir.model.fields,field_description:boraush_trading.field_pure__warehouse_id
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_inventory__warehouse_id
+#: model:ir.model.fields,field_description:boraush_trading.field_purity_storage__warehouse_id
+#: model:ir.model.fields,field_description:boraush_trading.field_sale__warehouse_id
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouseman__warehouse_id
+#: model_terms:ir.ui.view,arch_db:boraush_trading.goods_transport_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.purchase_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.sale_report_template
+#: model_terms:ir.ui.view,arch_db:boraush_trading.sale_view_form
+#: model_terms:ir.ui.view,arch_db:boraush_trading.warehouseman_report_template
+msgid "Warehouse"
+msgstr "المخزن"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_goods_transport__warehouse_id
+#: model:ir.model.fields,field_description:boraush_trading.field_pure_store__warehouse_id
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage__warehouse_id
+#: model:ir.model.fields,field_description:boraush_trading.field_raw_storage_receipt__warehouse_id
+#: model:ir.model.fields,field_description:boraush_trading.field_tallying_product__warehouse_id
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouse__warehouse_id
+#: model_terms:ir.ui.view,arch_db:boraush_trading.warehouse_report_template
+msgid "Warehouse ID"
+msgstr "رقم المخزن"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum__warehouse_id
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouse__name
+#: model_terms:ir.ui.view,arch_db:boraush_trading.warehouse_report_template
+msgid "Warehouse Name"
+msgstr "إسم المخزن"
+
+#. module: boraush_trading
+#: model_terms:ir.ui.view,arch_db:boraush_trading.arabic_gum_type_report_template
+msgid "Warehouse(s)"
+msgstr "المخازن"
+
+#. module: boraush_trading
+#: model:ir.model,name:boraush_trading.model_warehouseman
+#: model:ir.model.fields,field_description:boraush_trading.field_warehouse__warehouseman_id
+#: model:ir.ui.menu,name:boraush_trading.warehouseman_menu_item
+#: model_terms:ir.ui.view,arch_db:boraush_trading.warehouse_report_template
+msgid "Warehouseman"
+msgstr "أمين المخزن"
+
+#. module: boraush_trading
+#: model:ir.actions.report,name:boraush_trading.warehouseman_report
+#: model_terms:ir.ui.view,arch_db:boraush_trading.warehouseman_report_template
+msgid "Warehouseman Report"
+msgstr "تقرير أمين المخزن"
+
+#. module: boraush_trading
+#: model:ir.model.fields,field_description:boraush_trading.field_arabic_gum_type__warehouse_ids
+#: model:ir.ui.menu,name:boraush_trading.warehouse_menu_item
+msgid "Warehouses"
+msgstr "المخازن"
+
+#. module: boraush_trading
+#: model_terms:ir.ui.view,arch_db:boraush_trading.arabic_gum_type_report_template
+msgid "Yes"
+msgstr "نعم"
+
+#. module: boraush_trading
+#: model:ir.actions.act_window,name:boraush_trading.address_action
+#, fuzzy
+msgid "address"
+msgstr "العنوان"
+
+#. module: boraush_trading
+#: model:ir.actions.act_window,name:boraush_trading.arabic_gum_action
+#, fuzzy
+msgid "arabic gum"
+msgstr "الصمغ العربي"
+
+#. module: boraush_trading
+#: model:ir.actions.act_window,name:boraush_trading.arabic_gum_price_action
+#, fuzzy
+msgid "arabic gum price"
+msgstr "سعر الصمغ العربي"
+
+#. module: boraush_trading
+#: model:ir.actions.act_window,name:boraush_trading.arabic_gum_type_action
+#, fuzzy
+msgid "arabic gum type"
+msgstr "نوع الصمغ العربي"
+
+#. module: boraush_trading
+#: model:ir.actions.act_window,name:boraush_trading.commissioner_action
+#, fuzzy
+msgid "commissioner"
+msgstr "المندوب"
+
+#. module: boraush_trading
+#: model:ir.actions.act_window,name:boraush_trading.customer_action
+#, fuzzy
+msgid "customer"
+msgstr "العميل"
+
+#. module: boraush_trading
+#: model:ir.actions.act_window,name:boraush_trading.driver_action
+#, fuzzy
+msgid "driver"
+msgstr "السائق"
+
+#. module: boraush_trading
+#: model:ir.actions.act_window,name:boraush_trading.employee_action
+#, fuzzy
+msgid "employee"
+msgstr "الموظف"
+
+#. module: boraush_trading
+#: model:ir.actions.act_window,name:boraush_trading.expert_action
+#: model:ir.model,name:boraush_trading.model_expert
+#, fuzzy
+msgid "expert"
+msgstr "رقم الخبير"
+
+#. module: boraush_trading
+#: model:ir.actions.act_window,name:boraush_trading.goods_transport_action
+#, fuzzy
+msgid "goods transport"
+msgstr "نقل البضائع"
+
+#. module: boraush_trading
+#: model:ir.actions.act_window,name:boraush_trading.gum_stock_action
+#, fuzzy
+msgid "gum_stock"
+msgstr "مخزون الصمغ"
+
+#. module: boraush_trading
+#: model:ir.actions.act_window,name:boraush_trading.inventory_of_tallying_product_action
+#, fuzzy
+msgid "inventory of tallying product"
+msgstr "التنظيف و الفرز"
+
+#. module: boraush_trading
+#: model:ir.actions.act_window,name:boraush_trading.job_action
+#, fuzzy
+msgid "job"
+msgstr "الوظيفة"
+
+#. module: boraush_trading
+#: model:ir.actions.act_window,name:boraush_trading.market_action
+#: model:ir.actions.report,name:boraush_trading.market_report
+#, fuzzy
+msgid "market"
+msgstr "السوق"
+
+#. module: boraush_trading
+#: model:ir.actions.act_window,name:boraush_trading.order_action
+#, fuzzy
+msgid "order"
+msgstr "الطلب"
+
+#. module: boraush_trading
+#: model:ir.actions.act_window,name:boraush_trading.procure_order_action
+#, fuzzy
+msgid "procure order"
+msgstr "طلب الشراء"
+
+#. module: boraush_trading
+#: model:ir.actions.act_window,name:boraush_trading.producer_action
+#, fuzzy
+msgid "producer"
+msgstr "المُنتج"
+
+#. module: boraush_trading
+#: model:ir.actions.act_window,name:boraush_trading.purchase_action
+#, fuzzy
+msgid "purchase"
+msgstr "المشتريات"
+
+#. module: boraush_trading
+#: model:ir.actions.act_window,name:boraush_trading.pure_action
+#, fuzzy
+msgid "pure"
+msgstr "النقاوة"
+
+#. module: boraush_trading
+#: model:ir.actions.act_window,name:boraush_trading.pure_store_action
+#, fuzzy
+msgid "pure store"
+msgstr "تخزين النقاوة"
+
+#. module: boraush_trading
+#: model:ir.actions.act_window,name:boraush_trading.purity_inventory_action
+#, fuzzy
+msgid "purity inventory"
+msgstr "تخزين النقاوة"
+
+#. module: boraush_trading
+#: model:ir.actions.act_window,name:boraush_trading.purity_storage_action
+#, fuzzy
+msgid "purity storage"
+msgstr "تخزين النقاوة"
+
+#. module: boraush_trading
+#: model:ir.actions.act_window,name:boraush_trading.raw_storage_action
+#, fuzzy
+msgid "raw storage"
+msgstr "تخزين خام"
+
+#. module: boraush_trading
+#: model:ir.actions.act_window,name:boraush_trading.raw_storage_receipt_action
+#, fuzzy
+msgid "raw storage receipt"
+msgstr "فاتورة إستلام خام"
+
+#. module: boraush_trading
+#: model:ir.actions.act_window,name:boraush_trading.return_reason_action
+#, fuzzy
+msgid "return reason"
+msgstr "سبب الإرجاع"
+
+#. module: boraush_trading
+#: model:ir.actions.act_window,name:boraush_trading.returns_action
+#, fuzzy
+msgid "returns"
+msgstr "المرتجعات"
+
+#. module: boraush_trading
+#: model:ir.actions.act_window,name:boraush_trading.sale_action
+#, fuzzy
+msgid "sale"
+msgstr "المبيعات"
+
+#. module: boraush_trading
+#: model:ir.actions.act_window,name:boraush_trading.supervisor_action
+#, fuzzy
+msgid "supervisor"
+msgstr "المشرف"
+
+#. module: boraush_trading
+#: model:ir.actions.act_window,name:boraush_trading.tallying_product_action
+#, fuzzy
+msgid "tallying product"
+msgstr "التنظيف و الفرز"
+
+#. module: boraush_trading
+#: model:ir.actions.act_window,name:boraush_trading.trucks_action
+#, fuzzy
+msgid "trucks"
+msgstr "الشاحنات"
+
+#. module: boraush_trading
+#: model:ir.actions.act_window,name:boraush_trading.unit_action
+#, fuzzy
+msgid "unit"
+msgstr "الوحدة"
+
+#. module: boraush_trading
+#: model:ir.actions.act_window,name:boraush_trading.warehouse_action
+#: model:ir.actions.report,name:boraush_trading.warehouse_report
+msgid "warehouse"
+msgstr "المخزن"
+
+#. module: boraush_trading
+#: model:ir.actions.act_window,name:boraush_trading.warehouseman_action
+msgid "warehouseman"
+msgstr "أمين المخزن "

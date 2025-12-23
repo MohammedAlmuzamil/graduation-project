@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <record id="returns_sequence" model="ir.sequence">
+            <field name="name">returns seq</field>
+            <field name="code">returns_seq</field>
+            <field name="prefix">RET</field>
+            <field name="padding">4</field>
+        </record>
+    </data>
+</odoo>

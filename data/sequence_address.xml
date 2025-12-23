@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <record id="address_sequence" model="ir.sequence">
+            <field name="name">address seq</field>
+            <field name="code">address_seq</field>
+            <field name="prefix">ADS</field>
+            <field name="padding">4</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <record id="driver_sequence" model="ir.sequence">
+            <field name="name">driver seq</field>
+            <field name="code">driver_seq</field>
+            <field name="prefix">DRV</field>
+            <field name="padding">4</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <record id="tallying_product_sequence" model="ir.sequence">
+            <field name="name">tallying product seq</field>
+            <field name="code">tallying_product_seq</field>
+            <field name="prefix">TLP</field>
+            <field name="padding">4</field>
+        </record>
+    </data>
+</odoo>

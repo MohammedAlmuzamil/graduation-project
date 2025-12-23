@@ -1,0 +1,53 @@
+<odoo>
+    <menuitem
+            id="boraush_trading_root_menu"
+            name="Boraush Trading"
+            web_icon="boraush_trading,static/description/icon.png"
+    />
+    <menuitem
+            id="partners_menu"
+            name="Partners"
+            parent="boraush_trading_root_menu"
+    />
+    <menuitem
+            id="human_resources_menu"
+            name="Human Resource"
+            parent="boraush_trading_root_menu"
+    />
+    <menuitem
+            id="location_menu"
+            name="Locations"
+            parent="boraush_trading_root_menu"
+    />
+    <menuitem
+            id="assets_menu"
+            name="Assets"
+            parent="boraush_trading_root_menu"
+    />
+    <menuitem
+            id="product_menu"
+            name="Products"
+            parent="boraush_trading_root_menu"
+    />
+    <menuitem
+            id="inventory_management_menu"
+            name="Inventory Management"
+            parent="boraush_trading_root_menu"
+    />
+    <menuitem
+            id="purchases_menu"
+            name="Purchases"
+            parent="boraush_trading_root_menu"
+    />
+    <menuitem
+            id="operation_menu"
+            name="Operations"
+            parent="boraush_trading_root_menu"
+    />
+    <menuitem
+            id="sales_menu"
+            name="Sales"
+            parent="boraush_trading_root_menu"
+    />
+
+</odoo>

@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <record id="unit_sequence" model="ir.sequence">
+            <field name="name">unit seq</field>
+            <field name="code">unit_seq</field>
+            <field name="prefix">UNT</field>
+            <field name="padding">4</field>
+        </record>
+    </data>
+</odoo>

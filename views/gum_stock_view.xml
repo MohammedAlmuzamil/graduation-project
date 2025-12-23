@@ -1,0 +1,75 @@
+<odoo>
+
+    <record id="gum_stock_view_tree" model="ir.ui.view">
+        <field name="name">Gum Stock tree</field>
+        <field name="model">gum.stock</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="talha_quantity"/>
+                <field name="hashab_quantity"/>
+                <field name="olibanum_quantity"/>
+                <field name="talha_price"/>
+                <field name="hashab_price"/>
+                <field name="olibanum_price"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="gum_stock_view_form" model="ir.ui.view">
+        <field name="name">gum_stock form</field>
+        <field name="model">gum.stock</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group string="General info">
+                            <field name="talha_quantity"/>
+                            <field name="hashab_quantity"/>
+                            <field name="olibanum_quantity"/>
+                        </group>
+                        <group string="Additional info">
+                            <field name="talha_price"/>
+                            <field name="hashab_price"/>
+                            <field name="olibanum_price"/>
+                            <field name="description"/>
+<!--                            <field name="warehouse_ids" widget="many2many_tags"/>-->
+                        </group>
+                    </group>
+                </sheet>
+                    <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="gum_stock_view_search" model="ir.ui.view">
+        <field name="name">gum_stock search</field>
+        <field name="model">gum.stock</field>
+        <field name="arch" type="xml">
+            <search>
+            </search>
+        </field>
+    </record>
+
+
+
+    <record id="gum_stock_action" model="ir.actions.act_window">
+        <field name="name">gum_stock</field>
+        <field name="res_model">gum.stock</field>
+    </record>
+
+
+
+
+    <menuitem
+          id="gum_stock_menu_item"
+          name="Stock"
+          parent="inventory_management_menu"
+          action="gum_stock_action"
+    />
+</odoo>

@@ -1,0 +1,99 @@
+<odoo>
+
+    <record id="returns_view_tree" model="ir.ui.view">
+        <field name="name">returns tree</field>
+        <field name="model">returns</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="ref"/>
+                <field name="return_id"/>
+                <field name="active" invisible="True"/>
+                <field name="return_date"/>
+                <field name="sale_id"/>
+                <field name="customer_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="returns_view_form" model="ir.ui.view">
+        <field name="name">returns form</field>
+        <field name="model">returns</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button string="Confirm Return" type="object" name="confirm_return" class="btn-primary"/>
+                </header>
+                <sheet>
+<!--                    <div name="button_box" class="oe_button_box">-->
+<!--                        <button name="action_open_related_customer"-->
+<!--                                type="object" icon="fa-user" string="Customer"-->
+<!--                                invisible="not customer_id"/>-->
+<!--                    </div>-->
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <div class="oe_title">
+                        <label for="ref"/>
+                        <h1>
+                            <field name="ref"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="General info.">
+                            <field name="return_id"/>
+                            <field name="return_date"/>
+                            <field name="sale_id"/>
+                            <field name="return_reason_id"/>
+                            <field name="customer_id" readonly="1"/>
+                            <field name="active" invisible="True"/>
+                        </group>
+                    </group>
+
+                     <notebook>
+                    <page string="Return Lines">
+                        <field name="line_ids">
+                            <tree editable="bottom">
+                                <field name="sale_line_id"/>
+                                <field name="gum_type"/>
+                                <field name="quantity"/>
+                                <field name="unit_price"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+                </sheet>
+                    <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="returns_view_search" model="ir.ui.view">
+        <field name="name">returns search</field>
+        <field name="model">returns</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="return_id"/>
+            </search>
+        </field>
+    </record>
+
+
+
+    <record id="returns_action" model="ir.actions.act_window">
+        <field name="name">returns</field>
+        <field name="res_model">returns</field>
+    </record>
+
+
+
+
+    <menuitem
+          id="returns_menu_item"
+          name="Returns"
+          parent="sales_menu"
+          action="returns_action"
+    />
+</odoo>

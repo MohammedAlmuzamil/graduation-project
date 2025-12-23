@@ -1,0 +1,85 @@
+<odoo>
+
+    <record id="tallying_product_view_tree" model="ir.ui.view">
+        <field name="name">tallying product tree</field>
+        <field name="model">tallying.product</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="ref"/>
+                <field name="name"/>
+                <field name="active" invisible="True"/>
+                <field name="product_id"/>
+                <field name="warehouse_id"/>
+                <field name="supervisor_id"/>
+                <field name="product_weight"/>
+                <field name="extracted_date"/>
+                <field name="extracted_qty"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="tallying_product_view_form" model="ir.ui.view">
+        <field name="name">tallying product form</field>
+        <field name="model">tallying.product</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <div class="oe_title">
+                        <label for="ref"/>
+                        <h1>
+                            <field name="ref"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="General info">
+                            <field name="name"/>
+                            <field name="active" invisible="True"/>
+                            <field name="product_id"/>
+                            <field name="product_weight"/>
+                            <field name="supervisor_id"/>
+                        </group>
+                        <group string="Additional info">
+                            <field name="warehouse_id"/>
+                            <field name="extracted_date"/>
+                            <field name="extracted_qty"/>
+                        </group>
+                    </group>
+                </sheet>
+                    <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="tallying_product_view_search" model="ir.ui.view">
+        <field name="name">tallying product search</field>
+        <field name="model">tallying.product</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="product_id"/>
+            </search>
+        </field>
+    </record>
+
+
+
+    <record id="tallying_product_action" model="ir.actions.act_window">
+        <field name="name">tallying product</field>
+        <field name="res_model">tallying.product</field>
+    </record>
+
+
+
+
+    <menuitem
+          id="tallying_product_menu_item"
+          name="Tallying Products"
+          parent="inventory_management_menu"
+          action="tallying_product_action"
+    />
+</odoo>

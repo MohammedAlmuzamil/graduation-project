@@ -1,0 +1,84 @@
+<odoo>
+
+    <record id="warehouse_view_tree" model="ir.ui.view">
+        <field name="name">warehouse tree</field>
+        <field name="model">warehouse</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="ref"/>
+                <field name="name"/>
+                <field name="active" invisible="True"/>
+                <field name="warehouseman_id"/>
+                <field name="warehouse_id"/>
+                <field name="end_service_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="warehouse_view_form" model="ir.ui.view">
+        <field name="name">warehouse form</field>
+        <field name="model">warehouse</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+<!--                    <div name="button_box" class="oe_button_box">-->
+<!--                        <button name="action_open_related_employee"-->
+<!--                                type="object" icon="fa-user" string="Warehouseman"-->
+<!--                                invisible="not warehouseman_id"/>-->
+<!--                    </div>-->
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <div class="oe_title">
+                        <label for="ref"/>
+                        <h1>
+                            <field name="ref"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="General info">
+                            <field name="name"/>
+                            <field name="active" invisible="True"/>
+                            <field name="warehouseman_id"/>
+                        </group>
+                        <group string="Additional info">
+                            <field name="warehouse_id"/>
+                            <field name="end_service_date"/>
+                        </group>
+                    </group>
+                </sheet>
+                    <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="warehouse_view_search" model="ir.ui.view">
+        <field name="name">warehouse search</field>
+        <field name="model">warehouse</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="warehouse_id"/>
+            </search>
+        </field>
+    </record>
+
+
+
+    <record id="warehouse_action" model="ir.actions.act_window">
+        <field name="name">warehouse</field>
+        <field name="res_model">warehouse</field>
+    </record>
+
+
+
+
+    <menuitem
+          id="warehouse_menu_item"
+          name="Warehouses"
+          parent="assets_menu"
+          action="warehouse_action"
+    />
+</odoo>

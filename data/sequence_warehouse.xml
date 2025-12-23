@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <record id="warehouse_sequence" model="ir.sequence">
+            <field name="name">warehouse seq</field>
+            <field name="code">warehouse_seq</field>
+            <field name="prefix">WAR</field>
+            <field name="padding">4</field>
+        </record>
+    </data>
+</odoo>

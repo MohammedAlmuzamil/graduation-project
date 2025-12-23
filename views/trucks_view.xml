@@ -1,0 +1,84 @@
+<odoo>
+
+    <record id="trucks_view_tree" model="ir.ui.view">
+        <field name="name">trucks tree</field>
+        <field name="model">trucks</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="ref"/>
+                <field name="name"/>
+                <field name="driver_id"/>
+                <field name="active" invisible="True"/>
+                <field name="truck_type"/>
+                <field name="chassis_no"/>
+                <field name="license"/>
+                <field name="max_weight"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="trucks_view_form" model="ir.ui.view">
+        <field name="name">trucks form</field>
+        <field name="model">trucks</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <div class="oe_title">
+                        <label for="ref"/>
+                        <h1>
+                            <field name="ref"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="General info.">
+                            <field name="name"/>
+                            <field name="driver_id"/>
+                            <field name="active" invisible="True"/>
+                            <field name="truck_type"/>
+                            <field name="chassis_no"/>
+                        </group>
+                        <group string="Additional info.">
+                            <field name="license"/>
+                            <field name="max_weight"/>
+                        </group>
+                    </group>
+                </sheet>
+                    <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="trucks_view_search" model="ir.ui.view">
+        <field name="name">trucks search</field>
+        <field name="model">trucks</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="chassis_no"/>
+                <field name="name"/>
+            </search>
+        </field>
+    </record>
+
+
+
+    <record id="trucks_action" model="ir.actions.act_window">
+        <field name="name">trucks</field>
+        <field name="res_model">trucks</field>
+    </record>
+
+
+
+
+    <menuitem
+          id="trucks_menu_item"
+          name="Trucks"
+          parent="assets_menu"
+          action="trucks_action"
+    />
+</odoo>

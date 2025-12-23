@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <record id="raw_storage_receipt_sequence" model="ir.sequence">
+            <field name="name">raw storage receipt seq</field>
+            <field name="code">raw_storage_receipt_seq</field>
+            <field name="prefix">RSC</field>
+            <field name="padding">4</field>
+        </record>
+    </data>
+</odoo>

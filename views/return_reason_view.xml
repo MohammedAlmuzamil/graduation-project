@@ -1,0 +1,68 @@
+<odoo>
+
+    <record id="return_reason_view_tree" model="ir.ui.view">
+        <field name="name">return reason tree</field>
+        <field name="model">return.reason</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="return_date"/>
+                <field name="active" invisible="True"/>
+                <field name="order_id"/>
+                <field name="return_reason"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="return_reason_view_form" model="ir.ui.view">
+        <field name="name">return reason form</field>
+        <field name="model">return.reason</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <group>
+                        <group>
+                            <field name="order_id"/>
+                            <field name="active" invisible="True"/>
+                            <field name="return_reason"/>
+                            <field name="return_date"/>
+                        </group>
+                    </group>
+                </sheet>
+                    <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="return_reason_view_search" model="ir.ui.view">
+        <field name="name">return reason search</field>
+        <field name="model">return.reason</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="order_id"/>
+            </search>
+        </field>
+    </record>
+
+
+
+    <record id="return_reason_action" model="ir.actions.act_window">
+        <field name="name">return reason</field>
+        <field name="res_model">return.reason</field>
+    </record>
+
+
+
+
+    <menuitem
+          id="return_reason_menu_item"
+          name="Return Reasons"
+          parent="sales_menu"
+          action="return_reason_action"
+    />
+</odoo>
