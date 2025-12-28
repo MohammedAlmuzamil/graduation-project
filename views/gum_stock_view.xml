@@ -8,32 +8,48 @@
                 <field name="talha_quantity"/>
                 <field name="hashab_quantity"/>
                 <field name="olibanum_quantity"/>
-                <field name="talha_price"/>
-                <field name="hashab_price"/>
-                <field name="olibanum_price"/>
+                <field name="refined_quantity"/>
+                <field name="update_date"/>
+                <field name="min_stock_level"/>
+                <field name="max_stock_level"/>
                 <field name="description"/>
             </tree>
         </field>
     </record>
 
     <record id="gum_stock_view_form" model="ir.ui.view">
-        <field name="name">gum_stock form</field>
+        <field name="name">Gum Stock form</field>
         <field name="model">gum.stock</field>
         <field name="arch" type="xml">
             <form>
                 <sheet>
                     <group>
-                        <group string="General info">
+                        <group string="Talaha Stock">
                             <field name="talha_quantity"/>
+                        </group>
+                        <group string="Hashab Stock">
                             <field name="hashab_quantity"/>
+                        </group>
+                        <group string="Olibanum Stock">
                             <field name="olibanum_quantity"/>
                         </group>
-                        <group string="Additional info">
-                            <field name="talha_price"/>
-                            <field name="hashab_price"/>
-                            <field name="olibanum_price"/>
+                        <group string="Refined Stock">
+                            <field name="refined_quantity"/>
+                        </group>
+                        <group string="Max Stock Level">
+                            <field name="max_stock_level"/>
+                        </group>
+                        <group string="Min Stock Level">
+                            <field name="min_stock_level"/>
+                        </group>
+                        <group string="Update on Stock">
+                            <field name="update_date"/>
+                        </group>
+                        <group string="Total">
+                            <field name="total_quantity"/>
+                        </group>
+                        <group string="Description">
                             <field name="description"/>
-<!--                            <field name="warehouse_ids" widget="many2many_tags"/>-->
                         </group>
                     </group>
                 </sheet>

@@ -1,122 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
     <record id="goods_transport_report" model="ir.actions.report">
         <field name="name">Goods Transport Report</field>
         <field name="model">goods.transport</field>
-        <field name="report_type">qweb-html</field>
-        <field name="binding_model_id" ref="model_goods_transport"/>
+        <field name="report_type">qweb-pdf</field>
+        <field name="binding_model_id" ref="boraush_trading.model_goods_transport"/>
         <field name="binding_type">report</field>
         <field name="report_name">boraush_trading.goods_transport_report_template</field>
     </record>
 
     <template id="goods_transport_report_template">
-        <t t-set="report_encoding" t-value="'utf-8'"/>
         <t t-call="web.html_container">
-            <div class="page">
+            <t t-foreach="docs" t-as="doc">
 
-                <div class="report-header" style="display:flex; justify-content: space-between; align-items:flex-start;">
-                    <div class="company-left">
-                        <img t-if="docs and docs[0].env.company.logo"
-                             t-att-src="'data:image/png;base64,%s' % (docs[0].env.company.logo.decode())"
-                             style="width: 100px; height: auto; margin-bottom:10px;"/>
-                        <h1 t-field="docs and docs[0].env.company.name"/>
-                        <p t-field="docs and docs[0].env.company.street"/>
-                        <p>
-                            <span t-field="docs and docs[0].env.company.phone"/>
-                            |
-                            <span t-field="docs and docs[0].env.company.email"/>
-                        </p>
+                <div class="page">
+
+                    <div style="display:flex; align-items:flex-start;">
+
+                        <div>
+                            <img t-if="doc.env.company.logo"
+                                 t-att-src="'data:image/png;base64,%s' % (doc.env.company.logo.decode())"
+                                 style="width:100px; margin-bottom:10px;"/>
+                            <h2 t-field="doc.env.company.name"/>
+                            <p t-field="doc.env.company.street"/>
+                            <p>
+                                <span t-field="doc.env.company.phone"/> |
+                                <span t-field="doc.env.company.email"/>
+                            </p>
+                        </div>
+
                     </div>
-                    <div class="report-meta" style="text-align:right;">
-                        <p>
-                            <strong>Date:</strong>
-                            <t t-esc="time.strftime('%Y-%m-%d')"/>
-                        </p>
-                    </div>
-                </div>
 
-                <div style="text-align:left; font-size:13px; font-weight:bold; margin-bottom:10px;">
-                    <t t-esc="docs and docs[0].ref or ''"/>
-                </div>
 
-                <table class="transport-table"
-                       style="width:100%; border-collapse: collapse; text-align:center; margin-top:10px;">
-                    <thead style="background-color:#2F5597; color:white;">
-                        <tr>
-                            <th>Transport ID</th>
-                            <th>Driver</th>
-                            <th>Truck Type</th>
-                            <th>Employee</th>
-                            <th>Arabic Gum Type</th>
-                            <th>Quantity</th>
-                            <th>Warehouse</th>
-                            <th>Transport Date</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <t t-foreach="docs" t-as="doc">
+                    <table style="width:60%; border-collapse:collapse; margin-bottom:15px;">
+                        <tbody>
+
                             <tr>
-                                <td t-esc="doc.transport_id"/>
-                                <td t-esc="doc.driver_id.name or '-'"/>
-                                <td t-esc="doc.truck_id.truck_type or '-'"/>
-                                <td t-esc="doc.employee_id.name or '-'"/>
-                                <td t-esc="dict(doc._fields['gum_type'].selection)[doc.gum_type]"/>
-                                <td t-esc="doc.gum_qty"/>
-                                <td t-esc="doc.warehouse_id.name or '-'"/>
-                                <td t-esc="doc.transport_date"/>
-                                <td t-esc="dict(doc._fields['state'].selection)[doc.state]"/>
+                                <td class="lbl">Transport Ref</td>
+                                <td t-esc="doc.ref"/>
                             </tr>
-                        </t>
-                    </tbody>
-                </table>
+                            <tr>
+                                <td class="lbl">Transport ID</td>
+                                <td t-esc="doc.name"/>
+                            </tr>
+                            <tr>
+                                <td class="lbl">Date</td>
+                                <td t-esc="doc.transport_date"/>
+                            </tr>
+                            <tr>
+                                <td class="lbl">Truck</td>
+                                <td t-esc="doc.truck_id.name"/>
+                            </tr>
+                            <tr>
+                                <td class="lbl">Driver</td>
+                                <td t-esc="doc.driver_name.name"/>
+                            </tr>
+                            <tr>
+                                <td class="lbl">Warehouse</td>
+                                <td t-esc="doc.warehouse_id.name"/>
+                            </tr>
+                            <tr>
+                                <td class="lbl">Purchase Order</td>
+                                <td t-esc="doc.purchase_id.name"/>
+                            </tr>
+                            <tr>
+                                <td class="lbl">State</td>
+                                <td t-esc="dict(doc._fields['state'].selection).get(doc.state)"/>
+                            </tr>
 
-                <footer class="report-footer"
-                        style="display:flex; justify-content: space-between; margin-top:20px; font-size:11px; color:#555;">
-                    <div>
-                        Prepared by:
-                        <span t-esc="docs and docs[0].env.uid and docs[0].env.user.name or 'System'"/>
-                    </div>
-                    <div class="page-number">
-                        Page <span class="pagenum"/>
-                    </div>
-                </footer>
+                        </tbody>
+                    </table>
 
-            </div>
-        </t>
+                    <table class="transport-table" style="width:100%; border-collapse:collapse;">
+                        <thead>
+                            <tr>
+                                <th>Arabic Gum Type</th>
+                                <th>Quantity (Kg)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
-        <style>
-            .transport-table th, .transport-table td {
-                border: 1px solid #ddd;
-                padding: 8px;
-            }
+                            <t t-foreach="doc.line_ids" t-as="line">
+                                <tr>
+                                    <td t-esc="dict(line._fields['gum_type'].selection).get(line.gum_type)"/>
+                                    <td t-esc="line.gum_qty"/>
+                                </tr>
+                            </t>
 
-            .transport-table th {
-                background-color: #2F5597;
-                color: white;
-            }
+                            <tr class="total-row">
+                                <td style="text-align:right;">TOTAL</td>
+                                <td t-esc="doc.total_qty"/>
+                            </tr>
 
-            .page {
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 12px;
-                color: #222;
-                padding: 20px;
-            }
+                        </tbody>
+                    </table>
 
-            hr {
-                border: none;
-                border-top: 1px solid #ddd;
-                margin: 12px 0;
-            }
+                    <footer style="display:flex; justify-content:space-between; margin-top:20px; font-size:11px; color:#555;">
+                        <div>Prepared by: <span t-esc="doc.env.user.name"/></div>
+                        <div>Page <span class="pagenum"/></div>
+                    </footer>
 
-            @media print {
+                </div>
+
+            </t>
+
+            <style>
+
                 .page {
-                    padding: 10mm;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 12px;
+                    padding: 20px;
+                    color: #222;
                 }
+
+                .lbl {
+                    font-weight:bold;
+                    width:30%;
+                    padding:4px 0px;
+                }
+
+                .transport-table th, .transport-table td {
+                    border: 1px solid #ddd;
+                    padding: 8px;
+                    text-align:center;
+                    vertical-align: top;
+                }
+
+                .transport-table thead {
+                    background-color:#eb861e;
+                    color:white;
+                }
+
+                .total-row {
+                    background-color:#f0f0f0;
+                    font-weight:bold;
+                }
+
                 .pagenum:after {
                     content: counter(page);
                 }
-            }
-        </style>
+
+            </style>
+
+        </t>
     </template>
+
 </odoo>

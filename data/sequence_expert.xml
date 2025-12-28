@@ -7,4 +7,14 @@
             <field name="padding">4</field>
         </record>
     </data>
+
+
+<!--    <record id="seq_expert_id" model="ir.sequence">-->
+<!--        <field name="name">Expert Numeric ID</field>-->
+<!--        <field name="code">expert_id</field>-->
+<!--        <field name="prefix"></field>-->
+<!--        <field name="padding">0</field>-->
+<!--        <field name="number_increment">1</field>-->
+<!--    </record>-->
+
 </odoo>

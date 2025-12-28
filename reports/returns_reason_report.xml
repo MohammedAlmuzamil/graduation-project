@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="return_reason_report_action" model="ir.actions.report">
+        <field name="name">Return Reason Report</field>
+        <field name="model">return.reason</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="binding_model_id" ref="boraush_trading.model_return_reason"/>
+        <field name="binding_type">report</field>
+        <field name="report_name">boraush_trading.return_reason_report_template</field>
+    </record>
+
+    <template id="return_reason_report_template">
+        <t t-set="report_encoding" t-value="'utf-8'"/>
+        <t t-call="web.html_container">
+            <div class="page">
+
+                <div style="display:flex; justify-content: space-between; align-items:flex-start;">
+                    <div>
+                        <img t-if="docs[0].env.company.logo"
+                             t-att-src="'data:image/png;base64,%s' % (docs[0].env.company.logo.decode())"
+                             style="width: 100px; height:auto; margin-bottom:10px;"/>
+                        <h1 t-field="docs[0].env.company.name"/>
+                        <p t-field="docs[0].env.company.street"/>
+                        <p>
+                            <span t-field="docs[0].env.company.phone"/>
+                            |
+                            <span t-field="docs[0].env.company.email"/>
+                        </p>
+                    </div>
+
+
+                </div>
+
+
+                <table style="width:50%; border-collapse:collapse; margin-top:10px;">
+                    <tbody>
+                        <tr>
+                            <td style="font-weight:bold; width:50%;">Return Date</td>
+                            <td style="text-align:right;" t-esc="docs[0].return_date or '-'"/>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:bold;">Sale Order ID</td>
+                            <td style="text-align:right;" t-esc="docs[0].order_id.name or '-'"/>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 style="margin-top:20px;">Reason for Return</h3>
+                <div class="reason-box">
+                    <p style="padding:10px;">
+                        <t t-esc="docs[0].name"/>
+                    </p>
+                </div>
+
+                <footer style="display:flex; justify-content:space-between; margin-top:20px; font-size:11px; color:#555;">
+                    <div>Prepared by:
+                        <span t-esc="docs[0].env.user.name or 'System'"/>
+                    </div>
+                    <div>Page
+                        <span class="pagenum"/>
+                    </div>
+                </footer>
+
+            </div>
+        </t>
+
+        <style>
+            .page {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            padding: 20px;
+            color: #222;
+            }
+            hr {
+            border-top: 1px solid #ddd;
+            }
+            table td {
+            padding: 6px 4px;
+            }
+            .reason-box {
+            border: 1px solid #DDD;
+            background:#fdfdfd;
+            }
+            @media print {
+            .page { padding: 10mm; }
+            .pagenum:after { content: counter(page); }
+            }
+        </style>
+    </template>
+
+</odoo>

@@ -6,7 +6,7 @@ class Market(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     active = fields.Boolean(default=True)
-    ref = fields.Char(default='New', readonly=1)
+    ref = fields.Char(default='New', readonly=1,string="Number")
     market_id = fields.Char(string="Market ID", required=True,tracking=True)
     name = fields.Char(string="Market Name", required=True,tracking=True)
     address_id = fields.Many2one('address',string="Market Address", required=True,tracking=True)

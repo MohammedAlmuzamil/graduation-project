@@ -4,20 +4,14 @@
         <field name="name">address tree</field>
         <field name="model">address</field>
         <field name="arch" type="xml">
-            <tree>
-<!--                <field name="employee_id"/>-->
+            <tree string="Address">
                 <field name="ref"/>
+                <field name="address_id"/>
                 <field name="name"/>
+                <field name="postcode"/>
+                <field name="street_no"/>
+                <field name="building_no"/>
                 <field name="active" invisible="True"/>
-                <field name="continent"/>
-                <field name="country_id"/>
-                <field name="country_name"/>
-                <field name="state_id"/>
-                <field name="state_name"/>
-                <field name="locality_id"/>
-                <field name="locality_name"/>
-                <field name="city_id"/>
-                <field name="city_name"/>
             </tree>
         </field>
     </record>
@@ -26,7 +20,7 @@
         <field name="name">address form</field>
         <field name="model">address</field>
         <field name="arch" type="xml">
-            <form>
+            <form string="Address">
                 <sheet>
                     <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
                     <div class="oe_title">
@@ -37,20 +31,14 @@
                     </div>
                     <group>
                         <group string="General info">
-<!--                            <field name="employee_id"/>-->
-                            <field name="name"/>
+                            <field name="address_id"/>
+                            <field name="name" placeholder="Enter Locality Name"/>
                             <field name="active" invisible="True"/>
-                            <field name="continent"/>
-                            <field name="country_id"/>
-                            <field name="country_name"/>
                         </group>
-                        <group string="Country info">
-                            <field name="state_id"/>
-                            <field name="state_name"/>
-                            <field name="locality_id"/>
-                            <field name="locality_name"/>
-                            <field name="city_id"/>
-                            <field name="city_name"/>
+                        <group string="Additional info">
+                            <field name="postcode"/>
+                            <field name="street_no"/>
+                            <field name="building_no"/>
                         </group>
                     </group>
                 </sheet>
@@ -69,10 +57,29 @@
         <field name="model">address</field>
         <field name="arch" type="xml">
             <search>
-                <field name="country_id"/>
-                <field name="state_id"/>
-                <field name="locality_id"/>
-                <field name="city_id"/>
+                <field name="address_id"/>
+
+<!--                <filter name="Khartoum" string="Khartoum" domain="[('state_name','=','khartoum')]"/>-->
+<!--                <filter name="North Kordofan" string="North Kordofan" domain="[('state_name','=','north_kordofan')]"/>-->
+<!--                <filter name="South Kordofan" string="South Kordofan" domain="[('state_name','=','south_kordofan')]"/>-->
+<!--                <filter name="West Kordofan" string="West Kordofan" domain="[('state_name','=','west_kordofan')]"/>-->
+<!--                <filter name="North Darfur" string="North Darfur" domain="[('state_name','=','north_darfur')]"/>-->
+<!--                <filter name="South Darfur" string="South Darfur" domain="[('state_name','=','south_darfur')]"/>-->
+<!--                <filter name="East Darfur" string="East Darfur" domain="[('state_name','=','east_darfur')]"/>-->
+<!--                <filter name="West Darfur" string="West Darfur" domain="[('state_name','=','west_darfur')]"/>-->
+<!--                <filter name="Central Darfur" string="Central Darfur" domain="[('state_name','=','central_darfur')]"/>-->
+<!--                <filter name="River Nile" string="River Nile" domain="[('state_name','=','river_nile')]"/>-->
+<!--                <filter name="Northern" string="Northern" domain="[('state_name','=','northern')]"/>-->
+<!--                <filter name="Red Sea" string="Red Sea" domain="[('state_name','=','red_sea')]"/>-->
+<!--                <filter name="Kassala" string="Kassala" domain="[('state_name','=','kassala')]"/>-->
+<!--                <filter name="Gedaref" string="Gedaref" domain="[('state_name','=','gedaref')]"/>-->
+<!--                <filter name="Sennar" string="Sennar" domain="[('state_name','=','sennar')]"/>-->
+<!--                <filter name="Blue Nile" string="Blue Nile" domain="[('state_name','=','blue_nile')]"/>-->
+<!--                <filter name="White Nile" string="White Nile" domain="[('state_name','=','white_nile')]"/>-->
+<!--                <filter name="Gezira" string="Gezira" domain="[('state_name','=','gezira')]"/>-->
+
+
+<!--                <filter name="group" string="Khartom" context="{'group_by': 'name'}"/>-->
             </search>
         </field>
     </record>

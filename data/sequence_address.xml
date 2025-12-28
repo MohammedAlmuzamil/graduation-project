@@ -7,4 +7,13 @@
             <field name="padding">4</field>
         </record>
     </data>
+
+<!--    <record id="seq_address_id" model="ir.sequence">-->
+<!--        <field name="name">Address ID</field>-->
+<!--        <field name="code">address_id</field>-->
+<!--        <field name="prefix"></field>-->
+<!--        <field name="padding">0</field>-->
+<!--        <field name="number_increment">1</field>-->
+<!--    </record>-->
+
 </odoo>

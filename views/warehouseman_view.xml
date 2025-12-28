@@ -6,11 +6,13 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="ref"/>
+                <field name="name"/>
                 <field name="employee_id"/>
-                <field name="active" invisible="True"/>
                 <field name="warehouse_id"/>
+                <field name="hire_date"/>
                 <field name="email"/>
                 <field name="address"/>
+                <field name="active" invisible="True"/>
             </tree>
         </field>
     </record>
@@ -31,16 +33,22 @@
                     <group>
                         <group string="General info">
                             <field name="active" invisible="True"/>
+                            <field name="name"/>
                             <field name="employee_id"/>
                             <field name="warehouse_id"/>
                         </group>
                         <group string="Additional info">
+                            <field name="hire_date"/>
                             <field name="email"/>
-                            <field name="address"/>
+                            <field name="address"
+                                   options="{'no_create': False}"
+                                   context="{'default_employee_id': active_id}"
+                                   placeholder="State Locality City"
+                            />
                         </group>
                     </group>
                 </sheet>
-                    <div class="oe_chatter">
+                <div class="oe_chatter">
                     <field name="message_follower_ids"/>
                     <field name="activity_ids"/>
                     <field name="message_ids"/>
@@ -55,12 +63,11 @@
         <field name="model">warehouseman</field>
         <field name="arch" type="xml">
             <search>
-                <field name="employee_id"/>
+                <field name="name"/>
                 <field name="warehouse_id"/>
             </search>
         </field>
     </record>
-
 
 
     <record id="warehouseman_action" model="ir.actions.act_window">
@@ -69,12 +76,10 @@
     </record>
 
 
-
-
     <menuitem
-          id="warehouseman_menu_item"
-          name="Warehouseman"
-          parent="assets_menu"
-          action="warehouseman_action"
+            id="warehouseman_menu_item"
+            name="Warehouseman"
+            parent="assets_menu"
+            action="warehouseman_action"
     />
 </odoo>

@@ -6,15 +6,13 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="ref"/>
-                <field name="active" invisible="True"/>
-                <field name="transport_id"/>
-                <field name="driver_id"/>
-                <field name="employee_id"/>
+                <field name="name"/>
+                <field name="driver_name"/>
+<!--                <field name="employee_id"/>-->
                 <field name="warehouse_id"/>
                 <field name="truck_id"/>
-                <field name="gum_type"/>
-                <field name="gum_qty"/>
                 <field name="transport_date"/>
+                <field name="active" invisible="True"/>
             </tree>
         </field>
     </record>
@@ -26,16 +24,17 @@
             <form>
                 <sheet>
                     <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
-                    <widget name="web_ribbon" title="Delivered" bg_color="text-bg-success" invisible="state != 'delivered'"/>
+                    <widget name="web_ribbon" title="Delivered" bg_color="text-bg-success"
+                            invisible="state != 'delivered'"/>
                     <header>
                         <button name="action_pending" type="object" class="btn-warning" string="Pending"
-                        invisible="state in ('pending','delivered','loaded','in_transit')"/>
+                                invisible="state in ('pending','delivered','loaded','in_transit')"/>
                         <button name="action_loaded" type="object" class="btn-primary" string="Loaded"
-                        invisible="state != 'pending'"/>
+                                invisible="state != 'pending'"/>
                         <button name="action_in_transit" type="object" class="btn-info" string="In Transit"
-                        invisible="state != 'loaded' "/>
+                                invisible="state != 'loaded' "/>
                         <button name="action_delivered" type="object" class="btn-success" string="Delivered"
-                        invisible="state != 'in_transit' "/>
+                                invisible="state != 'in_transit' "/>
                         <field name="state" widget="statusbar"/>
                     </header>
                     <div class="oe_title">
@@ -47,20 +46,34 @@
                     <group>
                         <group string="General info">
                             <field name="active" invisible="True"/>
-                            <field name="transport_id" readonly="state=='delivered'"/>
-                            <field name="employee_id" readonly="state=='delivered'"/>
-                            <field name="driver_id" readonly="state=='delivered'"/>
-                            <field name="warehouse_id" readonly="state=='delivered'"/>
+                            <field name="name" readonly="state=='delivered'"/>
+                            <field name="purchase_id" placeholder="Purchase To Be Transport" readonly="state=='delivered'"/>
+<!--                            <field name="employee_id" placeholder="Employee Name" readonly="state=='delivered'"/>-->
+                            <field name="warehouse_id" placeholder="Warehouse Name" readonly="state=='delivered'"/>
                         </group>
                         <group string="Additional info">
-                            <field name="truck_id" readonly="state=='delivered'"/>
-                            <field name="gum_type" readonly="state=='delivered'"/>
-                            <field name="gum_qty" readonly="state=='delivered'"/>
+                            <field name="truck_id" placeholder="Truck ID" readonly="state=='delivered'"/>
+                            <field name="driver_name" placeholder="Driver Name" readonly="state=='delivered'"/>
                             <field name="transport_date" readonly="state=='delivered'"/>
+                            <field name="note" placeholder="Description" readonly="state=='delivered'"/>
                         </group>
                     </group>
+                    <notebook>
+                        <page string="Transport Details">
+                            <field name="line_ids">
+                                <tree editable="bottom">
+                                    <field name="gum_type"/>
+                                    <field name="gum_qty"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                    <div style="text-align: right; margin-top: 15px; font-weight: bold;">
+                        Total Transported Quantity Kg :
+                        <field name="total_qty" readonly="1"/>
+                    </div>
                 </sheet>
-                    <div class="oe_chatter">
+                <div class="oe_chatter">
                     <field name="message_follower_ids"/>
                     <field name="activity_ids"/>
                     <field name="message_ids"/>
@@ -75,13 +88,15 @@
         <field name="model">goods.transport</field>
         <field name="arch" type="xml">
             <search>
-                <field name="employee_id"/>
-                <field name="truck_id"/>
-                <field name="driver_id"/>
+                <field name="name"/>
+
+                <filter name="Pending" string="Pending" domain="[('state','=','pending')]"/>
+                <filter name="Loaded" string="Loaded" domain="[('state','=','loaded')]"/>
+                <filter name="In Transit" string="In Transit" domain="[('state','=','in_transit')]"/>
+                <filter name="Delivered" string="Delivered" domain="[('state','=','delivered')]"/>
             </search>
         </field>
     </record>
-
 
 
     <record id="goods_transport_action" model="ir.actions.act_window">
@@ -90,12 +105,10 @@
     </record>
 
 
-
-
     <menuitem
-          id="goods_transport_menu_item"
-          name="Goods Transport"
-          parent="operation_menu"
-          action="goods_transport_action"
+            id="goods_transport_menu_item"
+            name="Goods Transport"
+            parent="operation_menu"
+            action="goods_transport_action"
     />
 </odoo>

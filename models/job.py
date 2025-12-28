@@ -6,7 +6,7 @@ class Job(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     active = fields.Boolean(default=True)
-    ref = fields.Char(default='New', readonly=1)
+    ref = fields.Char(default='New', readonly=1,string="Number")
     name = fields.Char(string="Job Name", required=True,tracking=True)
     job_number = fields.Integer(string="Job ID", required=True,tracking=True)
     grade = fields.Char(string="Job Grade",tracking=True)

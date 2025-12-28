@@ -7,10 +7,11 @@
             <tree>
                 <field name="ref"/>
                 <field name="name"/>
-                <field name="active" invisible="True"/>
                 <field name="warehouseman_id"/>
                 <field name="warehouse_id"/>
+                <field name="address_id"/>
                 <field name="end_service_date"/>
+                <field name="active" invisible="True"/>
             </tree>
         </field>
     </record>
@@ -21,11 +22,11 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
-<!--                    <div name="button_box" class="oe_button_box">-->
-<!--                        <button name="action_open_related_employee"-->
-<!--                                type="object" icon="fa-user" string="Warehouseman"-->
-<!--                                invisible="not warehouseman_id"/>-->
-<!--                    </div>-->
+                    <div name="button_box" class="oe_button_box">
+                        <button name="action_open_related_employee"
+                                type="object" icon="fa-user" string="Warehouseman"
+                                invisible="not warehouseman_id"/>
+                    </div>
                     <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
                     <div class="oe_title">
                         <label for="ref"/>
@@ -37,11 +38,12 @@
                         <group string="General info">
                             <field name="name"/>
                             <field name="active" invisible="True"/>
-                            <field name="warehouseman_id"/>
+                            <field name="warehouse_id"/>
                         </group>
                         <group string="Additional info">
-                            <field name="warehouse_id"/>
+                            <field name="warehouseman_id"/>
                             <field name="end_service_date"/>
+                            <field name="address_id" placeholder="City Street Building NO"/>
                         </group>
                     </group>
                 </sheet>

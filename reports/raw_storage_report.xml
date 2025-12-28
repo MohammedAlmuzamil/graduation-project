@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="raw_storage_report" model="ir.actions.report">
+        <field name="name">Raw Storage Report</field>
+        <field name="model">raw.storage</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="binding_model_id" ref="boraush_trading.model_raw_storage"/>
+        <field name="binding_type">report</field>
+        <field name="report_name">boraush_trading.raw_storage_report_template</field>
+    </record>
+
+
+    <template id="raw_storage_report_template">
+        <t t-call="web.html_container">
+
+            <t t-foreach="docs" t-as="doc">
+
+                <div class="page">
+
+                    <div class="report-header"
+                         style="display:flex; justify-content: space-between; align-items:flex-start;">
+
+                        <div style="text-align:left;">
+                            <img t-if="doc.env.company.logo"
+                                 t-att-src="'data:image/png;base64,%s' % (doc.env.company.logo.decode())"
+                                 style="width:100px; margin-bottom:10px;"/>
+                            <h2 t-field="doc.env.company.name"/>
+                            <p t-field="doc.env.company.street"/>
+                            <p>
+                                <span t-field="doc.env.company.phone"/>
+                                |
+                                <span t-field="doc.env.company.email"/>
+                            </p>
+                        </div>
+
+                        <div style="text-align:right;">
+                            <h2 style="margin:0; font-size:22px;">Raw Storage Report</h2>
+                        </div>
+                    </div>
+
+                    <hr/>
+
+                    <table class="summary-table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <strong>Warehouse:</strong>
+                                </td>
+                                <td>
+                                    <t t-esc="doc.warehouse_id.name or '-'"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Receiving Date:</strong>
+                                </td>
+                                <td>
+                                    <t t-esc="doc.storing_date"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                    <table class="item-table" style="width:100%; border-collapse:collapse; text-align:center;">
+                        <thead>
+                            <tr>
+                                <th>Arabic Gum Type</th>
+                                <th>Quantity (KG)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="doc.line_ids" t-as="line">
+                                <tr>
+                                    <td t-esc="dict(line._fields['arabic_gum_type'].selection).get(line.arabic_gum_type)"/>
+                                    <td t-esc="line.quantity"/>
+                                </tr>
+                            </t>
+                        </tbody>
+
+                        <tfoot>
+                            <tr class="total-row">
+                                <td>
+                                    <strong>Total:</strong>
+                                </td>
+                                <td>
+                                    <strong>
+                                        <t t-esc="doc.total_quantity"/>
+                                        KG
+                                    </strong>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                    <footer style="display:flex; justify-content: space-between; margin-top:25px; font-size:11px; color:#555;">
+                        <div>Prepared by:
+                            <span t-esc="doc.env.user.name"/>
+                        </div>
+                        <div>Page
+                            <span class="pagenum"/>
+                        </div>
+                    </footer>
+
+                </div>
+
+            </t>
+
+            <style>
+                .page {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 13px;
+                padding: 20px;
+                color: #222;
+                }
+
+                .summary-table td {
+                padding: 4px 10px;
+                }
+
+                .item-table th, .item-table td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                }
+
+                .item-table thead {
+                background-color: #eb861e;
+                color: white;
+                }
+
+                .total-row {
+                color: black;
+                font-size: 14px;
+                }
+
+                hr {
+                border-top: 1px solid #ccc;
+                margin: 10px 0;
+                }
+
+                @media print {
+                .pagenum:after { content: counter(page); }
+                }
+            </style>
+
+        </t>
+    </template>
+
+
+</odoo>

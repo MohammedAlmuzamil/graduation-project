@@ -5,10 +5,14 @@
         <field name="model">inventory.of.tallying.product</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="active" invisible="True"/>
+                <field name="ref"/>
+                <field name="name"/>
                 <field name="product_id"/>
                 <field name="date"/>
+                <field name="supervisor_id"/>
+                <field name="warehouse_id"/>
                 <field name="description"/>
+                <field name="active" invisible="True"/>
             </tree>
         </field>
     </record>
@@ -19,33 +23,49 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <button name="action_load_all_gum_types" type="object" string="Load All Types" class="oe_highlight"/>
-                    <button name="action_clean_gums"
+                    <button name="action_cleaned"
                             string="Clean Gums"
                             type="object"
                             class="btn-success"
+                            invisible ="state == 'cleaned'"
+                            />
+                    <button name="action_view_gum_stock"
+                            string="View Gum Stock"
+                            type="object"
+                            class="btn-info"
+                            invisible ="state == 'cleaned'"
                             />
                 </header>
                 <sheet>
                     <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <div class="oe_title">
+                        <label for="ref"/>
+                        <h1>
+                            <field name="ref"/>
+                        </h1>
+                    </div>
                     <group>
-                        <group string="General info">
+                        <group string="Product ID">
                             <field name="active" invisible="True"/>
-                            <field name="product_id"/>
+                            <field name="state" invisible="1"/>
+                            <field name="name"/>
+                            <field name="product_id" placeholder="Raw Cum ID"/>
                         </group>
                         <group string="Additional info">
+                            <field name="supervisor_id" placeholder="Supervisor Name"/>
+                            <field name="warehouse_id" placeholder="Warehouse Name"/>
                             <field name="date"/>
-                            <field name="description"/>
-
+                        </group>
+                        <group string="Description">
+                            <field name="description" placeholder="Write Your Notes Here"/>
                         </group>
                     </group>
                     <notebook>
                         <page string="Cleaning Details">
                             <field name="line_ids">
                                 <tree editable="bottom">
-                                <field name="gum_type_id"/>
-                                <field name="gum_type"/>
-                                <field name="original_quantity"/>
+                                <field name="arabic_gum_type"/>
+                                <field name="quantity"/>
                                 <field name="net_quantity"/>
                                 <field name="refined_quantity"/>
                                 </tree>
@@ -53,8 +73,8 @@
                         </page>
                     </notebook>
                     <div style="text-align: right; margin-top: 15px; font-weight: bold;">
-                        Total Refined Quantity: KG
-                        <field name="total_refined_text" readonly="1"/>
+                        Total Refined Quantity: Kg :
+                        <field name="total_refined_quantity" readonly="1"/>
                     </div>
                 </sheet>
                     <div class="oe_chatter">
@@ -72,6 +92,7 @@
         <field name="model">inventory.of.tallying.product</field>
         <field name="arch" type="xml">
             <search>
+                <field name="name"/>
                 <field name="product_id"/>
             </search>
         </field>

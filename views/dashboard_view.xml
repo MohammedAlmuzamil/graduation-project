@@ -1,0 +1,110 @@
+<odoo>
+
+
+<!--    <record id="view_report_period_wizard" model="ir.ui.view">-->
+<!--    <field name="name">report period wizard form</field>-->
+<!--    <field name="model">report.period.wizard</field>-->
+<!--    <field name="arch" type="xml">-->
+<!--        <form string="Report Period">-->
+<!--            <sheet>-->
+<!--                <group>-->
+<!--                    <field name="date_from"/>-->
+<!--                    <field name="date_to"/>-->
+<!--                </group>-->
+<!--                <footer>-->
+<!--                    <button string="Print Report" type="object" name="print_report" class="btn-primary"/>-->
+<!--                    <button string="Cancel" class="btn-secondary" special="cancel"/>-->
+<!--                </footer>-->
+<!--            </sheet>-->
+<!--        </form>-->
+<!--    </field>-->
+<!--</record>-->
+
+
+    <record id="view_report_period_wizard" model="ir.ui.view">
+    <field name="name">report period wizard form</field>
+    <field name="model">report.period.wizard</field>
+    <field name="arch" type="xml">
+        <form string="report dashboard">
+            <sheet>
+                <group>
+                    <h2>Report Period</h2>
+                    <field name="report_type" placeholder="Choose report type"/>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                    <button string="Print" type="object" name="print_period_report" class="btn-primary"/>
+
+                    <separator string=" " colspan="2"/>
+
+                    <h2>report relavent</h2>
+                    <div class="o_horizontal_separator"/>
+                    <group col="2">
+                        <button string="arabic gum type" type="object"
+                                name="print_relative_report" args="('gum_types_chart',)"/>
+                    </group>
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+<!--    <record id="view_report_period_wizard" model="ir.ui.view">-->
+<!--        <field name="name">report period wizard form</field>-->
+<!--        <field name="model">report.period.wizard</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <form string="report dashboard">-->
+<!--                <sheet>-->
+<!--                    <h1>Business Dashboard</h1>-->
+<!--                    <div class="oe_button_box" name="button_box"/>-->
+<!--                    <div class="oe_title">-->
+<!--                        <h2>Reports Overview</h2>-->
+<!--                    </div>-->
+
+<!--                    <div class="o_row">-->
+<!--                        <div class="o_col">-->
+<!--                            <button name="action_sales_report" type="object"-->
+<!--                                    string="Sales Report" class="btn btn-primary"/>-->
+<!--                        </div>-->
+<!--                        <div class="o_col">-->
+<!--                            <button name="action_purchase_report" type="object"-->
+<!--                                    string="Purchase Report" class="btn btn-secondary"/>-->
+<!--                        </div>-->
+<!--                        <div class="o_col">-->
+<!--                            <button name="action_stock_report" type="object"-->
+<!--                                    string="Stock Report" class="btn btn-info"/>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    <separator string="Summary"/>-->
+<!--                    <group>-->
+<!--                        <field name="name" readonly="1"/>-->
+<!--                    </group>-->
+
+<!--                    <div>-->
+<!--                        <p>Sales Orders: <t t-esc="record.get_sales_count()"/></p>-->
+<!--                        <p>Purchase Orders: <t t-esc="record.get_purchase_count()"/></p>-->
+<!--                        <p>Customers: <t t-esc="record.get_partner_count()"/></p>-->
+<!--                    </div>-->
+<!--                </sheet>-->
+<!--            </form>-->
+<!--        </field>-->
+<!--    </record>-->
+
+
+
+
+    <record id="action_report_period_wizard" model="ir.actions.act_window">
+        <field name="name">period report</field>
+        <field name="res_model">report.period.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">current</field>
+    </record>
+
+
+    <menuitem
+            id="Dashboard_menu_item"
+            name="Dashboard"
+            parent="dashboard_menu"
+            action="action_report_period_wizard"
+    />
+</odoo>

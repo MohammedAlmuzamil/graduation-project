@@ -7,10 +7,9 @@
             <tree>
                 <field name="ref"/>
                 <field name="unit_name"/>
-                <field name="active" invisible="True"/>
                 <field name="name"/>
-<!--                <field name="unit_id"/>-->
                 <field name="code"/>
+                <field name="active" invisible="True"/>
             </tree>
         </field>
     </record>

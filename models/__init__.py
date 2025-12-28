@@ -13,13 +13,8 @@ from . import warehouseman
 from . import arabic_gum_type
 from . import unit
 from . import arabic_gum_price
-from . import arabic_gum
-from . import pure
-from . import tallying_product
-from . import purity_inventory
 from . import procure_order
 from . import purchase
-from . import pure_store
 from . import purity_storage
 from . import raw_storage
 from . import goods_transport
@@ -28,6 +23,8 @@ from . import order
 from . import returns
 from . import return_reason
 from . import inventory_of_tallying_product
-from . import raw_storage_receipt
 from . import supervisor
 from . import gum_stock
+from . import states
+from . import localities
+from . import cities

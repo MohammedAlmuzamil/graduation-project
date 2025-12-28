@@ -6,7 +6,7 @@ class Unit(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     active = fields.Boolean(default=True)
-    ref = fields.Char(default='New', readonly=1)
+    ref = fields.Char(default='New', readonly=1,string="Number")
     unit_name = fields.Selection([
         ('kilogram','Kilogram'),
         ('tonne','Tonne'),

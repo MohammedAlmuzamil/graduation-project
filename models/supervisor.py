@@ -1,7 +1,7 @@
 import re
 from odoo import models,fields,api
 
-from odoo17.odoo.exceptions import ValidationError
+from odoo.exceptions import ValidationError
 
 
 class Supervisor(models.Model):
@@ -10,25 +10,29 @@ class Supervisor(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     active = fields.Boolean(default=True)
-    ref = fields.Char(default='New' , readonly=1)
+    ref = fields.Char(default='New' , readonly=1,string="Number")
     name = fields.Char(string="Supervisor Name",tracking=True,required=True)
     supervisor_id = fields.Integer(string="Supervisor ID",tracking=True,required=True)
     phone = fields.Char(string="Phone Number",tracking=True,required=True,default="+249")
-    email = fields.Char(string="Email",tracking=True,required=True, default="example@email.com")
-    address = fields.Text(string="Address",tracking=True,required=True)
+    email = fields.Char(string="Email",tracking=True,required=True, default="example@gmail.com")
+    address = fields.Many2one(
+        'address',
+        string="Address",
+        tracking=True
+    )
     hire_date = fields.Date(string="Hire Date",tracking=True,required=True,default=fields.Datetime.now())
 
     _sql_constraints = [
-        ('unique_id', 'unique("supervisor_id")', 'This ID Is Exist!')
+        ('unique_id', 'unique("supervisor_id")', 'This Supervisor ID Is Exist!')
     ]
 
+    @api.constrains('supervisor_id')
+    def _check_supervisor_id_validity(self):
+        for rec in self:
+            if not rec.supervisor_id or rec.supervisor_id <=0 :
+                raise ValidationError("This Supervisor ID Is Not Valid")
 
-    # @api.model
-    # def create(self,vals):
-    #     res = super(Supervisor,self).create(vals)
-    #     if res.ref == 'New':
-    #         res.ref = self.env['ir.sequence'].next_by_code('supervisor_seq')
-    #     return res
+
 
     @api.model
     def default_get(self, fields_list):
@@ -58,10 +62,12 @@ class Supervisor(models.Model):
         email_pattern = r"^[\w\.-]+@[\w\.-]+\.\w+$"
         for rec in self:
             if rec.email and not re.match(email_pattern, rec.email):
-                raise ValidationError("Please enter a valid email address!")
+                raise ValidationError("Please Enter A Valid Email Address!")
+
+
 
     @api.constrains('phone')
     def _check_phone_number(self):
         for rec in self:
             if rec.phone and not rec.phone.startswith('+249'):
-                raise ValidationError("Phone number must start with Sudan's code +249!")
+                raise ValidationError("Phone Number Must Start With Sudan's Code +249!")

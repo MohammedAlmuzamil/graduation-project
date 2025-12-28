@@ -14,12 +14,7 @@ access_warehouseman,access_warehouseman,model_warehouseman,,1,1,1,1
 access_arabic_gum_type,access_arabic_gum_type,model_arabic_gum_type,,1,1,1,1
 access_unit,access_unit,model_unit,,1,1,1,1
 access_arabic_gum_price,access_arabic_gum_price,model_arabic_gum_price,,1,1,1,1
-access_arabic_gum,access_arabic_gum,model_arabic_gum,,1,1,1,1
-access_pure,access_pure,model_pure,,1,1,1,1
-access_tallying_product,access_tallying_product,model_tallying_product,,1,1,1,1
-access_purity_inventory,access_purity_inventory,model_purity_inventory,,1,1,1,1
 access_procure_order,access_procure_order,model_procure_order,,1,1,1,1
-access_pure_store,access_pure_store,model_pure_store,,1,1,1,1
 access_purchase,access_purchase,model_purchase,,1,1,1,1
 access_purity_storage,access_purity_storage,model_purity_storage,,1,1,1,1
 access_raw_storage,access_raw_storage,model_raw_storage,,1,1,1,1
@@ -29,11 +24,23 @@ access_order,access_order,model_order,,1,1,1,1
 access_returns,access_returns,model_returns,,1,1,1,1
 access_return_reason,access_return_reason,model_return_reason,,1,1,1,1
 access_inventory_of_tallying_product,access_inventory_of_tallying_product,model_inventory_of_tallying_product,,1,1,1,1
-access_raw_storage_receipt,access_raw_storage_receipt,model_raw_storage_receipt,,1,1,1,1
 access_supervisor,access_supervisor,model_supervisor,,1,1,1,1
 access_gum_stock,access_gum_stock,model_gum_stock,,1,1,1,1
 access_inventory_of_tallying_product_line,access_inventory_of_tallying_product_line,model_inventory_of_tallying_product_line,,1,1,1,1
 access_sale_line,access_sale_line,model_sale_line,,1,1,1,1
 access_purchase_line,access_purchase_line,model_purchase_line,,1,1,1,1
 access_returns_line,access_returns_line,model_returns_line,,1,1,1,1
+access_period_report,access_period_report,model_period_report,,1,1,1,1
+access_goods_transport_line,access_goods_transport_line,model_goods_transport_line,,1,1,1,1
+access_procure_order_line,access_procure_order_line,model_procure_order_line,,1,1,1,1
+access_order_line,access_order_line,model_order_line,,1,1,1,1
+access_arabic_gum_type_line,access_arabic_gum_type_line,model_arabic_gum_type_line,,1,1,1,1
+access_raw_storage_line,access_raw_storage_line,model_raw_storage_line,,1,1,1,1
+access_purity_storage_line,access_purity_storage_line,model_purity_storage_line,,1,1,1,1
+access_arabic_gum_price_line,access_arabic_gum_price_line,model_arabic_gum_price_line,,1,1,1,1
+access_states,access_states,model_states,,1,1,1,1
+access_localities,access_localities,model_localities,,1,1,1,1
+access_cities,access_cities,model_cities,,1,1,1,1
+access_purchase_analysis_wizard,access_purchase_analysis_wizard,model_purchase_analysis_wizard,boraush_trading.boraush_trading_user_group,1,1,1,1
+access_sale_analysis_wizard,access_sale_analysis_wizard,model_sale_analysis_wizard,boraush_trading.boraush_trading_user_group,1,1,1,1
 

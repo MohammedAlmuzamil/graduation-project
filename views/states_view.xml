@@ -1,0 +1,89 @@
+<odoo>
+
+    <record id="states_view_tree" model="ir.ui.view">
+        <field name="name">states tree</field>
+        <field name="model">states</field>
+        <field name="arch" type="xml">
+            <tree string="states">
+                <field name="state_id"/>
+                <field name="name"/>
+                <field name="active" invisible="True"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="states_view_form" model="ir.ui.view">
+        <field name="name">states form</field>
+        <field name="model">states</field>
+        <field name="arch" type="xml">
+            <form string="states">
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <group>
+                        <group string="General info">
+                            <field name="state_id"/>
+                            <field name="name"/>
+                            <field name="active" invisible="True"/>
+                        </group>
+                    </group>
+                </sheet>
+                    <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="states_view_search" model="ir.ui.view">
+        <field name="name">states search</field>
+        <field name="model">states</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="state_id"/>
+
+
+
+                <filter name="Khartoum" string="Khartoum" domain="[('name','=','khartoum')]"/>
+                <filter name="North Kordofan" string="North Kordofan" domain="[('name','=','north kordofan')]"/>
+                <filter name="South Kordofan" string="South Kordofan" domain="[('name','=','south kordofan')]"/>
+                <filter name="West Kordofan" string="West Kordofan" domain="[('name','=','west kordofan')]"/>
+                <filter name="North Darfur" string="North Darfur" domain="[('name','=','north darfur')]"/>
+                <filter name="South Darfur" string="South Darfur" domain="[('name','=','south darfur')]"/>
+                <filter name="East Darfur" string="East Darfur" domain="[('name','=','east darfur')]"/>
+                <filter name="West Darfur" string="West Darfur" domain="[('name','=','west darfur')]"/>
+                <filter name="Central Darfur" string="Central Darfur" domain="[('name','=','central darfur')]"/>
+                <filter name="River Nile" string="River Nile" domain="[('name','=','river nile')]"/>
+                <filter name="Northern" string="Northern" domain="[('name','=','northern')]"/>
+                <filter name="Red Sea" string="Red Sea" domain="[('name','=','red sea')]"/>
+                <filter name="Kassala" string="Kassala" domain="[('name','=','kassala')]"/>
+                <filter name="Gedaref" string="Gedaref" domain="[('name','=','gedaref')]"/>
+                <filter name="Sennar" string="Sennar" domain="[('name','=','sennar')]"/>
+                <filter name="Blue Nile" string="Blue Nile" domain="[('name','=','blue nile')]"/>
+                <filter name="White Nile" string="White Nile" domain="[('name','=','white nile')]"/>
+                <filter name="Gezira" string="Gezira" domain="[('name','=','gezira')]"/>
+
+
+            </search>
+        </field>
+    </record>
+
+
+
+    <record id="states_action" model="ir.actions.act_window">
+        <field name="name">states</field>
+        <field name="res_model">states</field>
+    </record>
+
+
+
+
+    <menuitem
+          id="states_menu_item"
+          name="States"
+          parent="location_menu"
+          action="states_action"
+    />
+</odoo>

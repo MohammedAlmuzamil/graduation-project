@@ -1,251 +1,187 @@
+from odoo import models, fields, api
+from odoo.exceptions import UserError
 
-from odoo import models,fields,api
 
-from odoo17.odoo.exceptions import ValidationError, UserError
 class InventoryOfTallyingProduct(models.Model):
     _name = 'inventory.of.tallying.product'
     _description = 'Inventory Of Tallying Product'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     active = fields.Boolean(default=True)
-    product_id = fields.Char(string="Product ID", required=True, tracking=True)
-    date = fields.Date(string="Date", required=True, tracking=True, default=fields.Datetime.now())
+    ref = fields.Char(default='New', readonly=1, copy=False, string="Number")
+    name = fields.Integer(string="Talling Product ID", required=True, tracking=True)
+    product_id = (fields.Many2one
+        (
+        'raw.storage',
+        string="Arabic Gum ID",
+        required=True,
+        tracking=True,
+        domain=[('is_cleaned', '=', False)]
+    ))
+
+    date = fields.Date(string="Cleaning Date", required=True, tracking=True, default=fields.Date.context_today)
     description = fields.Text(string="Note", required=True, tracking=True)
+
     line_ids = fields.One2many(
         'inventory.of.tallying.product.line',
-        'cleaning_id',
+        'tallying_id',
         string="Cleaning Details"
     )
+
     state = fields.Selection([
         ('draft', 'Draft'),
-        ('cleaned', 'Cleaned'),
+        ('cleaned', 'Cleaned')
     ], string="Status", default='draft', tracking=True)
 
-    total_refined_text = fields.Char(compute="_compute_total_refined_text")
+    total_refined_quantity = fields.Float(
+        compute="_compute_total_refined_quantity",
+        string="Total Refined Quantity"
+    )
+
+    supervisor_id = fields.Many2one('supervisor',string="Supervisor Name", required=True, tracking=True)
+    warehouse_id = fields.Many2one('warehouse', string="Warehouse", required=True, tracking=True)
+
+
+    _sql_constraints = [
+        ('unique_talling_product_id', 'unique("name")', 'This Talling Product ID Is  Already Exists!')
+    ]
+
+
+    @api.constrains('name')
+    def _check_talling_product_id_validty(self):
+        for rec in self:
+            if not rec.name or rec.name <=0 :
+                raise UserError("This Talling Product ID Is Not Valid")
+
+
+
+
 
     @api.depends('line_ids.refined_quantity')
-    def _compute_total_refined_text(self):
+    def _compute_total_refined_quantity(self):
         for rec in self:
-            total = sum(line.refined_quantity for line in rec.line_ids)
-            rec.total_refined_text = total
+            rec.total_refined_quantity = sum(line.refined_quantity for line in rec.line_ids)
 
-    def action_load_all_gum_types(self):
-        gum_types = self.env['arabic.gum.type'].search([('is_cleaned', '=', False)])
-        if not gum_types:
-            raise UserError("There is no record")
+    @api.onchange('product_id')
+    def _onchange_product_id(self):
+        if self.product_id:
+            self.line_ids = [(5, 0, 0)]
+            lines = []
+            for line in self.product_id.line_ids:
+                lines.append((0, 0, {
+                    'arabic_gum_type': line.arabic_gum_type,
+                    'quantity': line.quantity,
+                }))
+            if lines:
+                self.line_ids = lines
 
-        lines = []
-        for gum in gum_types:
-            existing_line = self.line_ids.filtered(lambda l: l.gum_type_id == gum)
-            if existing_line or gum.is_cleaned:
-                continue
-
-            lines.append((0, 0, {
-                'gum_type_id': gum.id,
-                'net_quantity': 0.0,
-            }))
-
-        if not lines:
-            raise UserError("All gum types have already been cleaned or added.")
-
-        self.write({'line_ids': lines})
-
-    def action_clean_gums(self):
-        if not self.line_ids:
+    def action_view_gum_stock(self):
+        stock = self.env['gum.stock'].search([], limit=1)
+        if not stock:
             return {
-                'warning': {
-                    'title': "Warning",
-                    'message': "No gum types to clean!",
-                }
+                'type': 'ir.actions.act_window',
+                'name': 'Gum Stock',
+                'res_model': 'gum.stock',
+                'view_mode': 'form',
+                'view_id': False,
+                'target': 'current',
+                'res_id': False,
+                'context': {'default_talha_quantity': 0.0, 'default_hashab_quantity': 0.0,
+                            'default_olibanum_quantity': 0.0,'default_refined_quantity': 0.0},
             }
-
-        cleaned_lines = 0
-        for line in self.line_ids:
-            if line.net_quantity <= 0:
-                continue
-            if line.gum_type_id.is_cleaned:
-                continue
-            line.gum_type_id.write({'is_cleaned': True})
-            cleaned_lines += 1
-
-        if cleaned_lines == 0:
-            return {
-                'warning': {
-                    'title': "Warning",
-                    'message': "No new gum types were cleaned.",
-                }
-            }
-
-        self.env['gum.stock'].recompute_stock()
-        self.write({'state': 'cleaned'})
         return {
-            'effect': {
-                'fadeout': 'slow',
-                'message': 'Cleaning process completed successfully',
-                'type': 'rainbow_man',
-            }
+            'type': 'ir.actions.act_window',
+            'name': 'Gum Stock',
+            'res_model': 'gum.stock',
+            'view_mode': 'form',
+            'res_id': stock.id,
+            'target': 'current',
         }
+
+
+
+
+
+    def action_cleaned(self):
+        for rec in self:
+            if not rec.line_ids:
+                raise UserError("No lines to clean.")
+
+            rec.product_id.is_cleaned = True
+            rec.state = 'cleaned'
+
+            purity_storage = self.env['purity.storage'].create({
+                'talling_id': rec.id,
+                'name': rec.product_id.name,
+                'storing_date': fields.Date.today(),
+                'warehouse_id': False,
+            })
+
+            for line in rec.line_ids:
+                self.env['purity.storage.line'].create({
+                    'purity_id': purity_storage.id,
+                    'arabic_gum_type': line.arabic_gum_type,
+                    'net_quantity': line.net_quantity,
+                    'refined_quantity': line.refined_quantity,
+                })
+
+            stock = self.env['gum.stock'].search([], limit=1)
+            if not stock:
+                stock = self.env['gum.stock'].create({
+                    'talha_quantity': 0.0,
+                    'hashab_quantity': 0.0,
+                    'olibanum_quantity': 0.0,
+                    'refined_quantity': 0.0,
+                    'update_date': fields.Date.today(),
+                })
+
+            for line in rec.line_ids:
+                if line.arabic_gum_type == 'talha_gum':
+                    stock.talha_quantity += line.net_quantity
+                elif line.arabic_gum_type == 'hashab_gum':
+                    stock.hashab_quantity += line.net_quantity
+                elif line.arabic_gum_type == 'olibanum_gum':
+                    stock.olibanum_quantity += line.net_quantity
+
+                stock.refined_quantity += line.refined_quantity
+
+            stock.update_date = fields.Date.today()
+
+    @api.model
+    def create(self, vals):
+        res = super(InventoryOfTallyingProduct, self).create(vals)
+        if res.ref == 'New':
+            res.ref = self.env['ir.sequence'].next_by_code('inventory_of_talling_product_seq')
+        return res
+
+
+
 
 
 class InventoryOfTallyingProductLine(models.Model):
     _name = 'inventory.of.tallying.product.line'
     _description = 'Inventory Of Tallying Product Line'
 
-    cleaning_id = fields.Many2one('inventory.of.tallying.product', string="Cleaning Reference", ondelete="cascade")
-    gum_type_id = fields.Many2one('arabic.gum.type', string="Arabic Gum Type", required=True, ondelete='cascade')
-    original_quantity = fields.Float(string="Original Quantity", related="gum_type_id.quantity", store=False, readonly=True)
+    tallying_id = fields.Many2one('inventory.of.tallying.product')
+    arabic_gum_type = fields.Selection([
+        ('talha_gum', 'Talha Gum'),
+        ('hashab_gum', 'Hashab Gum'),
+        ('olibanum_gum', 'Olibanum Gum'),
+    ], required=True, tracking=True, default='talha_gum', string="Arabic Gum Type")
+    quantity = fields.Float(string="Original Quantity", required=True, tracking=True)
     net_quantity = fields.Float(string="Quantity After Cleaning")
-    refined_quantity = fields.Float(compute='_compute_refined_quantity', string="Refined Quantity")
-    gum_type = fields.Selection(string="Gum Type", related="gum_type_id.arabic_gum_type", store=False, readonly=True)
+    refined_quantity = fields.Float(compute='_compute_refined_quantity', string="Residue Quantity")
 
-    @api.depends('original_quantity', 'net_quantity')
+
+    @api.depends('quantity', 'net_quantity')
     def _compute_refined_quantity(self):
         for rec in self:
-            rec.refined_quantity = rec.original_quantity - rec.net_quantity
+            rec.refined_quantity = rec.quantity - rec.net_quantity
 
-    @api.constrains('gum_type_id', 'cleaning_id')
-    def _check_unique_gum_type_per_cleaning(self):
-        for rec in self:
-            if rec.cleaning_id and rec.gum_type_id:
-                duplicates = rec.cleaning_id.line_ids.filtered(
-                    lambda l: l.gum_type_id == rec.gum_type_id and l.id != rec.id)
-                if duplicates:
-                    raise ValidationError(
-                        f"The gum type '{rec.gum_type_id.display_name}' is already added to this cleaning process."
-                    )
-
-    @api.model
-    def create(self, vals):
-        line = super().create(vals)
-        self.env['gum.stock'].recompute_stock()
-        return line
-
-    def write(self, vals):
-        res = super().write(vals)
-        self.env['gum.stock'].recompute_stock()
-        return res
-
-#
-# class InventoryOfTallyingProduct(models.Model):
-#     _name = 'inventory.of.tallying.product'
-#     _description = 'Inventory Of Tallying Product'
-#     _inherit = ['mail.thread', 'mail.activity.mixin']
-#
-#     active = fields.Boolean(default=True)
-#
-#     product_id = fields.Char(string = "Product ID", required = True, tracking = True)
-#     # product_weight = fields.Float(string = "Product Weight KG", required = True, tracking = True)
-#     # warehouse_id = fields.Many2one('warehouse',string = "Warehouse ID", required = True, tracking = True)
-#     date = fields.Date(string = "Date", required = True, tracking = True,default=fields.Datetime.now())
-#     # quantity_on_hand = fields.Float(string = "Quantity Available", required = True, tracking = True)
-#     description = fields.Text(string = "Note", required = True, tracking = True)
-#     line_ids = fields.One2many(
-#         'inventory.of.tallying.product.line',
-#         'cleaning_id',
-#         string="Cleaning Details"
-#     )
-#
-#     def action_load_all_gum_types(self):
-#         gum_types = self.env['arabic.gum.type'].search([('is_cleaned', '=', False)])
-#         if not gum_types:
-#             raise UserError("There is no record")
-#
-#         lines = []
-#         for gum in gum_types:
-#             existing_line = self.line_ids.filtered(lambda l: l.gum_type_id == gum)
-#             if existing_line or gum.is_cleaned:
-#                 continue
-#
-#             lines.append((0, 0, {
-#                 'gum_type_id': gum.id,
-#                 'net_quantity': 0.0,
-#             }))
-#
-#         if not lines:
-#             raise UserError("All gum types have already been cleaned or added.")
-#
-#         self.write({'line_ids': lines})
-#
-#     total_refined_text = fields.Char(
-#         compute="_compute_total_refined_text"
-#     )
-#
-#     @api.depends('line_ids.refined_quantity')
-#     def _compute_total_refined_text(self):
-#         for rec in self:
-#             total = sum(line.refined_quantity for line in rec.line_ids)
-#             rec.total_refined_text =  total
-#
-#
-#
-# class InventoryOfTallyingProductLine(models.Model):
-#     _name = 'inventory.of.tallying.product.line'
-#     _description = 'Inventory Of Tallying Product Line'
-#
-#     cleaning_id = fields.Many2one('inventory.of.tallying.product', string="Cleaning Reference", ondelete="cascade")
-#     gum_type_id = fields.Many2one('arabic.gum.type', string="Arabic Gum Type", required=True,ondelete='cascade')
-#
-#     original_quantity = fields.Float(string="Original Quantity", related="gum_type_id.quantity", store=False, readonly=True)
-#     # raw_quantity = fields.Float(string="Raw Quantity Before Cleaning", required=True)
-#     net_quantity = fields.Float(string="Quantity After Cleaning")
-#     refined_quantity = fields.Float(compute='_compute_refined_quantity',string="Refined Quantity")
-#     gum_type = fields.Selection(string="Gum Type", related="gum_type_id.arabic_gum_type", store=False, readonly=True)
-#
-#
-#     @api.depends('original_quantity')
-#     def _compute_refined_quantity(self):
-#         for rec in self:
-#             rec.refined_quantity = rec.original_quantity - rec.net_quantity
-#
-#     @api.constrains('gum_type_id', 'cleaning_id')
-#     def _check_unique_gum_type_per_cleaning(self):
-#         for rec in self:
-#             if rec.cleaning_id and rec.gum_type_id:
-#                 duplicates = rec.cleaning_id.line_ids.filtered(
-#                     lambda l: l.gum_type_id == rec.gum_type_id and l.id != rec.id)
-#                 if duplicates:
-#                     raise ValidationError(
-#                         f"The gum type '{rec.gum_type_id.display_name}' is already added to this cleaning process."
-#                     )
-#
-#     @api.model
-#     def create(self, vals):
-#         gum_id = vals.get('gum_type_id')
-#         if gum_id:
-#             existing_line = self.env['inventory.of.tallying.product.line'].search([
-#                 ('gum_type_id', '=', gum_id),
-#                 ('net_quantity', '>', 0)
-#             ], limit=1)
-#             if existing_line:
-#                 raise ValidationError("This gum type has already been cleaned. You cannot clean it again.")
-#
-#         line = super().create(vals)
-#         self.env['gum.stock'].recompute_stock()
-#         line.gum_type_id._compute_is_cleaned()
-#         return line
-#
-#     def write(self, vals):
-#         if 'net_quantity' in vals:
-#             for rec in self:
-#                 if rec.net_quantity > 0:
-#                     raise ValidationError("This gum type has already been cleaned. You cannot modify it again.")
-#         res = super().write(vals)
-#         self.env['gum.stock'].recompute_stock()
-#         for line in self:
-#             line.gum_type_id._compute_is_cleaned()
-#         return res
-#
-#
-#
-#     @api.model
-#     def create(self, vals):
-#         line = super().create(vals)
-#         self.env['gum.stock'].recompute_stock()
-#         return line
-#
-#     def write(self, vals):
-#         res = super().write(vals)
-#         self.env['gum.stock'].recompute_stock()
-#         return res
-#
-#
+    @api.constrains('quantity','net_quantity')
+    def _check_quantity_grater_than_new_quantity(self):
+        for rec in self :
+            if rec.net_quantity >= rec.quantity:
+                raise UserError("Quantity After Cleaning Cant Exceed Original Quantity")
+            elif rec.net_quantity <=0 :
+                raise UserError("Quantity After Cleaning Cant Zero Or Negative Number")

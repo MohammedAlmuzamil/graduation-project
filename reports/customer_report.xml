@@ -3,78 +3,86 @@
     <record id="customer_report" model="ir.actions.report">
         <field name="name">Customer Report</field>
         <field name="model">customer</field>
-        <field name="report_type">qweb-html</field>
-        <field name="binding_model_id" ref="model_customer"/>
+        <field name="report_type">qweb-pdf</field>
+        <field name="binding_model_id" ref="boraush_trading.model_customer"/>
         <field name="binding_type">report</field>
         <field name="report_name">boraush_trading.customer_report_template</field>
     </record>
 
     <template id="customer_report_template">
-        <t t-set="report_encoding" t-value="'utf-8'"/>
-        <t t-call="web.html_container">
-            <div class="page">
-
-                <div class="report-header" style="display:flex; justify-content: space-between; align-items:flex-start;">
-                    <div class="company-left">
-                        <img t-if="docs and docs[0].env.company.logo"
-                             t-att-src="'data:image/png;base64,%s' % (docs[0].env.company.logo.decode())"
-                             style="width: 100px; height: auto; margin-bottom:10px;"/>
-                        <h1 t-field="docs and docs[0].env.company.name"/>
-                        <p t-field="docs and docs[0].env.company.street"/>
-                        <p>
-                            <span t-field="docs and docs[0].env.company.phone"/> |
-                            <span t-field="docs and docs[0].env.company.email"/>
-                        </p>
-                    </div>
-                    <div class="report-meta" style="text-align:right;">
-                        <h2>Customer Report</h2>
-                        <p><strong>Ref:</strong> <span t-esc="docs and docs[0].ref or '-'"/></p>
-                        <p><strong>Date:</strong> <t t-esc="time.strftime('%Y-%m-%d')"/></p>
-                    </div>
-                </div>
-
-                <hr/>
-
-                <table class="customer-table" style="width:100%; border-collapse: collapse; text-align:left; margin-top:10px;">
-                    <tbody>
-                        <t t-foreach="docs" t-as="doc">
+        <t t-call="web.external_layout">
+            <main>
+                <t t-foreach="docs" t-as="doc">
+                    <div class="page">
+                        <table style="width:100%; border-collapse:collapse; margin-bottom:15px;">
                             <tr>
-                                <th>Customer Name</th>
-                                <td t-esc="doc.name or '-'"/>
-                                <th>Customer ID</th>
-                                <td t-esc="doc.customer_id or '-'"/>
+                                <td style="width:100px;">
+                                    <img t-if="doc.env.company.logo"
+                                         t-att-src="'data:image/png;base64,%s' % (doc.env.company.logo.decode())"
+                                         style="width:100px; height:auto;"/>
+                                </td>
+                                <td>
+                                    <h2 t-field="doc.env.company.name"/>
+                                    <p t-field="doc.env.company.street"/>
+                                    <p>
+                                        <span t-field="doc.env.company.phone"/>
+                                        |
+                                        <span t-field="doc.env.company.email"/>
+                                    </p>
+                                </td>
+                                <td style="width:150px; text-align:right;">
+                                    <h3>Customer Report</h3>
+                                    <p><b>Ref:</b> <t t-esc="doc.ref or '-'"/></p>
+                                    <p><b>Date:</b> <t t-esc="time.strftime('%Y-%m-%d')"/></p>
+                                </td>
                             </tr>
-                            <tr>
-                                <th>Phone</th>
-                                <td t-esc="doc.phone or '-'"/>
-                                <th>Email</th>
-                                <td t-esc="doc.email or '-'"/>
-                            </tr>
-                            <tr>
-                                <th>Address</th>
-                                <td colspan="3"><t t-esc="doc.address or '-'"/></td>
-                            </tr>
-                        </t>
-                    </tbody>
-                </table>
+                        </table>
 
-                <footer class="report-footer" style="display:flex; justify-content: space-between; margin-top:20px; font-size:11px; color:#555;">
-                    <div>
-                        Prepared by: <span t-esc="docs and docs[0].env.user.name or 'System'"/>
+                        <hr/>
+
+                        <table class="sale-table" style="width:100%; border-collapse:collapse; margin-top:10px;">
+                            <thead>
+                                <tr style="background-color:#eb861e; color:white;">
+                                    <th>Customer ID</th>
+                                    <th>Customer Name</th>
+                                    <th>Phone</th>
+                                    <th>Email</th>
+                                    <th>Address</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td t-esc="doc.customer_id or '-'"/>
+                                    <td t-esc="doc.name or '-'"/>
+                                    <td t-esc="doc.phone or '-'"/>
+                                    <td t-esc="doc.email or '-'"/>
+                                    <td t-esc="doc.address or '-'"/>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table style="width:100%; margin-top:20px; font-size:12px; color:#555;">
+                            <tr>
+                                <td style="text-align:left;">
+                                    Prepared by: <span t-esc="doc.env.user.name"/>
+                                </td>
+                                <td style="text-align:right;">
+                                    Page <span class="pagenum"/>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
-                    <div class="page-number">Page <span class="pagenum"/></div>
-                </footer>
+                </t>
+            </main>
 
-            </div>
+            <style type="text/css" media="print">
+                * { -webkit-print-color-adjust: exact !important; }
+                .sale-table th, .sale-table td { border:1px solid #ddd; padding:5px; font-size:12px; }
+                .sale-table th { background-color:#eb861e !important; color:white !important; }
+                .page { font-family: Arial, Helvetica, sans-serif; font-size:12px; padding:15px; color:#222; }
+                hr { border:none; border-top:1px solid #ddd; margin:8px 0; }
+                .pagenum:after { content: counter(page); }
+            </style>
         </t>
-
-        <style>
-            .customer-table th, .customer-table td { padding: 8px; vertical-align: top; border-bottom: 1px solid #eee; }
-            .customer-table th { background-color: #f7f7f7; width: 20%; }
-            .page { font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #222; padding: 20px; }
-            hr { border: none; border-top: 1px solid #ddd; margin: 12px 0; }
-            @media print { .page { padding: 10mm; } .pagenum:after { content: counter(page); } }
-        </style>
-
     </template>
 </odoo>

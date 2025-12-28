@@ -8,11 +8,11 @@
                 <field name="ref"/>
                 <field name="name"/>
                 <field name="driver_id"/>
-                <field name="active" invisible="True"/>
                 <field name="truck_type"/>
                 <field name="chassis_no"/>
                 <field name="license"/>
                 <field name="max_weight"/>
+                <field name="active" invisible="True"/>
             </tree>
         </field>
     </record>
@@ -31,15 +31,15 @@
                         </h1>
                     </div>
                     <group>
-                        <group string="General info.">
+                        <group string="General info">
                             <field name="name"/>
                             <field name="driver_id"/>
                             <field name="active" invisible="True"/>
                             <field name="truck_type"/>
-                            <field name="chassis_no"/>
                         </group>
-                        <group string="Additional info.">
-                            <field name="license"/>
+                        <group string="Additional info">
+                            <field name="license" placeholder="License Number"/>
+                            <field name="chassis_no" placeholder="Chassis Number"/>
                             <field name="max_weight"/>
                         </group>
                     </group>
@@ -61,6 +61,11 @@
             <search>
                 <field name="chassis_no"/>
                 <field name="name"/>
+
+                <filter name="Flatbed Truck" string="Flatbed Truck" domain="[('truck_type','=','flatbed_truck')]"/>
+                <filter name="Flatbed Box" string="Flatbed Box" domain="[('truck_type','=','box_truck')]"/>
+                <filter name="Pickup Truck" string="Pickup Truck" domain="[('truck_type','=','pickup_truck')]"/>
+                <filter name="Container Truck" string="Container Truck" domain="[('truck_type','=','container_truck')]"/>
             </search>
         </field>
     </record>

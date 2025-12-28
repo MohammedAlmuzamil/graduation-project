@@ -1,0 +1,84 @@
+<odoo>
+    <record id="report_period_wizard_view_form" model="ir.ui.view">
+        <field name="name">report period wizard form</field>
+        <field name="model">period.report</field>
+        <field name="arch" type="xml">
+            <form string="report dashboard">
+                <sheet>
+                    <group>
+                        <field name="report_type"/>
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                    </group>
+                    <footer>
+                        <button string="Print" type="object" name="print_period_report" class="btn-primary"/>
+                        <button string="Show Chart" type="object" name="show_chart_report" class="btn-success"/>
+                        <button string="Cancel" special="cancel" class="btn-secondary"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="view_sales_graph" model="ir.ui.view">
+        <field name="name">sale.graph</field>
+        <field name="model">sale.line</field>
+        <field name="arch" type="xml">
+            <graph string="Sales by Gum Type" type="pie">
+                <field name="gum_type" type="row"/>
+                <field name="quantity" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="action_sales_graph" model="ir.actions.act_window">
+        <field name="name">Sales Report</field>
+        <field name="res_model">sale.line</field>
+        <field name="view_mode">graph,tree</field>
+        <field name="context">{'graph_mode': 'pie'}</field>
+    </record>
+
+
+    <record id="view_purchase_graph" model="ir.ui.view">
+        <field name="name">purchase.graph</field>
+        <field name="model">purchase.line</field>
+        <field name="arch" type="xml">
+            <graph string="Purchases by Gum Type" type="pie">
+                <field name="gum_type" type="row"/>
+                <field name="quantity" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="action_purchases_graph" model="ir.actions.act_window">
+        <field name="name">Purchase Report</field>
+        <field name="res_model">purchase.line</field>
+        <field name="view_mode">graph,tree</field>
+        <field name="context">{'graph_mode': 'pie'}</field>
+    </record>
+
+
+
+
+
+
+
+
+
+    <record id="action_report_period_wizard" model="ir.actions.act_window">
+        <field name="name">period report</field>
+        <field name="res_model">period.report</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+
+    <menuitem
+            id="Dashboard_menu_item"
+            name="Dashboard"
+            parent="dashboard_menu"
+            action="action_report_period_wizard"
+    />
+
+</odoo>

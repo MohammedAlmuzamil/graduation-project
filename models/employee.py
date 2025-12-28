@@ -1,7 +1,11 @@
 import re
+from datetime import date
+
 from odoo import models,fields,api
 
-from odoo17.odoo.exceptions import ValidationError
+from odoo.exceptions import ValidationError
+
+from datetime import date
 
 
 class Employee(models.Model):
@@ -10,17 +14,30 @@ class Employee(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     active = fields.Boolean(default=True)
-    name = fields.Char(string="Employee Name", required=True,tracking=True)
-    # employee_ids = fields.One2many('address','employee_id', string="Employee Address", required=True,tracking=True)
+    name = fields.Char(string="Employee Name",tracking=True)
     employee_number = fields.Integer(string="Employee ID", required=True,tracking=True)
     phone = fields.Char(string="Phone Number",tracking=True,default="+249")
-    email = fields.Char(string="Email",tracking=True, default="example@email.com")
-    job_id = fields.Many2one('job',string="Job",required=True,tracking=True)
+    email = fields.Char(string="Email",tracking=True, default="example@gmail.com")
+
+    job_id = fields.Many2one(
+        'job',
+        string="Job",
+        required=True,
+        tracking=True
+    )
+
     hire_data = fields.Date(string="Hire Date",tracking=True,default=fields.Datetime.now())
+    address = fields.Many2one(
+        'address',
+        string="Address",
+        tracking=True
+    )
 
     _sql_constraints = [
-        ('unique_id', 'unique("employee_number")', 'This ID Is Exist!')
+        ('unique_id', 'unique("employee_number")', 'This Employee ID Is Exist!')
     ]
+
+
 
     @api.model
     def default_get(self, fields_list):
@@ -58,3 +75,17 @@ class Employee(models.Model):
                 number_without_code = rec.phone[4:]
                 if len(number_without_code) != 9 or not number_without_code.isdigit():
                     raise ValidationError("Phone number must contain exactly 9 digits after +249!")
+
+
+    @api.constrains('employee_number')
+    def _check_employee_number_validation(self):
+        for rec in self :
+            if not rec.employee_number or rec.employee_number <=0 :
+                raise ValidationError("Employee ID Is Not Valid")
+
+
+    @api.constrains('hire_data')
+    def _check_hire_data_validation(self):
+        for rec in self :
+            if rec.hire_data > date.today():
+                raise ValidationError("Hire Date Cant Be In Future")

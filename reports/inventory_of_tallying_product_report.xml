@@ -1,125 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="inventory_of_tallying_product_report" model="ir.actions.report">
-        <field name="name">Tallying Products Report</field>
+    <record id="inventory_tallying_product_report" model="ir.actions.report">
+        <field name="name">Inventory of Tallying Product Report</field>
         <field name="model">inventory.of.tallying.product</field>
-        <field name="report_type">qweb-html</field>
-        <field name="binding_model_id" ref="model_inventory_of_tallying_product"/>
+        <field name="report_type">qweb-pdf</field>
+        <field name="binding_model_id" ref="boraush_trading.model_inventory_of_tallying_product"/>
         <field name="binding_type">report</field>
-        <field name="report_name">boraush_trading.inventory_of_tallying_product_report_template</field>
+        <field name="report_name">boraush_trading.inventory_tallying_report_template</field>
     </record>
-    <template id="inventory_of_tallying_product_report_template">
-        <t t-set="report_encoding" t-value="'utf-8'"/>
-        <t t-call="web.html_container">
-            <div class="page">
 
-                <div class="report-header" style="display:flex; justify-content: space-between; align-items:flex-start;">
-                    <div class="company-left">
-                        <img t-if="docs and docs[0].env.company.logo"
-                             t-att-src="'data:image/png;base64,%s' % (docs[0].env.company.logo.decode())"
-                             style="width: 100px; height: auto; margin-bottom:10px;"/>
-                        <h1 t-field="docs and docs[0].env.company.name"/>
-                        <p t-field="docs and docs[0].env.company.street"/>
-                        <p>
-                            <span t-field="docs and docs[0].env.company.phone"/>
-                            |
-                            <span t-field="docs and docs[0].env.company.email"/>
-                        </p>
-                    </div>
+    <template id="inventory_tallying_report_template">
+        <t t-call="web.external_layout">
+            <main>
+                <t t-set="time" t-value="datetime.datetime.now()"/>
+                <t t-foreach="docs" t-as="doc">
+                    <div class="page">
+                        <table style="width:100%; border-collapse:collapse; margin-bottom:15px;">
+                            <tr>
+                                <td style="width:100px;">
+                                    <img t-if="doc.env.company.logo"
+                                         t-att-src="'data:image/png;base64,%s' % (doc.env.company.logo.decode())"
+                                         style="width:100px; height:auto;"/>
+                                </td>
+                                <td>
+                                    <h2 t-field="doc.env.company.name"/>
+                                    <p t-field="doc.env.company.street"/>
+                                    <p>
+                                        <span t-field="doc.env.company.phone"/>
+                                        |
+                                        <span t-field="doc.env.company.email"/>
+                                    </p>
+                                </td>
+                                <td style="width:150px; text-align:right;">
+                                    <h3>Inventory Tallying Report</h3>
+                                    <p><b>Date:</b> <t t-esc="time.strftime('%Y-%m-%d')"/></p>
+                                </td>
+                            </tr>
+                        </table>
 
-                    <div class="report-meta" style="text-align:right;">
-                        <p>
-                            <strong>Date:</strong>
-                            <t t-esc="time.strftime('%Y-%m-%d')"/>
-                        </p>
-                    </div>
-                </div>
+                        <hr/>
 
-                <hr/>
+                        <table style="width:60%; border-collapse:collapse; margin-bottom:15px;">
+                            <tbody>
+                                <tr><td style="font-weight:bold; width:30%;">Tallying Product ID</td><td t-esc="doc.name"/></tr>
+                                <tr><td style="font-weight:bold;">Product</td><td t-esc="doc.product_id.name"/></tr>
+                                <tr><td style="font-weight:bold;">Date</td><td t-esc="doc.date"/></tr>
+                                <tr><td style="font-weight:bold;">Warehouse</td><td t-esc="doc.warehouse_id.name"/></tr>
+                                <tr><td style="font-weight:bold;">Supervisor</td><td t-esc="doc.supervisor_id.name"/></tr>
+                                <tr><td style="font-weight:bold;">Status</td><td t-esc="dict(doc._fields['state'].selection).get(doc.state)"/></tr>
+                            </tbody>
+                        </table>
 
-                <table class="inventory-table"
-                       style="width:100%; border-collapse: collapse; text-align:center; margin-top:10px;">
-                    <thead style="background-color:#2F5597; color:white;">
-                        <tr>
-                            <th>Product ID</th>
-                            <th>Arabic Gum Type</th>
-                            <th>Original Quantity</th>
-                            <th>Net Quantity</th>
-                            <th>Refined Quantity</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <t t-foreach="docs" t-as="doc">
-                            <t t-foreach="doc.line_ids" t-as="line">
-                                <tr>
-                                    <td t-esc="doc.product_id"/>
-                                    <td t-esc="line.gum_type_id.name or '-'"/>
-                                    <td t-esc="line.original_quantity"/>
-                                    <td t-esc="line.net_quantity"/>
-                                    <td t-esc="line.refined_quantity"/>
+                        <table class="tallying-table" style="width:100%; border-collapse:collapse; margin-top:10px;">
+                            <thead>
+                                <tr style="background-color:#eb861e; color:white;">
+                                    <th>Arabic Gum Type</th>
+                                    <th>Quantity (KG)</th>
+                                    <th>Quantity After Cleaning (KG)</th>
+                                    <th>Refined Quantity (KG)</th>
                                 </tr>
-                            </t>
-                        </t>
-                    </tbody>
-                    <tfoot>
-                        <tr style="font-weight:bold;">
-                            <td>Total</td>
-                            <td>-</td>
-                            <td t-esc="sum(line.original_quantity for doc in docs for line in doc.line_ids)"/>
-                            <td t-esc="sum(line.net_quantity for doc in docs for line in doc.line_ids)"/>
-                            <td t-esc="sum(line.refined_quantity for doc in docs for line in doc.line_ids)"/>
-                        </tr>
-                    </tfoot>
-                </table>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="doc.line_ids" t-as="line" t-key="line.id">
+                                    <tr>
+                                        <td t-esc="dict(line._fields['arabic_gum_type'].selection).get(line.arabic_gum_type)"/>
+                                        <td t-esc="line.quantity"/>
+                                        <td t-esc="line.net_quantity"/>
+                                        <td t-esc="line.refined_quantity"/>
+                                    </tr>
+                                </t>
+                                <tr style="font-weight:bold; background:#f0f0f0;">
+                                    <td style="text-align:center;">TOTAL</td>
+                                    <td t-esc="sum(line.quantity for line in doc.line_ids)"/>
+                                    <td t-esc="sum(line.net_quantity for line in doc.line_ids)"/>
+                                    <td t-esc="doc.total_refined_quantity"/>
+                                </tr>
+                            </tbody>
+                        </table>
 
-                <footer class="report-footer"
-                        style="display:flex; justify-content: space-between; margin-top:20px; font-size:11px; color:#555;">
-                    <div>
-                        Prepared by:
-                        <span t-esc="docs and docs[0].env.uid and docs[0].env.user.name or 'System'"/>
+                        <table style="width:100%; margin-top:20px; font-size:12px; color:#555;">
+                            <tr>
+                                <td style="text-align:left;">
+                                    Prepared by: <t t-esc="doc.env.user.name or 'System'"/>
+                                </td>
+                                <td style="text-align:right;">
+                                    Page <span class="pagenum"/>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
-                    <div class="page-number">
-                        Page <span class="pagenum"/>
-                    </div>
-                </footer>
+                </t>
+            </main>
 
-            </div>
+            <style type="text/css" media="print">
+                * { -webkit-print-color-adjust: exact !important; }
+                .tallying-table th, .tallying-table td { border:1px solid #ddd; padding:6px; font-size:12px; vertical-align:top; }
+                .tallying-table th { background-color:#eb861e !important; color:white !important; }
+                .page { font-family: Arial, Helvetica, sans-serif; font-size:12px; padding:15px; color:#222; }
+                hr { border:none; border-top:1px solid #ddd; margin:8px 0; }
+                .pagenum:after { content: counter(page); }
+            </style>
         </t>
-
-        <style>
-            .inventory-table th, .inventory-table td {
-                border: 1px solid #ddd;
-                padding: 8px;
-            }
-
-            .inventory-table th {
-                background-color: #2F5597;
-                color: white;
-            }
-
-            .page {
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 12px;
-                color: #222;
-                padding: 20px;
-            }
-
-            hr {
-                border: none;
-                border-top: 1px solid #ddd;
-                margin: 12px 0;
-            }
-
-            @media print {
-                .page {
-                    padding: 10mm;
-                }
-                .pagenum:after {
-                    content: counter(page);
-                }
-            }
-        </style>
     </template>
-
-
 </odoo>

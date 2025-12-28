@@ -1,0 +1,1060 @@
+<odoo>
+
+    <record id="boraush_trading_category" model="ir.module.category">
+        <field name="name">Boraush Trading</field>
+    </record>
+
+    <record id="boraush_trading_manager_group" model="res.groups">
+        <field name="name">Boraush Trading Manager</field>
+        <field name="category_id" ref="boraush_trading.boraush_trading_category"/>
+    </record>
+
+    <record id="boraush_trading_user_group" model="res.groups">
+        <field name="name">Boraush Trading User</field>
+        <field name="category_id" ref="boraush_trading.boraush_trading_category"/>
+    </record>
+
+
+
+    <record id="commissioner_record_rule_by_user" model="ir.rule">
+        <field name="name">commissioner.by.user</field>
+        <field name="model_id" ref="boraush_trading.model_commissioner"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_user_group'))]"/>
+        <field name="domain_force">[('create_uid' , '=' , user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+
+
+
+
+    <record id="commissioner_record_rule_by_manager" model="ir.rule">
+        <field name="name">commissioner.by.manager</field>
+        <field name="model_id" ref="boraush_trading.model_commissioner"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_manager_group'))]"/>
+        <field name="domain_force">[(1 , '=' , 1)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="address_record_rule_by_user" model="ir.rule">
+        <field name="name">address.by.user</field>
+        <field name="model_id" ref="boraush_trading.model_address"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_user_group'))]"/>
+        <field name="domain_force">[('create_uid' , '=' , user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+
+
+    <record id="address_record_rule_by_manager" model="ir.rule">
+        <field name="name">address.by.manager</field>
+        <field name="model_id" ref="boraush_trading.model_address"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_manager_group'))]"/>
+        <field name="domain_force">[(1 , '=' , 1)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="states_record_rule_by_user" model="ir.rule">
+        <field name="name">states.by.user</field>
+        <field name="model_id" ref="boraush_trading.model_states"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_user_group'))]"/>
+        <field name="domain_force">[('create_uid' , '=' , user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="states_record_rule_by_manager" model="ir.rule">
+        <field name="name">states.by.manager</field>
+        <field name="model_id" ref="boraush_trading.model_states"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_manager_group'))]"/>
+        <field name="domain_force">[('create_uid' , '=' , user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="cities_record_rule_by_user" model="ir.rule">
+        <field name="name">cities.by.user</field>
+        <field name="model_id" ref="boraush_trading.model_cities"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_user_group'))]"/>
+        <field name="domain_force">[('create_uid' , '=' , user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="cities_record_rule_by_manager" model="ir.rule">
+        <field name="name">cities.by.manager</field>
+        <field name="model_id" ref="boraush_trading.model_cities"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_manager_group'))]"/>
+        <field name="domain_force">[(1 , '=' , 1)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="localities_record_rule_by_user" model="ir.rule">
+        <field name="name">localities.by.user</field>
+        <field name="model_id" ref="boraush_trading.model_localities"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_user_group'))]"/>
+        <field name="domain_force">[('create_uid' , '=' , user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="localities_record_rule_by_manager" model="ir.rule">
+        <field name="name">localities.by.manager</field>
+        <field name="model_id" ref="boraush_trading.model_localities"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_manager_group'))]"/>
+        <field name="domain_force">[(1 , '=' , 1)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="expert_record_rule_by_user" model="ir.rule">
+        <field name="name">expert.by.user</field>
+        <field name="model_id" ref="boraush_trading.model_expert"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_user_group'))]"/>
+        <field name="domain_force">[('create_uid' , '=' , user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="expert_record_rule_by_manager" model="ir.rule">
+        <field name="name">expert.by.manager</field>
+        <field name="model_id" ref="boraush_trading.model_expert"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_manager_group'))]"/>
+        <field name="domain_force">[(1 , '=' , 1)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="producer_record_rule_by_user" model="ir.rule">
+        <field name="name">producer.by.user</field>
+        <field name="model_id" ref="boraush_trading.model_producer"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_user_group'))]"/>
+        <field name="domain_force">[('create_uid' , '=' , user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="producer_record_rule_by_manager" model="ir.rule">
+        <field name="name">producer.by.manager</field>
+        <field name="model_id" ref="boraush_trading.model_producer"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_manager_group'))]"/>
+        <field name="domain_force">[(1 , '=' , 1)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="customer_record_rule_by_user" model="ir.rule">
+        <field name="name">customer.by.user</field>
+        <field name="model_id" ref="boraush_trading.model_customer"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_user_group'))]"/>
+        <field name="domain_force">[('create_uid' , '=' , user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="customer_record_rule_by_manager" model="ir.rule">
+        <field name="name">customer.by.manager</field>
+        <field name="model_id" ref="boraush_trading.model_customer"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_manager_group'))]"/>
+        <field name="domain_force">[(1 , '=' , 1)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="driver_record_rule_by_user" model="ir.rule">
+        <field name="name">driver.by.user</field>
+        <field name="model_id" ref="boraush_trading.model_driver"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_user_group'))]"/>
+        <field name="domain_force">[('create_uid' , '=' , user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+
+
+    <record id="driver_record_rule_by_manager" model="ir.rule">
+        <field name="name">driver.by.manager</field>
+        <field name="model_id" ref="boraush_trading.model_driver"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_manager_group'))]"/>
+        <field name="domain_force">[(1 , '=' , 1)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="supervisor_record_rule_by_user" model="ir.rule">
+        <field name="name">supervisor.by.user</field>
+        <field name="model_id" ref="boraush_trading.model_supervisor"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_user_group'))]"/>
+        <field name="domain_force">[('create_uid' , '=' , user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+
+
+    <record id="supervisor_record_rule_by_manager" model="ir.rule">
+        <field name="name">supervisor.by.manager</field>
+        <field name="model_id" ref="boraush_trading.model_supervisor"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_manager_group'))]"/>
+        <field name="domain_force">[(1 , '=' , 1)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="employee_record_rule_by_user" model="ir.rule">
+        <field name="name">employee.by.user</field>
+        <field name="model_id" ref="boraush_trading.model_employee"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_user_group'))]"/>
+        <field name="domain_force">[('create_uid' , '=' , user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+
+
+    <record id="employee_record_rule_by_manager" model="ir.rule">
+        <field name="name">employee.by.manager</field>
+        <field name="model_id" ref="boraush_trading.model_employee"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_manager_group'))]"/>
+        <field name="domain_force">[(1 , '=' , 1)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="job_record_rule_by_user" model="ir.rule">
+        <field name="name">job.by.user</field>
+        <field name="model_id" ref="boraush_trading.model_job"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_user_group'))]"/>
+        <field name="domain_force">[('create_uid' , '=' , user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+
+
+    <record id="job_record_rule_by_manager" model="ir.rule">
+        <field name="name">job.by.manager</field>
+        <field name="model_id" ref="boraush_trading.model_job"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_manager_group'))]"/>
+        <field name="domain_force">[(1 , '=' , 1)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="market_record_rule_by_user" model="ir.rule">
+        <field name="name">market.by.user</field>
+        <field name="model_id" ref="boraush_trading.model_market"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_user_group'))]"/>
+        <field name="domain_force">[('create_uid' , '=' , user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+
+
+    <record id="market_record_rule_by_manager" model="ir.rule">
+        <field name="name">market.by.manager</field>
+        <field name="model_id" ref="boraush_trading.model_market"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_manager_group'))]"/>
+        <field name="domain_force">[(1 , '=' , 1)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="trucks_record_rule_by_user" model="ir.rule">
+        <field name="name">trucks.by.user</field>
+        <field name="model_id" ref="boraush_trading.model_trucks"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_user_group'))]"/>
+        <field name="domain_force">[('create_uid' , '=' , user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+
+
+    <record id="trucks_record_rule_by_manager" model="ir.rule">
+        <field name="name">trucks.by.manager</field>
+        <field name="model_id" ref="boraush_trading.model_trucks"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_manager_group'))]"/>
+        <field name="domain_force">[(1 , '=' , 1)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="warehouse_record_rule_by_user" model="ir.rule">
+        <field name="name">warehouse.by.user</field>
+        <field name="model_id" ref="boraush_trading.model_warehouse"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_user_group'))]"/>
+        <field name="domain_force">[('create_uid' , '=' , user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+
+
+    <record id="warehouse_record_rule_by_manager" model="ir.rule">
+        <field name="name">warehouse.by.manager</field>
+        <field name="model_id" ref="boraush_trading.model_warehouse"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_manager_group'))]"/>
+        <field name="domain_force">[(1 , '=' , 1)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="arabic_gum_type_record_rule_by_user" model="ir.rule">
+        <field name="name">arabic.gum.type.by.user</field>
+        <field name="model_id" ref="boraush_trading.model_arabic_gum_type"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_user_group'))]"/>
+        <field name="domain_force">[('create_uid' , '=' , user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+
+
+    <record id="arabic_gum_type_record_rule_by_manager" model="ir.rule">
+        <field name="name">arabic.gum.type.by.manager</field>
+        <field name="model_id" ref="boraush_trading.model_arabic_gum_type"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_manager_group'))]"/>
+        <field name="domain_force">[(1 , '=' , 1)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="arabic_gum_type_line_record_rule_by_user" model="ir.rule">
+        <field name="name">arabic.gum.type.line.by.user</field>
+        <field name="model_id" ref="boraush_trading.model_arabic_gum_type_line"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_user_group'))]"/>
+        <field name="domain_force">[('create_uid' , '=' , user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+
+
+    <record id="arabic_gum_type_line_record_rule_by_manager" model="ir.rule">
+        <field name="name">arabic.gum.type.line.by.manager</field>
+        <field name="model_id" ref="boraush_trading.model_arabic_gum_type_line"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_manager_group'))]"/>
+        <field name="domain_force">[(1 , '=' , 1)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="unit_record_rule_by_user" model="ir.rule">
+        <field name="name">unit.by.user</field>
+        <field name="model_id" ref="boraush_trading.model_unit"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_user_group'))]"/>
+        <field name="domain_force">[('create_uid' , '=' , user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+
+
+    <record id="unit_record_rule_by_manager" model="ir.rule">
+        <field name="name">unit.by.manager</field>
+        <field name="model_id" ref="boraush_trading.model_unit"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_manager_group'))]"/>
+        <field name="domain_force">[(1 , '=' , 1)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+<!--    <record id="unit_record_rule_by_manager" model="ir.rule">-->
+<!--        <field name="name">unit.by.manager</field>-->
+<!--        <field name="model_id" ref="boraush_trading.model_unit"/>-->
+<!--        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_manager_group'))]"/>-->
+<!--        <field name="domain_force">[(1 , '=' , 1)]</field>-->
+<!--        <field name="perm_read" eval="True"/>-->
+<!--        <field name="perm_write" eval="True"/>-->
+<!--        <field name="perm_create" eval="True"/>-->
+<!--        <field name="perm_unlink" eval="True"/>-->
+<!--    </record>-->
+
+
+
+<!--    <record id="commissioner_record_rule_by_manager" model="ir.rule">-->
+<!--        <field name="name">commissioner.by.manager</field>-->
+<!--        <field name="model_id" ref="boraush_trading.model_commissioner"/>-->
+<!--        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_manager_group'))]"/>-->
+<!--        <field name="domain_force">[(1 , '=' , 1)]</field>-->
+<!--        <field name="perm_read" eval="True"/>-->
+<!--        <field name="perm_write" eval="True"/>-->
+<!--        <field name="perm_create" eval="True"/>-->
+<!--        <field name="perm_unlink" eval="True"/>-->
+<!--    </record>-->
+
+
+
+    <record id="arabic_gum_price_record_rule_by_user" model="ir.rule">
+        <field name="name">arabic.gum.price.by.user</field>
+        <field name="model_id" ref="boraush_trading.model_arabic_gum_price"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_user_group'))]"/>
+        <field name="domain_force">[('create_uid' , '=' , user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+
+
+    <record id="arabic_gum_price_record_rule_by_manager" model="ir.rule">
+        <field name="name">arabic.gum.price.by.manager</field>
+        <field name="model_id" ref="boraush_trading.model_arabic_gum_price"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_manager_group'))]"/>
+        <field name="domain_force">[(1 , '=' , 1)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="arabic_gum_price_line_record_rule_by_user" model="ir.rule">
+        <field name="name">arabic.gum.price.line.by.user</field>
+        <field name="model_id" ref="boraush_trading.model_arabic_gum_price_line"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_user_group'))]"/>
+        <field name="domain_force">[('create_uid' , '=' , user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+
+
+    <record id="arabic_gum_price_line_record_rule_by_manager" model="ir.rule">
+        <field name="name">arabic.gum.price.line.by.manager</field>
+        <field name="model_id" ref="boraush_trading.model_arabic_gum_price_line"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_manager_group'))]"/>
+        <field name="domain_force">[(1 , '=' , 1)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="inventory_of_tallying_product_record_rule_by_user" model="ir.rule">
+        <field name="name">inventory.of.tallying.product.by.user</field>
+        <field name="model_id" ref="boraush_trading.model_inventory_of_tallying_product"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_user_group'))]"/>
+        <field name="domain_force">[('create_uid' , '=' , user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+
+
+    <record id="inventory_of_tallying_product_record_rule_by_manager" model="ir.rule">
+        <field name="name">inventory.of.tallying.product.by.manager</field>
+        <field name="model_id" ref="boraush_trading.model_inventory_of_tallying_product"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_manager_group'))]"/>
+        <field name="domain_force">[(1 , '=' , 1)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="inventory_of_tallying_product_line_record_rule_by_user" model="ir.rule">
+        <field name="name">inventory.of.tallying.product.line.by.user</field>
+        <field name="model_id" ref="boraush_trading.model_inventory_of_tallying_product_line"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_user_group'))]"/>
+        <field name="domain_force">[('create_uid' , '=' , user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+
+
+    <record id="inventory_of_tallying_product_line_record_rule_by_manager" model="ir.rule">
+        <field name="name">inventory.of.tallying.product.line.by.manager</field>
+        <field name="model_id" ref="boraush_trading.model_inventory_of_tallying_product_line"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_manager_group'))]"/>
+        <field name="domain_force">[(1 , '=' , 1)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="procure_order_record_rule_by_user" model="ir.rule">
+        <field name="name">procure.order.by.user</field>
+        <field name="model_id" ref="boraush_trading.model_procure_order"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_user_group'))]"/>
+        <field name="domain_force">[('create_uid' , '=' , user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+
+
+    <record id="procure_order_record_rule_by_manager" model="ir.rule">
+        <field name="name">procure.order.by.manager</field>
+        <field name="model_id" ref="boraush_trading.model_procure_order"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_manager_group'))]"/>
+        <field name="domain_force">[(1 , '=' , 1)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="procure_order_line_record_rule_by_user" model="ir.rule">
+        <field name="name">procure.order.line.by.user</field>
+        <field name="model_id" ref="boraush_trading.model_procure_order_line"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_user_group'))]"/>
+        <field name="domain_force">[('create_uid' , '=' , user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+
+
+    <record id="procure_order_line_record_rule_by_manager" model="ir.rule">
+        <field name="name">procure.order.line.by.manager</field>
+        <field name="model_id" ref="boraush_trading.model_procure_order_line"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_manager_group'))]"/>
+        <field name="domain_force">[(1 , '=' , 1)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="purchase_record_rule_by_user" model="ir.rule">
+        <field name="name">purchase.by.user</field>
+        <field name="model_id" ref="boraush_trading.model_purchase"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_user_group'))]"/>
+        <field name="domain_force">[('create_uid' , '=' , user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+
+
+    <record id="purchase_record_rule_by_manager" model="ir.rule">
+        <field name="name">purchase.by.manager</field>
+        <field name="model_id" ref="boraush_trading.model_purchase"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_manager_group'))]"/>
+        <field name="domain_force">[(1 , '=' , 1)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="purchase_line_record_rule_by_user" model="ir.rule">
+        <field name="name">purchase.line.by.user</field>
+        <field name="model_id" ref="boraush_trading.model_purchase_line"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_user_group'))]"/>
+        <field name="domain_force">[('create_uid' , '=' , user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+
+
+    <record id="purchase_line_record_rule_by_manager" model="ir.rule">
+        <field name="name">purchase.line.by.manager</field>
+        <field name="model_id" ref="boraush_trading.model_purchase_line"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_manager_group'))]"/>
+        <field name="domain_force">[(1 , '=' , 1)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="purity_storage_record_rule_by_user" model="ir.rule">
+        <field name="name">purity.storage.by.user</field>
+        <field name="model_id" ref="boraush_trading.model_purity_storage"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_user_group'))]"/>
+        <field name="domain_force">[('create_uid' , '=' , user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+
+
+    <record id="purity_storage_record_rule_by_manager" model="ir.rule">
+        <field name="name">purity.storage.by.manager</field>
+        <field name="model_id" ref="boraush_trading.model_purity_storage"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_manager_group'))]"/>
+        <field name="domain_force">[(1 , '=' , 1)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="purity_storage_line_record_rule_by_user" model="ir.rule">
+        <field name="name">purity.storage.line.by.user</field>
+        <field name="model_id" ref="boraush_trading.model_purity_storage_line"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_user_group'))]"/>
+        <field name="domain_force">[('create_uid' , '=' , user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+
+
+    <record id="purity_storage_line_record_rule_by_manager" model="ir.rule">
+        <field name="name">purity.storage.line.by.manager</field>
+        <field name="model_id" ref="boraush_trading.model_purity_storage_line"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_manager_group'))]"/>
+        <field name="domain_force">[(1 , '=' , 1)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="raw_storage_record_rule_by_user" model="ir.rule">
+        <field name="name">raw.storage.by.user</field>
+        <field name="model_id" ref="boraush_trading.model_raw_storage"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_user_group'))]"/>
+        <field name="domain_force">[('create_uid' , '=' , user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+
+
+    <record id="raw_storage_record_rule_by_manager" model="ir.rule">
+        <field name="name">raw.storage.by.manager</field>
+        <field name="model_id" ref="boraush_trading.model_raw_storage"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_manager_group'))]"/>
+        <field name="domain_force">[(1 , '=' , 1)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="raw_storage_line_record_rule_by_user" model="ir.rule">
+        <field name="name">raw.storage.line.by.user</field>
+        <field name="model_id" ref="boraush_trading.model_raw_storage_line"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_user_group'))]"/>
+        <field name="domain_force">[('create_uid' , '=' , user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+
+
+    <record id="raw_storage_line_record_rule_by_manager" model="ir.rule">
+        <field name="name">raw.storage.line.by.manager</field>
+        <field name="model_id" ref="boraush_trading.model_raw_storage_line"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_manager_group'))]"/>
+        <field name="domain_force">[(1 , '=' , 1)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="goods_transport_record_rule_by_user" model="ir.rule">
+        <field name="name">goods.transport.by.user</field>
+        <field name="model_id" ref="boraush_trading.model_goods_transport"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_user_group'))]"/>
+        <field name="domain_force">[('create_uid' , '=' , user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+
+
+    <record id="goods_transport_record_rule_by_manager" model="ir.rule">
+        <field name="name">goods.transport.by.manager</field>
+        <field name="model_id" ref="boraush_trading.model_goods_transport"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_manager_group'))]"/>
+        <field name="domain_force">[(1 , '=' , 1)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="goods_transport_line_record_rule_by_user" model="ir.rule">
+        <field name="name">goods.transport.line.by.user</field>
+        <field name="model_id" ref="boraush_trading.model_goods_transport_line"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_user_group'))]"/>
+        <field name="domain_force">[('create_uid' , '=' , user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+
+
+    <record id="goods_transport_line_record_rule_by_manager" model="ir.rule">
+        <field name="name">goods.transport.line.by.manager</field>
+        <field name="model_id" ref="boraush_trading.model_goods_transport_line"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_manager_group'))]"/>
+        <field name="domain_force">[(1 , '=' , 1)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="order_record_rule_by_user" model="ir.rule">
+        <field name="name">order.by.user</field>
+        <field name="model_id" ref="boraush_trading.model_order"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_user_group'))]"/>
+        <field name="domain_force">[('create_uid' , '=' , user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+
+
+    <record id="order_record_rule_by_manager" model="ir.rule">
+        <field name="name">order.by.manager</field>
+        <field name="model_id" ref="boraush_trading.model_order"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_manager_group'))]"/>
+        <field name="domain_force">[(1 , '=' , 1)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="order_line_record_rule_by_user" model="ir.rule">
+        <field name="name">order.line.by.user</field>
+        <field name="model_id" ref="boraush_trading.model_order_line"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_user_group'))]"/>
+        <field name="domain_force">[('create_uid' , '=' , user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+
+
+    <record id="order_line_record_rule_by_manager" model="ir.rule">
+        <field name="name">order.line.by.manager</field>
+        <field name="model_id" ref="boraush_trading.model_order_line"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_manager_group'))]"/>
+        <field name="domain_force">[(1 , '=' , 1)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="sale_record_rule_by_user" model="ir.rule">
+        <field name="name">sale.by.user</field>
+        <field name="model_id" ref="boraush_trading.model_sale"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_user_group'))]"/>
+        <field name="domain_force">[('create_uid' , '=' , user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+
+
+    <record id="sale_record_rule_by_manager" model="ir.rule">
+        <field name="name">sale.by.manager</field>
+        <field name="model_id" ref="boraush_trading.model_sale"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_manager_group'))]"/>
+        <field name="domain_force">[(1 , '=' , 1)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="sale_line_record_rule_by_user" model="ir.rule">
+        <field name="name">sale.line.by.user</field>
+        <field name="model_id" ref="boraush_trading.model_sale_line"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_user_group'))]"/>
+        <field name="domain_force">[('create_uid' , '=' , user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+
+
+    <record id="sale_line_record_rule_by_manager" model="ir.rule">
+        <field name="name">sale.line.by.manager</field>
+        <field name="model_id" ref="boraush_trading.model_sale_line"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_manager_group'))]"/>
+        <field name="domain_force">[(1 , '=' , 1)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="returns_record_rule_by_user" model="ir.rule">
+        <field name="name">returns.by.user</field>
+        <field name="model_id" ref="boraush_trading.model_returns"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_user_group'))]"/>
+        <field name="domain_force">[('create_uid' , '=' , user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+
+
+    <record id="returns_record_rule_by_manager" model="ir.rule">
+        <field name="name">returns.by.manager</field>
+        <field name="model_id" ref="boraush_trading.model_returns"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_manager_group'))]"/>
+        <field name="domain_force">[(1 , '=' , 1)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="returns_line_record_rule_by_user" model="ir.rule">
+        <field name="name">returns.line.by.user</field>
+        <field name="model_id" ref="boraush_trading.model_returns_line"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_user_group'))]"/>
+        <field name="domain_force">[('create_uid' , '=' , user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+
+
+    <record id="returns_line_record_rule_by_manager" model="ir.rule">
+        <field name="name">returns.line.by.manager</field>
+        <field name="model_id" ref="boraush_trading.model_returns_line"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_manager_group'))]"/>
+        <field name="domain_force">[(1 , '=' , 1)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+
+    <record id="return_reason_record_rule_by_user" model="ir.rule">
+        <field name="name">return.reason.by.user</field>
+        <field name="model_id" ref="boraush_trading.model_return_reason"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_user_group'))]"/>
+        <field name="domain_force">[('create_uid' , '=' , user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+
+
+    <record id="return_reason_record_rule_by_manager" model="ir.rule">
+        <field name="name">return.reason.by.manager</field>
+        <field name="model_id" ref="boraush_trading.model_return_reason"/>
+        <field name="groups" eval="[(4, ref('boraush_trading.boraush_trading_manager_group'))]"/>
+        <field name="domain_force">[(1 , '=' , 1)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+
+</odoo>

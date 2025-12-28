@@ -5,12 +5,11 @@
         <field name="model">arabic.gum.price</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="active" invisible="True"/>
-                <field name="arabic_gum_id"/>
-                <field name="gum_name"/>
+                <field name="name"/>
+                <field name="invoice_id"/>
+                <field name="date"/>
                 <field name="units"/>
-                <field name="unit_price"/>
-                <field name="price_date"/>
+                <field name="active" invisible="True"/>
             </tree>
         </field>
     </record>
@@ -25,15 +24,29 @@
                     <group>
                         <group string="General info">
                             <field name="active" invisible="True"/>
-                            <field name="arabic_gum_id"/>
-                            <field name="gum_name"/>
-                            <field name="units"/>
+                            <field name="name"/>
+                            <field name="invoice_id"/>
                         </group>
                         <group string="Additional info">
-                            <field name="unit_price"/>
-                            <field name="price_date"/>
+                            <field name="date"/>
+                            <field name="units"/>
                         </group>
                     </group>
+                    <notebook>
+                        <page string="Arabic Gum Price Details">
+                            <field name="line_ids">
+                                <tree editable="bottom">
+                                    <field name="gum_type"/>
+                                    <field name="unit_price"/>
+                                    <field name="subtotal"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                    <div style="text-align: right; margin-top: 15px; font-weight: bold;">
+                        Total Amount $ :
+                        <field name="total_price" readonly="1"/>
+                    </div>
                 </sheet>
                     <div class="oe_chatter">
                     <field name="message_follower_ids"/>
@@ -50,7 +63,7 @@
         <field name="model">arabic.gum.price</field>
         <field name="arch" type="xml">
             <search>
-                <field name="arabic_gum_id"/>
+                <field name="name"/>
             </search>
         </field>
     </record>

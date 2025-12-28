@@ -6,12 +6,12 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="ref"/>
-                <field name="active" invisible="True"/>
-                <field name="name"/>
                 <field name="comm_id"/>
+                <field name="name"/>
                 <field name="phone"/>
                 <field name="email"/>
                 <field name="address"/>
+                <field name="active" invisible="True"/>
             </tree>
         </field>
     </record>
@@ -37,12 +37,12 @@
                         </group>
                         <group string="Additional info">
                             <field name="phone"/>
-                            <field name="address"/>
                             <field name="email"/>
+                            <field name="address" placeholder="State Locality City"/>
                         </group>
                     </group>
                 </sheet>
-                    <div class="oe_chatter">
+                <div class="oe_chatter">
                     <field name="message_follower_ids"/>
                     <field name="activity_ids"/>
                     <field name="message_ids"/>
@@ -57,19 +57,18 @@
         <field name="model">commissioner</field>
         <field name="arch" type="xml">
             <search>
+                <field name="name"/>
                 <field name="comm_id"/>
+                <field name="phone"/>
             </search>
         </field>
     </record>
-
 
 
     <record id="commissioner_action" model="ir.actions.act_window">
         <field name="name">commissioner</field>
         <field name="res_model">commissioner</field>
     </record>
-
-
 
 
     <menuitem

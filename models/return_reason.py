@@ -7,5 +7,10 @@ class ReturnReason(models.Model):
 
     active = fields.Boolean(default=True)
     return_date = fields.Date(string = "Return Date", required = True, tracking = True,default = fields.Datetime.now())
-    order_id = fields.Many2one('order',string="Order ID",required = True, tracking = True)
-    return_reason = fields.Text(string="Return Reason",required = True, tracking = True)
+    order_id = fields.Many2one(
+        'order',
+        string="order ID",
+        required = True,
+        tracking = True
+    )
+    name = fields.Text(string="Return Reason",required = True, tracking = True)

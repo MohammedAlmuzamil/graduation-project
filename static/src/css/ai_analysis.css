@@ -1,0 +1,19 @@
+.ai_analysis_popup .o_form_sheet {
+    max-width: 900px;
+}
+
+.ai_analysis_content {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Cairo', sans-serif;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.ai_analysis_content .note-editable,
+.ai_analysis_content iframe {
+    min-height: 420px !important;
+    max-height: 500px;
+    overflow-y: auto !important;
+    white-space: pre-wrap;
+}

@@ -6,11 +6,11 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="ref"/>
-                <field name="name"/>
-                <field name="active" invisible="True"/>
                 <field name="job_number"/>
+                <field name="name"/>
                 <field name="grade"/>
                 <field name="employee_count"/>
+                <field name="active" invisible="True"/>
             </tree>
         </field>
     </record>

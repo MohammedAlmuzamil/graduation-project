@@ -2,7 +2,7 @@ import re
 
 from odoo import models,fields,api
 
-from odoo17.odoo.exceptions import ValidationError
+from odoo.exceptions import ValidationError
 
 
 class Commissioner(models.Model):
@@ -11,18 +11,23 @@ class Commissioner(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     active = fields.Boolean(default=True)
-    ref = fields.Char(default='New' , readonly=1)
+    ref = fields.Char(default='New' , readonly=1,string="Number")
     name = fields.Char(string="Commissioner Name" , required=True,tracking=True)
     comm_id = fields.Integer(string="Commissioner ID" , required=True,tracking=True)
     phone = fields.Char(string="Phone Number",tracking=True,default="+249")
-    email = fields.Char(string="Email",tracking=True, default="example@email.com")
-    address = fields.Text(string="Address",tracking=True)
-
+    email = fields.Char(string="Email",tracking=True, default="example@gmail.com")
+    address = fields.Many2one(
+        'address',
+        string="Address",
+        tracking=True
+    )
 
 
     _sql_constraints = [
-        ('unique_id', 'unique("comm_id")', 'This ID Is Exist!')
+        ('unique_id', 'unique("comm_id")', 'This Commissioner ID Is Exist!')
     ]
+
+
 
     @api.model
     def default_get(self, fields_list):
@@ -61,13 +66,10 @@ class Commissioner(models.Model):
             if rec.phone and not rec.phone.startswith('+249'):
                 raise ValidationError("Phone number must start with Sudan's code +249!")
 
-    # @api.model
-    # def create(self,vals):
-    #     res = super(Commissioner,self).create(vals)
-    #     if res.ref == 'New':
-    #         res.ref = self.env['ir.sequence'].next_by_code('commissioner_seq')
-    #     return res
 
-
-
+    @api.constrains('comm_id')
+    def _check_comm_id(self):
+        for rec in self:
+            if not rec.comm_id or rec.comm_id <=0 :
+                raise ValidationError("Commissioner ID Is Not Valid")
 

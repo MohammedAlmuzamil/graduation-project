@@ -3,13 +3,15 @@
     <record id="trucks_report" model="ir.actions.report">
         <field name="name">Trucks Report</field>
         <field name="model">trucks</field>
-        <field name="report_type">qweb-html</field>
-        <field name="binding_model_id" ref="model_trucks"/>
+        <field name="report_type">qweb-pdf</field>
+        <field name="binding_model_id" ref="boraush_trading.model_trucks"/>
         <field name="binding_type">report</field>
         <field name="report_name">boraush_trading.trucks_report_template</field>
     </record>
+
     <template id="trucks_report_template">
-         <t t-set="report_encoding" t-value="'utf-8'"/>
+        <t t-set="report_encoding" t-value="'utf-8'"/>
+        <t t-set="time" t-value="datetime.datetime.now()"/>
         <t t-call="web.html_container">
             <div class="page">
 
@@ -17,7 +19,7 @@
                     <div class="company-left">
                         <img t-if="docs and docs[0].env.company.logo"
                              t-att-src="'data:image/png;base64,%s' % (docs[0].env.company.logo.decode())"
-                             style="width: 100px; height: auto; margin-bottom:10px;"/>
+                             style="width:100px; height:auto; margin-bottom:10px;"/>
                         <h1 t-field="docs and docs[0].env.company.name"/>
                         <p t-field="docs and docs[0].env.company.street"/>
                         <p>
@@ -27,21 +29,16 @@
                         </p>
                     </div>
                     <div class="report-meta" style="text-align:right;">
-                        <p>
-                            <strong>Date:</strong>
-                            <t t-esc="time.strftime('%Y-%m-%d')"/>
-                        </p>
+                        <p><strong>Date:</strong> <t t-esc="time.strftime('%Y-%m-%d')"/></p>
                     </div>
                 </div>
-
 
                 <div style="text-align:left; font-size:13px; font-weight:bold; margin-bottom:10px;">
                     <t t-esc="docs and docs[0].ref or ''"/>
                 </div>
 
-                <table class="truck-table"
-                       style="width:100%; border-collapse: collapse; text-align:center; margin-top:10px;">
-                    <thead style="background-color:#2F5597; color:white;">
+                <table class="truck-table" style="width:100%; border-collapse: collapse; text-align:center; margin-top:10px;">
+                    <thead style="background-color:#eb861e; color:white;">
                         <tr>
                             <th>Truck ID</th>
                             <th>Truck Type</th>
@@ -54,65 +51,31 @@
                     <tbody>
                         <t t-foreach="docs" t-as="truck">
                             <tr>
-                                <td t-esc="truck.truck_id"/>
+                                <td t-esc="truck.name or '-'"/>
                                 <td t-esc="dict(truck._fields['truck_type'].selection).get(truck.truck_type, '-')"/>
-                                <td t-esc="truck.chassis_no"/>
-                                <td t-esc="truck.license"/>
-                                <td t-esc="truck.max_weight"/>
+                                <td t-esc="truck.chassis_no or '-'"/>
+                                <td t-esc="truck.license or '-'"/>
+                                <td t-esc="truck.max_weight or '-'"/>
                                 <td t-esc="truck.driver_id.name or '-'"/>
                             </tr>
                         </t>
                     </tbody>
                 </table>
 
-                <footer class="report-footer"
-                        style="display:flex; justify-content: space-between; margin-top:20px; font-size:11px; color:#555;">
-                    <div>
-                        Prepared by:
-                        <span t-esc="docs and docs[0].env.uid and docs[0].env.user.name or 'System'"/>
-                    </div>
-                    <div class="page-number">
-                        Page <span class="pagenum"/>
-                    </div>
+                <footer class="report-footer" style="display:flex; justify-content: space-between; margin-top:20px; font-size:11px; color:#555;">
+                    <div>Prepared by: <span t-esc="docs and docs[0].env.user.name or 'System'"/></div>
+                    <div class="page-number">Page <span class="pagenum"/></div>
                 </footer>
 
             </div>
         </t>
 
         <style>
-            .truck-table th, .truck-table td {
-                border: 1px solid #ddd;
-                padding: 8px;
-            }
-
-            .truck-table th {
-                background-color: #2F5597;
-                color: white;
-            }
-
-            .page {
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 12px;
-                color: #222;
-                padding: 20px;
-            }
-
-            hr {
-                border: none;
-                border-top: 1px solid #ddd;
-                margin: 12px 0;
-            }
-
-            @media print {
-                .page {
-                    padding: 10mm;
-                }
-                .pagenum:after {
-                    content: counter(page);
-                }
-            }
+            .truck-table th, .truck-table td { border:1px solid #ddd; padding:8px; }
+            .truck-table th { background-color:#eb861e; color:white; }
+            .page { font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#222; padding:20px; }
+            hr { border:none; border-top:1px solid #ddd; margin:12px 0; }
+            @media print { .page { padding:10mm; } .pagenum:after { content:counter(page); } }
         </style>
     </template>
-
-
 </odoo>

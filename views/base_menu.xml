@@ -50,4 +50,12 @@
             parent="boraush_trading_root_menu"
     />
 
+    <menuitem
+            id="dashboard_menu"
+            name="Dashboard"
+            parent="boraush_trading_root_menu"
+
+    />
+
 </odoo>
+<!--groups="boraush_trading.boraush_trading_manager_group"-->

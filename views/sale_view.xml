@@ -4,28 +4,43 @@
         <field name="name">sale tree</field>
         <field name="model">sale</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree decoration-danger="(check_returned == 'returned')">
+                <header>
+                    <button name="sales_xlsx_report" type="object" string="Print Excel Report" class="btn-success"/>
+                    <button name="action_analyze_and_show" type="object" string="Analyze Sales" class="btn-primary"/>
+                </header>
                 <field name="ref"/>
                 <field name="name"/>
-                <field name="active" invisible="True"/>
+                <field name="order_id"/>
                 <field name="warehouse_id"/>
                 <field name="employee_id"/>
                 <field name="customer_id"/>
                 <field name="sale_date"/>
                 <field name="amount_total"/>
+                <field name="check_returned" invisible="1"/>
+                <field name="active" invisible="True"/>
             </tree>
         </field>
     </record>
+
+
 
     <record id="sale_view_form" model="ir.ui.view">
         <field name="name">sale form</field>
         <field name="model">sale</field>
         <field name="arch" type="xml">
             <form>
-                <header>
-                    <button string="Confirm Sale" type="object" name="action_confirm_sale" class="btn-primary"/>
-                </header>
                 <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <widget name="web_ribbon" title="Returned" bg_color="text-bg-danger"
+                            invisible="check_returned != 'returned'"/>
+                    <header>
+                        <button string="Confirm Sale"
+                                type="object"
+                                name="action_confirm_sale"
+                                class="btn-primary"
+                                invisible="state == 'sold'"/>
+                    </header>
                     <div name="button_box" class="oe_button_box">
                         <button name="action_open_related_employee"
                                 type="object" icon="fa-user" string="Employee"
@@ -36,9 +51,10 @@
                         <button name="action_open_related_warehouse"
                                 type="object" icon="fa-cubes" string="Warehouse"
                                 invisible="not warehouse_id"/>
+
+
+
                     </div>
-                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
-<!--                    <field name="is_returned" widget="statusbar" options="{'invisible': [('is_returned','=',False)]}"/>-->
                     <div class="oe_title">
                         <label for="ref"/>
                         <h1>
@@ -48,14 +64,18 @@
                     <group>
                         <group string="General info">
                             <field name="name"/>
+                            <field name="order_id" placeholder="Sale Order ID"/>
+                            <field name="warehouse_id" placeholder="Warehouse Name"/>
                             <field name="active" invisible="True"/>
-                            <field name="warehouse_id"/>
-                            <field name="employee_id"/>
-                            <field name="customer_id"/>
+                            <field name="state" invisible="1"/>
+                            <field name="check_returned" invisible="1"/>
                         </group>
                         <group string="Additional info">
+                            <field name="employee_id" placeholder="Employee Name"/>
+                            <field name="customer_id" placeholder="Customer Name"/>
+                        </group>
+                        <group string="Date">
                             <field name="sale_date"/>
-                            <field name="amount_total" readonly="1"/>
                         </group>
                     </group>
                     <notebook>
@@ -64,18 +84,45 @@
                                 <tree editable="bottom">
                                     <field name="gum_type"/>
                                     <field name="quantity"/>
-                                    <field name="unit_price" readonly="1"/>
+                                    <field name="unit_price"/>
                                     <field name="subtotal" readonly="1"/>
                                 </tree>
                             </field>
                         </page>
                     </notebook>
+                    <div style="text-align: right; margin-top: 15px; font-weight: bold;">
+                        Total Sales $ :
+                        <field name="amount_total" readonly="1"/>
+                    </div>
                 </sheet>
-                    <div class="oe_chatter">
+                <div class="oe_chatter">
                     <field name="message_follower_ids"/>
                     <field name="activity_ids"/>
                     <field name="message_ids"/>
                 </div>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="view_sale_analysis_wizard" model="ir.ui.view">
+        <field name="name">sale.analysis.wizard.form</field>
+        <field name="model">sale.analysis.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Sales AI Analysis" class="ai_analysis_popup">
+                <sheet>
+                    <field name="analysis_text"
+                           widget="html"
+                           readonly="1"
+                           nolabel="1"
+                           class="ai_analysis_content"/>
+                </sheet>
+
+                <footer>
+                    <button string="Close"
+                            class="btn-secondary"
+                            special="cancel"/>
+                </footer>
             </form>
         </field>
     </record>
@@ -89,10 +136,12 @@
                 <field name="warehouse_id"/>
                 <field name="name"/>
                 <field name="employee_id"/>
+
+                <filter name="Sold" string="Sold" domain="[('check_returned','!=','returned')]"/>
+                <filter name="Returned" string="Returned" domain="[('check_returned','=','returned')]"/>
             </search>
         </field>
     </record>
-
 
 
     <record id="sale_action" model="ir.actions.act_window">
@@ -101,12 +150,10 @@
     </record>
 
 
-
-
     <menuitem
-          id="sale_menu_item"
-          name="Sales"
-          parent="sales_menu"
-          action="sale_action"
+            id="sale_menu_item"
+            name="Sales"
+            parent="sales_menu"
+            action="sale_action"
     />
 </odoo>

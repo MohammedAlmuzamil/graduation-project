@@ -6,13 +6,11 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="ref"/>
-                <field name="order_id"/>
-                <field name="active" invisible="True"/>
-                <field name="gum_id"/>
-                <field name="gum_type"/>
-                <field name="quantity"/>
+                <field name="name"/>
+                <field name="state"/>
                 <field name="date_order"/>
                 <field name="customer_id"/>
+                <field name="active" invisible="True"/>
             </tree>
         </field>
     </record>
@@ -24,6 +22,20 @@
             <form>
                 <sheet>
                     <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <widget name="web_ribbon" title="Done" bg_color="text-bg-success" invisible="state != 'done'"/>
+                    <header>
+                        <button name="action_draft" type="object" class="btn-warning" string="Draft"
+                        invisible="state in ('draft','sent','sale','done')"/>
+                        <button name="action_sent" type="object" class="btn-primary" string="Sent"
+                        invisible="state != 'draft'"/>
+                        <button name="action_sale" type="object" class="btn-info" string="Sale"
+                        invisible="state != 'sent'"/>
+                        <button name="action_done" type="object" class="btn-success" string="Done"
+                        invisible="state != 'sale'"/>
+                        <button name="action_cancel" type="object" class="btn-primary" string="Cancel"
+                        invisible="state == 'done'"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
                     <div class="oe_title">
                         <label for="ref"/>
                         <h1>
@@ -33,16 +45,25 @@
                     <group>
                         <group string="General info">
                             <field name="active" invisible="True"/>
-                            <field name="order_id"/>
-                            <field name="gum_id"/>
-                            <field name="customer_id"/>
-                        </group>
-                        <group string="Additional info">
-                            <field name="gum_type"/>
-                            <field name="quantity"/>
+                            <field name="name"/>
+                            <field name="customer_id" placeholder="Customer Name"/>
                             <field name="date_order"/>
                         </group>
                     </group>
+                    <notebook>
+                        <page string="Orders Details">
+                            <field name="line_ids">
+                                <tree editable="bottom">
+                                    <field name="arabic_gum_type"/>
+                                    <field name="quantity"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                    <div style="text-align: right; margin-top: 15px; font-weight: bold;">
+                        Total Quantity Kg :
+                        <field name="total_quantity" readonly="1"/>
+                    </div>
                 </sheet>
                     <div class="oe_chatter">
                     <field name="message_follower_ids"/>
@@ -59,8 +80,13 @@
         <field name="model">order</field>
         <field name="arch" type="xml">
             <search>
-                <field name="gum_id"/>
-                <field name="order_id"/>
+                <field name="name"/>
+
+                <filter name="Draft" string="Draft" domain="[('state','=','draft')]"/>
+                <filter name="Sent" string="Sent" domain="[('state','=','sent')]"/>
+                <filter name="Sale" string="Sale" domain="[('state','=','sale')]"/>
+                <filter name="Done" string="Done" domain="[('state','=','done')]"/>
+                <filter name="Cancel" string="Cancel" domain="[('state','=','cancel')]"/>
             </search>
         </field>
     </record>

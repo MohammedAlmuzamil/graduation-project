@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <record id="inventory_of_talling_product_sequence" model="ir.sequence">
+            <field name="name">Inventory Of Talling Product seq</field>
+            <field name="code">inventory_of_talling_product_seq</field>
+            <field name="prefix">TAL</field>
+            <field name="padding">4</field>
+        </record>
+    </data>
+</odoo>

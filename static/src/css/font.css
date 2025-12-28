@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'Cairo';
+    src: url('/boraush_trading/static/src/fonts/Cairo-Regular.ttf') format('truetype');
+}
+
+.ai_analysis_text textarea {
+    direction: rtl;
+    text-align: right;
+    white-space: pre-wrap;
+    font-family: 'Cairo', sans-serif;
+    font-size: 14px;
+    line-height: 1.8;
+    min-height: 400px;
+    overflow-y: auto;
+}
+

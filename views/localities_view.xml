@@ -1,0 +1,68 @@
+<odoo>
+
+    <record id="localities_view_tree" model="ir.ui.view">
+        <field name="name">localities tree</field>
+        <field name="model">localities</field>
+        <field name="arch" type="xml">
+            <tree string="localities">
+                <field name="locality_id"/>
+                <field name="name"/>
+                <field name="city_id"/>
+                <field name="active" invisible="True"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="localities_view_form" model="ir.ui.view">
+        <field name="name">localities form</field>
+        <field name="model">localities</field>
+        <field name="arch" type="xml">
+            <form string="localities">
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <group>
+                        <group string="General info">
+                            <field name="locality_id"/>
+                            <field name="name"/>
+                            <field name="city_id"/>
+                            <field name="active" invisible="True"/>
+                        </group>
+                    </group>
+                </sheet>
+                    <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="localities_view_search" model="ir.ui.view">
+        <field name="name">localities search</field>
+        <field name="model">localities</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="locality_id"/>
+            </search>
+        </field>
+    </record>
+
+
+
+    <record id="localities_action" model="ir.actions.act_window">
+        <field name="name">localities</field>
+        <field name="res_model">localities</field>
+    </record>
+
+
+
+
+    <menuitem
+          id="localities_menu_item"
+          name="Localities"
+          parent="location_menu"
+          action="localities_action"
+    />
+</odoo>

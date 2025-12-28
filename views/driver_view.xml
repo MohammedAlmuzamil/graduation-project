@@ -6,12 +6,12 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="ref"/>
-                <field name="name"/>
-                <field name="active" invisible="True"/>
                 <field name="driver_id"/>
+                <field name="name"/>
                 <field name="phone"/>
                 <field name="email"/>
                 <field name="address"/>
+                <field name="active" invisible="True"/>
             </tree>
         </field>
     </record>
@@ -38,8 +38,8 @@
                         <group>
                         <group string="Additional info">
                             <field name="phone"/>
-                            <field name="address"/>
                             <field name="email"/>
+                            <field name="address" placeholder="State Locality City"/>
                         </group>
                         </group>
                     </group>

@@ -4,7 +4,7 @@
         <field name="name">market</field>
         <field name="model">market</field>
         <field name="report_type">qweb-html</field>
-        <field name="binding_model_id" ref="model_market"/>
+        <field name="binding_model_id" ref="boraush_trading.model_market"/>
         <field name="binding_type">report</field>
         <field name="report_name">boraush_trading.market_report_template</field>
     </record>
@@ -79,7 +79,7 @@
             }
 
             .market-table th {
-                background-color: #2F5597;
+                background-color: #eb861e;
                 color: white;
             }
 

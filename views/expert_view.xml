@@ -6,12 +6,12 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="ref"/>
-                <field name="name"/>
-                <field name="active" invisible="True"/>
                 <field name="expert_id"/>
+                <field name="name"/>
                 <field name="phone"/>
                 <field name="email"/>
                 <field name="address"/>
+                <field name="active" invisible="True"/>
             </tree>
         </field>
     </record>
@@ -34,13 +34,15 @@
                             <field name="active" invisible="True"/>
                             <field name="name"/>
                             <field name="expert_id"/>
+                        </group>
+                        <group string="Additional info">
                             <field name="phone"/>
-                            <field name="address"/>
                             <field name="email"/>
+                            <field name="address" placeholder="State Locality City"/>
                         </group>
                     </group>
                 </sheet>
-                    <div class="oe_chatter">
+                <div class="oe_chatter">
                     <field name="message_follower_ids"/>
                     <field name="activity_ids"/>
                     <field name="message_ids"/>
@@ -61,19 +63,16 @@
     </record>
 
 
-
     <record id="expert_action" model="ir.actions.act_window">
         <field name="name">expert</field>
         <field name="res_model">expert</field>
     </record>
 
 
-
-
     <menuitem
-          id="expert_menu_item"
-          name="Experts"
-          parent="partners_menu"
-          action="expert_action"
+            id="expert_menu_item"
+            name="Experts"
+            parent="partners_menu"
+            action="expert_action"
     />
 </odoo>

@@ -3,114 +3,101 @@
     <record id="job_report" model="ir.actions.report">
         <field name="name">Job Report</field>
         <field name="model">job</field>
-        <field name="report_type">qweb-html</field>
-        <field name="binding_model_id" ref="model_job"/>
+        <field name="report_type">qweb-pdf</field>
+        <field name="binding_model_id" ref="boraush_trading.model_job"/>
         <field name="binding_type">report</field>
         <field name="report_name">boraush_trading.job_report_template</field>
     </record>
 
     <template id="job_report_template">
-        <t t-set="report_encoding" t-value="'utf-8'"/>
-        <t t-call="web.html_container">
-            <div class="page">
-
-                <div class="report-header" style="display:flex; justify-content: space-between; align-items:flex-start;">
-                    <div class="company-left">
-                        <img t-if="docs and docs[0].env.company.logo"
-                             t-att-src="'data:image/png;base64,%s' % (docs[0].env.company.logo.decode())"
-                             style="width: 100px; height: auto; margin-bottom:10px;"/>
-                        <h1 t-field="docs and docs[0].env.company.name"/>
-                        <p t-field="docs and docs[0].env.company.street"/>
-                        <p>
-                            <span t-field="docs and docs[0].env.company.phone"/>
-                            |
-                            <span t-field="docs and docs[0].env.company.email"/>
-                        </p>
-                    </div>
-                    <div class="report-meta" style="text-align:right;">
-                        <h2>Job Report</h2>
-                        <p>
-                            <strong>Date:</strong>
-                            <t t-esc="time.strftime('%Y-%m-%d')"/>
-                        </p>
-                    </div>
-                </div>
-
-                <hr/>
-
-                <table class="job-table"
-                       style="width:100%; border-collapse: collapse; text-align:center; margin-top:10px;">
-                    <thead style="background-color:#2F5597; color:white;">
-                        <tr>
-                            <th>Job ID</th>
-                            <th>Job Name</th>
-                            <th>Job Grade</th>
-                            <th>Employee Count</th>
-                            <th>Employee Names</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <t t-foreach="docs" t-as="job">
+        <t t-call="web.external_layout">
+            <main>
+                <t t-set="time" t-value="datetime.datetime.now()"/>
+                <t t-foreach="docs" t-as="doc">
+                    <div class="page">
+                        <table style="width:100%; border-collapse:collapse; margin-bottom:15px;">
                             <tr>
-                                <td t-esc="job.job_number"/>
-                                <td t-esc="job.name"/>
-                                <td t-esc="job.grade or '-'"/>
-                                <td t-esc="job.employee_count"/>
+                                <td style="width:100px;">
+                                    <img t-if="doc.env.company.logo"
+                                         t-att-src="'data:image/png;base64,%s' % (doc.env.company.logo.decode())"
+                                         style="width:100px; height:auto;"/>
+                                </td>
                                 <td>
-                                    <t t-esc="', '.join(emp.name for emp in job.employee_ids) or '-'"/>
+                                    <h2 t-field="doc.env.company.name"/>
+                                    <p t-field="doc.env.company.street"/>
+                                    <p>
+                                        <span t-field="doc.env.company.phone"/>
+                                        |
+                                        <span t-field="doc.env.company.email"/>
+                                    </p>
+                                </td>
+                                <td style="width:150px; text-align:right;">
+                                    <h3>Job Report</h3>
+                                    <p><b>Date:</b> <t t-esc="time.strftime('%Y-%m-%d')"/></p>
                                 </td>
                             </tr>
-                        </t>
-                    </tbody>
-                </table>
+                        </table>
 
-                <footer class="report-footer"
-                        style="display:flex; justify-content: space-between; margin-top:20px; font-size:11px; color:#555;">
-                    <div>
-                        Prepared by:
-                        <span t-esc="docs and docs[0].env.uid and docs[0].env.user.name or 'System'"/>
-                    </div>
-                    <div class="page-number">
-                        Page <span class="pagenum"/>
-                    </div>
-                </footer>
+                        <hr/>
 
-            </div>
+                        <table style="width:60%; border-collapse:collapse; margin-bottom:15px;">
+                            <tr>
+                                <td><b>Job ID</b></td>
+                                <td t-esc="doc.job_number or '-'"/>
+                            </tr>
+                            <tr>
+                                <td><b>Job Name</b></td>
+                                <td t-esc="doc.name or '-'"/>
+                            </tr>
+                            <tr>
+                                <td><b>Job Grade</b></td>
+                                <td t-esc="doc.grade or '-'"/>
+                            </tr>
+                        </table>
+
+                        <table class="sale-table" style="width:100%; border-collapse:collapse; margin-top:10px;">
+                            <thead>
+                                <tr style="background-color:#eb861e; color:white;">
+                                    <th>Employee No.</th>
+                                    <th>Employee Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="doc.employee_ids" t-as="emp">
+                                    <tr>
+                                        <td t-esc="emp.id"/>
+                                        <td t-esc="emp.name"/>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+
+                        <div style="margin-top:10px; font-weight:bold;">
+                            Total Employees: <t t-esc="doc.employee_count or 0"/>
+                        </div>
+
+                        <table style="width:100%; margin-top:20px; font-size:12px; color:#555;">
+                            <tr>
+                                <td style="text-align:left;">
+                                    Prepared by: <span t-esc="doc.env.user.name or 'System'"/>
+                                </td>
+                                <td style="text-align:right;">
+                                    Page <span class="pagenum"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </t>
+            </main>
+
+            <style type="text/css" media="print">
+                * { -webkit-print-color-adjust: exact !important; }
+                .sale-table th, .sale-table td { border:1px solid #ddd; padding:5px; font-size:12px; }
+                .sale-table th { background-color:#eb861e !important; color:white !important; }
+                .page { font-family: Arial, Helvetica, sans-serif; font-size:12px; padding:15px; color:#222; }
+                hr { border:none; border-top:1px solid #ddd; margin:8px 0; }
+                .pagenum:after { content: counter(page); }
+            </style>
         </t>
-
-        <style>
-            .job-table th, .job-table td {
-                border: 1px solid #ddd;
-                padding: 8px;
-            }
-
-            .job-table th {
-                background-color: #2F5597;
-                color: white;
-            }
-
-            .page {
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 12px;
-                color: #222;
-                padding: 20px;
-            }
-
-            hr {
-                border: none;
-                border-top: 1px solid #ddd;
-                margin: 12px 0;
-            }
-
-            @media print {
-                .page {
-                    padding: 10mm;
-                }
-                .pagenum:after {
-                    content: counter(page);
-                }
-            }
-        </style>
-
     </template>
 </odoo>

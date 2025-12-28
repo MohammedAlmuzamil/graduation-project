@@ -1,11 +1,33 @@
 {
-    'name':"Boraush Trading",
-    'author':"Mohemmed Almuzamil Omran",
-    'category':'',
-    'version':'17.0.0.1.0',
-    'depends':['base','mail'
-               ],
-    'data':[
+    'name': "Boraush Trading",
+    'summary': "A full trading management system built for Boraush Company using Odoo 17.",
+    'description': """
+Boraush Trading – Full Integrated System
+========================================
+This system is developed as a Graduation Project using **Odoo 17 Framework**.
+It covers and automates all trading operations including:
+
+- Customer Management
+- Warehouse & Stock Control
+- Arabic Gum Management & Pricing
+- Procurement & Purchasing
+- Sales & Returns Management
+- Purchases & Precure Orders Management
+- Goods Transport Tracking
+- Employee & Job Management
+- Multi-Level Access Rights & Security Groups
+- Periodic Reports & Custom PDF Reports
+- Automated Sequences for all business documents
+- State, Locality, and City Management
+- Communication using Odoo Mail & Activity System""",
+
+    'author': "Developed as a Graduation Project by Mohammed Almuzamil - Abdelmonem Mohammed - Aesha Malik - Yassen Saif Al-Nasr",
+    'category': 'Productivity',
+    'version': '17.0.0.1.0',
+    'depends': ['base', 'mail'
+                ],
+    'data': [
+        'security/security.xml',
         'security/ir.model.access.csv',
         'data/sequence_commissioner.xml',
         'data/sequence_expert.xml',
@@ -33,6 +55,8 @@
         'data/sequence_purchase.xml',
         'data/sequence_warehouse.xml',
         'data/sequence_goods_transport.xml',
+        'data/inventory_of_talling_product.xml',
+
         'views/base_menu.xml',
         'views/commissioner_view.xml',
         'views/expert_view.xml',
@@ -49,13 +73,8 @@
         'views/arabic_gum_type_view.xml',
         'views/unit_view.xml',
         'views/arabic_gum_price_view.xml',
-        'views/arabic_gum_view.xml',
-        'views/pure_view.xml',
-        'views/tallying_product_view.xml',
-        'views/purity_inventory_view.xml',
         'views/procure_order_view.xml',
         'views/purchase_view.xml',
-        'views/pure_store_view.xml',
         'views/purity_storage_view.xml',
         'views/raw_storage_view.xml',
         'views/goods_transport_view.xml',
@@ -64,9 +83,14 @@
         'views/returns_view.xml',
         'views/return_reason_view.xml',
         'views/inventory_of_tallying_product_view.xml',
-        'views/raw_storage_receipt_view.xml',
         'views/supervisor_view.xml',
         'views/gum_stock_view.xml',
+        'views/states_view.xml',
+        'views/localities_view.xml',
+        'views/cities_view.xml',
+
+        'wizard/report_period_wizard_view.xml',
+
         'reports/commissioner_report.xml',
         'reports/expert_report.xml',
         'reports/producer_report.xml',
@@ -74,7 +98,6 @@
         'reports/customer_report.xml',
         'reports/employee_report.xml',
         'reports/supervisor_report.xml',
-        'reports/job_report.xml',
         'reports/address_report.xml',
         'reports/driver_report.xml',
         'reports/trucks_report.xml',
@@ -87,6 +110,22 @@
         'reports/purchase_report.xml',
         'reports/sale_report.xml',
         'reports/returns_report.xml',
+        'reports/units_report.xml',
+        'reports/arabic_gum_price_report.xml',
+        'reports/purity_storage_report.xml',
+        'reports/gum_stock_report.xml',
+        'reports/returns_reason_report.xml',
+        'reports/procure_order_report.xml',
+        'reports/order_report.xml',
+        'reports/job_report.xml',
+        'reports/raw_storage_report.xml',
+        'reports/receiving_goods_report.xml',
     ],
-    'application':True,
+    'assets': {
+        'web.report_assets_common': [
+            'boraush_trading/static/src/css/font.css',
+            'boraush_trading/static/src/css/ai_analysis.css',
+        ],
+    },
+    'application': True,
 }

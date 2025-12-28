@@ -3,115 +3,88 @@
     <record id="driver_report" model="ir.actions.report">
         <field name="name">Driver Report</field>
         <field name="model">driver</field>
-        <field name="report_type">qweb-html</field>
-        <field name="binding_model_id" ref="model_driver"/>
+        <field name="report_type">qweb-pdf</field>
+        <field name="binding_model_id" ref="boraush_trading.model_driver"/>
         <field name="binding_type">report</field>
         <field name="report_name">boraush_trading.driver_report_template</field>
     </record>
+
     <template id="driver_report_template">
-        <t t-set="report_encoding" t-value="'utf-8'"/>
-        <t t-call="web.html_container">
-            <t t-set="time" t-value="datetime.datetime.now()"/>
-            <div class="page">
-
-                <div class="report-header" style="display:flex; justify-content: space-between; align-items:flex-start;">
-                    <div class="company-left">
-                        <img t-if="docs and docs[0].env.company.logo"
-                             t-att-src="'data:image/png;base64,%s' % (docs[0].env.company.logo.decode())"
-                             style="width: 100px; height: auto; margin-bottom:10px;"/>
-                        <h1 t-field="docs and docs[0].env.company.name"/>
-                        <p t-field="docs and docs[0].env.company.street"/>
-                        <p>
-                            <span t-field="docs and docs[0].env.company.phone"/>
-                            |
-                            <span t-field="docs and docs[0].env.company.email"/>
-                        </p>
-                    </div>
-                    <div class="report-meta" style="text-align:right;">
-<!--                        <h2>Driver Report</h2>-->
-                        <p>
-                            <strong>Date:</strong>
-                            <t t-esc="time.strftime('%Y-%m-%d')"/>
-                        </p>
-                    </div>
-                </div>
-
-                <hr/>
-
-                <table class="driver-table"
-                       style="width:100%; border-collapse: collapse; text-align:center; margin-top:10px;">
-                    <thead style="background-color:#2F5597; color:white;">
-                        <tr>
-                            <th>Ref</th>
-                            <th>Driver Name</th>
-                            <th>Driver ID</th>
-                            <th>Phone</th>
-                            <th>Email</th>
-                            <th>Address</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <t t-foreach="docs" t-as="driver">
+        <t t-call="web.external_layout">
+            <main>
+                <t t-set="time" t-value="datetime.datetime.now()"/>
+                <t t-foreach="docs" t-as="driver">
+                    <div class="page">
+                        <table style="width:100%; border-collapse:collapse; margin-bottom:15px;">
                             <tr>
-                                <td t-esc="driver.ref"/>
-                                <td t-esc="driver.name"/>
-                                <td t-esc="driver.driver_id"/>
-                                <td t-esc="driver.phone"/>
-                                <td t-esc="driver.email"/>
-                                <td t-esc="driver.address"/>
+                                <td style="width:100px;">
+                                    <img t-if="driver.env.company.logo"
+                                         t-att-src="'data:image/png;base64,%s' % (driver.env.company.logo.decode())"
+                                         style="width:100px; height:auto;"/>
+                                </td>
+                                <td>
+                                    <h2 t-field="driver.env.company.name"/>
+                                    <p t-field="driver.env.company.street"/>
+                                    <p>
+                                        <span t-field="driver.env.company.phone"/>
+                                        |
+                                        <span t-field="driver.env.company.email"/>
+                                    </p>
+                                </td>
+                                <td style="width:150px; text-align:right;">
+                                    <h3>Driver Report</h3>
+                                    <p><b>Date:</b> <t t-esc="time.strftime('%Y-%m-%d')"/></p>
+                                </td>
                             </tr>
-                        </t>
-                    </tbody>
-                </table>
+                        </table>
 
-                <footer class="report-footer"
-                        style="display:flex; justify-content: space-between; margin-top:20px; font-size:11px; color:#555;">
-                    <div>
-                        Prepared by:
-                        <span t-esc="docs and docs[0].env.user.name or 'System'"/>
-                    </div>
-                    <div class="page-number">
-                        Page <span class="pagenum"/>
-                    </div>
-                </footer>
+                        <hr/>
 
-            </div>
+                        <table class="sale-table" style="width:100%; border-collapse:collapse; margin-top:10px;">
+                            <thead>
+                                <tr style="background-color:#eb861e; color:white;">
+                                    <th>Ref</th>
+                                    <th>Driver ID</th>
+                                    <th>Driver Name</th>
+                                    <th>Phone</th>
+                                    <th>Email</th>
+                                    <th>Address</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td t-esc="driver.ref or '-'"/>
+                                    <td t-esc="driver.driver_id or '-'"/>
+                                    <td t-esc="driver.name or '-'"/>
+                                    <td t-esc="driver.phone or '-'"/>
+                                    <td t-esc="driver.email or '-'"/>
+                                    <td t-esc="driver.address.name.name or '-'"/>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table style="width:100%; margin-top:20px; font-size:12px; color:#555;">
+                            <tr>
+                                <td style="text-align:left;">
+                                    Prepared by: <span t-esc="driver.env.user.name or 'System'"/>
+                                </td>
+                                <td style="text-align:right;">
+                                    Page <span class="pagenum"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </t>
+            </main>
+
+            <style type="text/css" media="print">
+                * { -webkit-print-color-adjust: exact !important; }
+                .sale-table th, .sale-table td { border:1px solid #ddd; padding:5px; font-size:12px; }
+                .sale-table th { background-color:#eb861e !important; color:white !important; }
+                .page { font-family: Arial, Helvetica, sans-serif; font-size:12px; padding:15px; color:#222; }
+                hr { border:none; border-top:1px solid #ddd; margin:8px 0; }
+                .pagenum:after { content: counter(page); }
+            </style>
         </t>
-
-        <style>
-            .driver-table th, .driver-table td {
-                border: 1px solid #ddd;
-                padding: 8px;
-            }
-
-            .driver-table th {
-                background-color: #2F5597;
-                color: white;
-            }
-
-            .page {
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 12px;
-                color: #222;
-                padding: 20px;
-            }
-
-            hr {
-                border: none;
-                border-top: 1px solid #ddd;
-                margin: 12px 0;
-            }
-
-            @media print {
-                .page {
-                    padding: 10mm;
-                }
-                .pagenum:after {
-                    content: counter(page);
-                }
-            }
-        </style>
     </template>
-
-
 </odoo>

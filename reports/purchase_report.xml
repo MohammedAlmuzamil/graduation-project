@@ -3,94 +3,129 @@
     <record id="purchase_report" model="ir.actions.report">
         <field name="name">Purchase Report</field>
         <field name="model">purchase</field>
-        <field name="report_type">qweb-html</field>
-        <field name="binding_model_id" ref="model_purchase"/>
+        <field name="report_type">qweb-pdf</field>
+        <field name="binding_model_id" ref="boraush_trading.model_purchase"/>
         <field name="binding_type">report</field>
         <field name="report_name">boraush_trading.purchase_report_template</field>
     </record>
-    <template id="purchase_report_template">
-        <t t-set="report_encoding" t-value="'utf-8'"/>
-        <t t-call="web.html_container">
-            <div class="page">
 
-                <div class="row" style="display:flex; justify-content: space-between; align-items:flex-start;">
-                    <div class="col-6">
-                        <img t-if="docs and docs[0].env.company.logo"
-                             t-att-src="'data:image/png;base64,%s' % (docs[0].env.company.logo.decode())"
-                             style="max-height:100px;"/>
-                        <h2 t-field="docs and docs[0].env.company.name"/>
-                        <p t-field="docs and docs[0].env.company.street"/>
-                        <p>
-                            <span t-field="docs and docs[0].env.company.phone"/>
-                            |
-                            <span t-field="docs and docs[0].env.company.email"/>
-                        </p>
+    <template id="purchase_report_template">
+        <t t-call="web.external_layout">
+            <main>
+                <t t-set="all_grand_total" t-value="sum(doc.total_price for doc in docs)"/>
+                <t t-foreach="docs" t-as="doc">
+                    <div class="page">
+                        <table style="width:100%; border-collapse:collapse; margin-bottom:15px;">
+                            <tr>
+                                <td style="width:100px;">
+                                    <img t-if="doc.env.company.logo"
+                                         t-att-src="'data:image/png;base64,%s' % (doc.env.company.logo.decode())"
+                                         style="width:100px; height:auto;"/>
+                                </td>
+                                <td>
+                                    <h2 t-field="doc.env.company.name"/>
+                                    <p t-field="doc.env.company.street"/>
+                                    <p>
+                                        <span t-field="doc.env.company.phone"/>
+                                        |
+                                        <span t-field="doc.env.company.email"/>
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table style="width:60%; border-collapse:collapse; margin-bottom:15px;">
+                            <tr>
+                                <td>
+                                    <b>Purchase Ref</b>
+                                </td>
+                                <td t-esc="doc.ref"/>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>Purchase Date</b>
+                                </td>
+                                <td t-esc="doc.purchase_date"/>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>Commissioner</b>
+                                </td>
+                                <td t-esc="doc.commissioner_id.name"/>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>Warehouse</b>
+                                </td>
+                                <td t-esc="doc.warehouse_id.name"/>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>Purchase Order</b>
+                                </td>
+                                <td t-esc="doc.order_id.name"/>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>Note</b>
+                                </td>
+                                <td t-esc="doc.description or '-'"/>
+                            </tr>
+                        </table>
+
+                        <table class="purchase-table" style="width:100%; border-collapse:collapse; margin-top:10px;">
+                            <thead>
+                                <tr style="background-color:#eb861e; color:white;">
+                                    <th>Arabic Gum Type</th>
+                                    <th>Color</th>
+                                    <th>Quality</th>
+                                    <th>Quantity</th>
+                                    <th>Unit Price</th>
+                                    <th>Total Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="doc.line_ids" t-as="line">
+                                    <tr>
+                                        <td t-esc="dict(line._fields['gum_type'].selection).get(line.gum_type)"/>
+                                        <td t-esc="dict(line._fields['color'].selection).get(line.color)"/>
+                                        <td t-esc="dict(line._fields['quality'].selection).get(line.quality)"/>
+                                        <td t-esc="line.quantity"/>
+                                        <td t-esc="line.unit_price"/>
+                                        <td t-esc="line.total_price"/>
+                                    </tr>
+                                </t>
+                                <tr style="font-weight:bold; background:#f0f0f0;">
+                                    <td colspan="3" style="text-align:right;">TOTAL</td>
+                                    <td t-esc="sum(line.quantity for line in doc.line_ids)"/>
+                                    <td t-esc="sum(line.unit_price for line in doc.line_ids)"/>
+                                    <td t-esc="doc.total_price"/>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <div class="col-6" style="text-align:right;">
-                        <h1 style="color:#2F5597; margin-bottom:0;">Purchase Order</h1>
-                        <p><strong>Ref:</strong> <t t-esc="docs[0].ref"/></p>
-                        <p><strong>Date:</strong> <t t-esc="docs[0].purchase_date"/></p>
-                    </div>
+                </t>
+
+                <div>
+                    <table style="width:100%; border-collapse:collapse; font-size:14px;">
+                        <tr style="background:#d9edf7; font-weight:bold;">
+                            <td style="text-align:center;">TOTAL PURCHASE PRICE</td>
+                            <td t-esc="all_grand_total"/>
+                        </tr>
+                    </table>
                 </div>
 
-                <hr style="margin:15px 0;"/>
 
-                <table class="table table-sm" style="width:100%; border-collapse:collapse;">
-                    <thead style="background-color:#2F5597; color:white;">
-                        <tr>
-                            <th>Arabic Gum ID</th>
-                            <th>Arabic Gum Type</th>
-                            <th>Color</th>
-                            <th>Quality</th>
-                            <th>Quantity</th>
-                            <th>Unit Price</th>
-                            <th>Total Price</th>
-                            <th>Warehouse</th>
-                            <th>Commissioner</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <t t-foreach="docs" t-as="purchase">
-                            <t t-foreach="purchase.line_ids" t-as="line">
-                                <tr>
-                                    <td t-esc="line.id"/>
-                                    <td t-esc="dict(line._fields['gum_type'].selection)[line.gum_type]"/>
-                                    <td t-esc="dict(line._fields['color'].selection)[line.color]"/>
-                                    <td t-esc="dict(line._fields['quality'].selection)[line.quality]"/>
-                                    <td t-esc="line.quantity"/>
-                                    <td t-esc="line.unit_price"/>
-                                    <td t-esc="line.total_price"/>
-                                    <td t-esc="line.warehouse_id.name or '-'"/>
-                                    <td t-esc="line.commissioner_id.name or '-'"/>
-                                </tr>
-                            </t>
-                            <tr style="font-weight:bold; background-color:#f2f2f2;">
-                                <td colspan="8" style="text-align:right;">Total:</td>
-                                <td t-esc="purchase.total_price" style="text-align:right;"/>
-                                <td colspan="2"/>
-                            </tr>
-
-                        </t>
-                    </tbody>
-                </table>
-
-                <footer style="display:flex; justify-content: space-between; margin-top:20px; font-size:11px;">
-                    <div>
-                        Prepared by: <span t-esc="docs and docs[0].env.user.name or 'System'"/>
-                    </div>
-                    <div class="page-number">Page <span class="pagenum"/></div>
-                </footer>
-
-            </div>
+            </main>
         </t>
 
-        <style>
-            .table th, .table td { border:1px solid #ddd; padding:8px; }
-            .table th { background-color:#2F5597; color:white; }
-            .page { font-family: Arial, Helvetica, sans-serif; font-size:12px; padding:20px; }
+        <style type="text/css" media="print">
+            * { -webkit-print-color-adjust: exact !important; }
+            .purchase-table th, .purchase-table td { border:1px solid #ddd; padding:5px; font-size:12px;
+            vertical-align:top; }
+            .purchase-table th { background-color:#eb861e !important; color:white !important; }
+            .page { font-family: Arial, Helvetica, sans-serif; font-size:12px; padding:15px; color:#222; }
             .pagenum:after { content: counter(page); }
         </style>
     </template>
-
-
 </odoo>
